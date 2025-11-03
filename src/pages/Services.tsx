@@ -1,149 +1,316 @@
-import { Card, CardContent } from "@/components/ui/card";
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import {
-  Building2,
-  Wrench,
-  Zap,
-  Warehouse,
-  Truck,
-  Boxes,
-  Home,
-  Package,
-  Cog,
-} from "lucide-react";
-import fabricationImage from "@/assets/fabrication.jpg";
-import warehouseImage from "@/assets/warehouse.jpg";
-import containerImage from "@/assets/container-conversion.jpg";
-import machineryImage from "@/assets/machinery.jpg";
-
-const Services = () => {
+import { Card, CardContent } from "@/components/ui/card";
+import { ChevronRightIcon, Building2, Wrench, Zap, Warehouse, Truck, Container, Home, Package, Cog, Clock, Users, Leaf, Target, Award, Shield } from "lucide-react";
+import constructionImage from "@/assets/Warehouse and cold storage area.jpeg";
+import fabricationImage from "@/assets/Structural Fabrication.jpeg";
+import machineHireImage from "@/assets/machine hire.jpeg";
+import modularBuildingsImage from "@/assets/modular buildings.jpeg";
+import conversionsImage from "@/assets/container.jpeg";
+import servicesImage from "@/assets/services bg.png";
+export const ServicesPage = (): JSX.Element => {
   const services = [
-    {
-      icon: Building2,
-      title: "Construction",
-      description: "Complete construction services from foundation to finish, including residential, commercial, and industrial projects.",
-      image: warehouseImage,
-    },
-    {
-      icon: Wrench,
-      title: "Structural Fabrication",
-      description: "Expert steel fabrication and structural engineering for industrial and commercial applications.",
-      image: fabricationImage,
-    },
-    {
-      icon: Zap,
-      title: "Plasma & Fiber Laser Cutting",
-      description: "Advanced profile cutting technology for precise metal fabrication and custom steel components.",
-      image: fabricationImage,
-    },
-    {
-      icon: Warehouse,
-      title: "Steel Portal Frames",
-      description: "Design and construction of steel portal frame structures for warehouses, factories, and residential properties.",
-      image: warehouseImage,
-    },
-    {
-      icon: Truck,
-      title: "Machine Hire & Access Equipment",
-      description: "Comprehensive range of plant machinery and access equipment for rent with professional operators.",
-      image: machineryImage,
-    },
-    {
-      icon: Boxes,
-      title: "Container Conversions",
-      description: "Transform shipping containers into functional offices, homes, storage units, and custom spaces.",
-      image: containerImage,
-    },
-    {
-      icon: Home,
-      title: "Prefabricated Buildings",
-      description: "Modular building solutions including cold storage facilities and custom prefab structures.",
-      image: containerImage,
-    },
-    {
-      icon: Package,
-      title: "Flat Pack Structures",
-      description: "Official agents for Cube Modular flat pack prefabricated structures for quick deployment.",
-      image: containerImage,
-    },
-    {
-      icon: Cog,
-      title: "Plant & Machinery Supply",
-      description: "Supply of quality construction equipment and machinery for purchase or long-term lease.",
-      image: machineryImage,
-    },
-  ];
+  {
+    id: 1,
+    icon: Building2,
+    title: "Construction",
+    description: "Complete construction services from foundation to completion with superior quality and reliability.",
+    color: "bg-indigo-600"
+  },
+  {
+    id: 2,
+    icon: Wrench,
+    title: "Structural Fabrication",
+    description: "Custom steel fabrication services for commercial structures with precision engineering.",
+    color: "bg-indigo-600"
+  },
+  {
+    id: 3,
+    icon: Zap,
+    title: "Plasma & Fiber Laser Cutting",
+    description: "Advanced cutting services with precision laser and fiber laser technology for complex projects.",
+    color: "bg-indigo-600"
+  },
+  {
+    id: 4,
+    icon: Warehouse,
+    title: "Steel Portal Frames",
+    description: "Durable steel frame structures for warehouses, factories, and buildings.",
+    color: "bg-indigo-600"
+  },
+  {
+    id: 5,
+    icon: Truck,
+    title: "Machine Hire & Access Equipment",
+    description: "Comprehensive equipment rental solutions for industrial projects.",
+    color: "bg-indigo-600"
+  },
+  {
+    id: 6,
+    icon: Container,
+    title: "Container Conversions",
+    description: "Custom container conversions for homes, offices, and storage facilities.",
+    color: "bg-indigo-600"
+  },
+  {
+    id: 7,
+    icon: Home,
+    title: "Prefabricated Buildings",
+    description: "Modern prefab solutions for homes, shops, and storage facilities with quick deployment.",
+    color: "bg-indigo-600"
+  },
+  {
+    id: 8,
+    icon: Package,
+    title: "Flat Pack Prefab Structures",
+    description: "Authorized agents for Cube Modular with innovative flat pack building solutions.",
+    color: "bg-indigo-600"
+  },
+  {
+    id: 9,
+    icon: Cog,
+    title: "Steel & Machinery Supply",
+    description: "Supply of new and used plant and machinery for construction and industrial sectors.",
+    color: "bg-indigo-600"
+  },
+];
+
+const whyChooseFeatures = [
+  {
+    id: 1,
+    icon: Clock,
+    title: "15+ Years Experience",
+    description: "Extensive industry experience with proven track record of successful projects.",
+    color: "bg-indigo-600"
+  },
+  {
+    id: 2,
+    icon: Target,
+    title: "On-Time, On-Budget",
+    description: "Reliable project management ensuring timely completion and cost control.",
+    color: "bg-indigo-600"
+  },
+  {
+    id: 3,
+    icon: Users,
+    title: "Skilled Team",
+    description: "Expert engineers and skilled workers with extensive capabilities.",
+    color: "bg-indigo-600"
+  },
+  {
+    id: 4,
+    icon: Leaf,
+    title: "Environmental Responsibility",
+    description: "Sustainable practices and environmental commitment in all implementations.",
+    color: "bg-indigo-600"
+  },
+  {
+    id: 5,
+    icon: Award,
+    title: "Client-Focused Approach",
+    description: "Flexible solutions tailored to meet specific client requirements and timely delivery.",
+    color: "bg-indigo-600"
+  },
+  {
+    id: 6,
+    icon: Shield,
+    title: "Quality Assurance",
+    description: "Rigorous quality processes ensuring exceptional workmanship standards.",
+    color: "bg-indigo-600"
+  },
+];
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
-      {/* Header */}
-      <section className="bg-gradient-hero text-white py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Our Services</h1>
-          <p className="text-xl md:text-2xl opacity-90 max-w-3xl animate-fade-in">
-            Comprehensive construction and industrial solutions tailored to your needs
+    <div className="flex flex-col w-full">
+      {/* Hero Section */}
+      <section
+        className="relative flex flex-col items-center justify-center h-[400px] px-8 md:px-16 w-full"
+        style={{
+          backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 100%), url(${servicesImage})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="relative z-10 flex flex-col items-center gap-4 max-w-4xl text-center">
+          <h1 className="text-5xl font-bold text-white">Our Services</h1>
+          <p className="text-lg text-white/90">
+            Delivering construction, fabrication, modular and machinery solutions across Zambia.
           </p>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
+      {/* Introduction */}
+      <section className="flex flex-col items-center px-8 md:px-16 py-16 w-full bg-gray-50">
+        <div className="max-w-4xl text-center">
+          <p className="text-base text-gray-700 leading-relaxed">
+            With over 15 years of industry experience, Keparo Enterprises Ltd provides comprehensive construction, fabrication, and machinery solutions across Zambia. Our skilled team delivers innovative, reliable, and cost-effective solutions tailored to every project requirement with professionalism.
+          </p>
+        </div>
+      </section>
+
+      {/* Core Services */}
+      <section className="flex flex-col items-center px-8 md:px-16 py-16 w-full bg-white">
+        <div className="max-w-screen-xl w-full flex flex-col gap-12">
+          <div className="flex flex-col gap-4 items-center text-center">
+            <h2 className="text-3xl font-bold text-gray-900">Our Core Services</h2>
+            <p className="text-gray-600">
+              Comprehensive solutions for all your construction and fabrication needs
+            </p>
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-medium transition-all group">
-                <div className="relative h-48 overflow-hidden">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-overlay"></div>
-                  <div className="absolute top-4 left-4 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <service.icon className="w-6 h-6 text-primary" />
-                  </div>
+            {services.map((service) => (
+              <Card
+                key={service.id}
+                className="flex flex-col gap-6 p-6 border border-gray-200 rounded-lg bg-white hover:shadow-lg transition-shadow"
+              >
+                <div className={`w-12 h-12 ${service.color} rounded-lg flex items-center justify-center`}>
+                  <service.icon className="w-6 h-6 text-white" />
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.description}</p>
-                </CardContent>
+                <div className="flex flex-col gap-3">
+                  <h3 className="text-lg font-bold text-gray-900">{service.title}</h3>
+                  <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
+                </div>
+                <Button
+                  variant="link"
+                  className="p-0 h-auto text-indigo-600 hover:text-indigo-700 justify-start w-fit font-semibold"
+                >
+                  Read More →
+                </Button>
               </Card>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8">Why Choose Keparo Enterprises?</h2>
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              <Card>
-                <CardContent className="p-6">
-                  <div className="text-4xl font-bold text-primary mb-2">15+</div>
-                  <div className="font-semibold mb-2">Years Experience</div>
-                  <p className="text-sm text-muted-foreground">Proven track record of excellence</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="text-4xl font-bold text-primary mb-2">100%</div>
-                  <div className="font-semibold mb-2">Quality Assured</div>
-                  <p className="text-sm text-muted-foreground">Commitment to superior standards</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="text-4xl font-bold text-primary mb-2">24/7</div>
-                  <div className="font-semibold mb-2">Support Available</div>
-                  <p className="text-sm text-muted-foreground">Always here when you need us</p>
-                </CardContent>
-              </Card>
+      {/* Construction Excellence */}
+      <section className="flex flex-col items-center px-8 md:px-16 py-16 w-full bg-gray-50">
+        <div className="max-w-screen-xl w-full">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="w-full h-80 rounded-lg overflow-hidden">
+              <img
+                src={constructionImage}
+                alt="Construction"
+                className="w-full h-full object-cover"
+              />
             </div>
-            <Button asChild size="lg" className="bg-accent hover:bg-accent/90">
-              <Link to="/contact">Request a Quote</Link>
+            <div className="flex flex-col gap-6">
+              <h2 className="text-3xl font-bold text-gray-900">Construction Excellence</h2>
+              <p className="text-gray-700 leading-relaxed">
+                Our construction team specializes in everything from residential homes to large commercial structures. With our experienced team and proven project management methodologies, we deliver quality results on time and within budget.
+              </p>
+              <Button className="w-fit bg-gray-800 hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg">
+                Learn More about Construction
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Precision Fabrication */}
+      <section className="flex flex-col items-center px-8 md:px-16 py-16 w-full bg-white">
+        <div className="max-w-screen-xl w-full">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="flex flex-col gap-6">
+              <h2 className="text-3xl font-bold text-gray-900">Precision Fabrication</h2>
+              <p className="text-gray-700 leading-relaxed">
+                Our state-of-the-art fabrication facility combines traditional craftsmanship with modern technology. From structural steel to custom metalwork, we deliver excellence for every project requirement.
+              </p>
+              <Button className="w-fit bg-gray-800 hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg">
+                See Fabrication Projects
+              </Button>
+            </div>
+            <div className="w-full h-80 rounded-lg overflow-hidden">
+              <img
+                src={fabricationImage}
+                alt="Fabrication"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Container Solutions */}
+      <section className="flex flex-col items-center px-8 md:px-16 py-16 w-full bg-gray-50">
+        <div className="max-w-screen-xl w-full">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="w-full h-80 rounded-lg overflow-hidden">
+              <img
+                src={conversionsImage}
+                alt="Container Conversions"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="flex flex-col gap-6">
+              <h2 className="text-3xl font-bold text-gray-900">Innovative Container Solutions</h2>
+              <p className="text-gray-700 leading-relaxed">
+                Transform shipping containers into functional spaces including offices, homes, and storage facilities. Our innovative conversion solutions deliver sustainable buildings with exceptional durability and cost-effectiveness.
+              </p>
+              <Button className="w-fit bg-gray-800 hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg">
+                Explore Container Projects
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="flex flex-col items-center px-8 md:px-16 py-16 w-full bg-white">
+        <div className="max-w-screen-xl w-full flex flex-col gap-12">
+          <div className="flex flex-col gap-4 items-center text-center">
+            <h2 className="text-3xl font-bold text-gray-900">Why Choose Keparo Enterprises Ltd</h2>
+            <p className="text-gray-600">
+              Your trusted partner for exceptional construction and fabrication solutions
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {whyChooseFeatures.map((feature) => (
+              <div
+                key={feature.id}
+                className="flex flex-col gap-4 items-center text-center p-6"
+              >
+                <div className={`w-16 h-16 ${feature.color} rounded-full flex items-center justify-center`}>
+                  <feature.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900">{feature.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Banner */}
+      <section className="flex flex-col items-center px-8 md:px-16 py-16 w-full bg-indigo-600">
+        <div className="max-w-screen-xl w-full flex flex-col gap-4 items-center text-center">
+          <h2 className="text-3xl font-bold text-white">
+            Over 15 Years of Successful Projects Across Zambia
+          </h2>
+          <p className="text-white/90 max-w-3xl">
+            Trusted by clients countrywide for delivering exceptional construction and fabrication.
+          </p>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="flex flex-col items-center px-8 md:px-16 py-16 w-full bg-white">
+        <div className="max-w-screen-xl w-full flex flex-col gap-8 items-center text-center">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-3xl font-bold text-gray-900">
+              Ready to explore how our services can support your next project?
+            </h2>
+            <p className="text-gray-600">
+              Let's discuss your requirements and create the perfect solution for your needs.
+            </p>
+          </div>
+          <div className="flex gap-4">
+            <Button className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg">
+              Get A Quote
+            </Button>
+            <Button className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-lg">
+              Contact Us
             </Button>
           </div>
         </div>
@@ -152,4 +319,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default ServicesPage;

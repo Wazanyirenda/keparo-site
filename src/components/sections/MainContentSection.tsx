@@ -7,6 +7,7 @@ import fabricationImage from "@/assets/Structural Fabrication.jpeg";
 import machineHireImage from "@/assets/machine hire.jpeg";
 import modularBuildingsImage from "@/assets/modular buildings.jpeg";
 import conversionsImage from "@/assets/container.jpeg";
+import { useNavigate } from "react-router-dom";
 
 const services = [
   {
@@ -68,6 +69,7 @@ const services = [
 ];
 
 export const MainContentSection = (): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <section className="flex flex-col items-center w-full bg-[#f2f2f2]">
       <div className="flex flex-col w-full max-w-[90rem] px-4 py-12 md:px-16 md:py-24">
@@ -114,6 +116,7 @@ export const MainContentSection = (): JSX.Element => {
 
               <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                 <Button
+                onClick={() => navigate("/services")}
                   variant="outline"
                   className="h-10 sm:h-9 px-4 py-2 rounded-lg border border-white/20 bg-transparent hover:bg-white/10 text-white hover:text-white min-w-[100px]"
                 >
@@ -123,6 +126,7 @@ export const MainContentSection = (): JSX.Element => {
                 </Button>
 
                 <Button
+                onClick={() => navigate("/services")}
                   variant="link"
                   className="h-10 sm:h-9 p-0 text-white hover:text-white/90 flex items-center gap-1"
                 >
@@ -152,6 +156,7 @@ export const MainContentSection = (): JSX.Element => {
 
                 <div className="mt-auto">
                   <Button
+                  onClick={() => navigate("/services")}
                     variant="link"
                     className="h-9 p-0 text-white hover:text-white/90 flex items-center gap-1"
                   >
@@ -180,6 +185,7 @@ export const MainContentSection = (): JSX.Element => {
 
                 <div className="mt-auto">
                   <Button
+                  onClick={() => navigate("/services")}
                     variant="link"
                     className="h-9 p-0 text-white hover:text-white/90 flex items-center gap-1"
                   >
@@ -211,6 +217,7 @@ export const MainContentSection = (): JSX.Element => {
 
               <div className="flex items-center gap-4 mt-auto">
                 <Button
+                onClick={() => navigate("/services")}
                   variant="outline"
                   className="h-9 px-4 py-2 rounded-lg border border-white/20 bg-transparent hover:bg-white/10 text-white hover:text-white"
                 >
@@ -220,6 +227,7 @@ export const MainContentSection = (): JSX.Element => {
                 </Button>
 
                 <Button
+                  onClick={() => navigate("/services")}
                   variant="link"
                   className="h-9 p-0 text-white hover:text-white/90 flex items-center gap-1"
                 >
@@ -254,6 +262,7 @@ export const MainContentSection = (): JSX.Element => {
 
               <div className="flex items-center gap-4 mt-auto">
                 <Button
+                onClick={() => navigate("/services")}
                   variant="outline"
                   className="h-9 px-4 py-2 rounded-lg border border-white/20 bg-transparent hover:bg-white/10 text-white hover:text-white"
                 >
@@ -263,6 +272,7 @@ export const MainContentSection = (): JSX.Element => {
                 </Button>
 
                 <Button
+                onClick={() => navigate("/services")}
                   variant="link"
                   className="h-9 p-0 text-white hover:text-white/90 flex items-center gap-1"
                 >

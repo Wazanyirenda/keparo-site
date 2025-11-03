@@ -3,12 +3,14 @@ import React from "react";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import mimbulaLogo from "@/assets/mimbula-logo.png";
+import testimonialAvatar from "@/assets/mimbula avatar.jpg";
 
 const testimonialData = {
-  logo: "/logo-5.svg",
+  logo: mimbulaLogo,
   quote:
     "Keparo transformed our industrial vision into a robust reality with exceptional precision.",
-  avatar: "/avatar-image.png",
+  avatar: testimonialAvatar,
   name: "John Mwila",
   title: "Operations Director, Mimbula Minerals",
   caseStudyLink: "#",

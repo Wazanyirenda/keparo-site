@@ -1,6 +1,8 @@
 import { ChevronRightIcon } from "lucide-react";
 import React from "react";
 import { Button } from "@/components/ui/button";
+import whyChooseUsImage from "@/assets/why choose.jpeg";
+
 
 const values = [
   { label: "Experience", zIndex: "z-[5]" },
@@ -34,7 +36,7 @@ export const ProjectsSection = (): JSX.Element => {
           </div>
         </header>
 
-        <div className="w-full bg-[#f2f2f2] border border-solid flex flex-col items-center justify-center self-stretch border-[#04070926]">
+        <div className="w-full bg-[#f2f2f2] flex flex-col items-center justify-center self-stretch">
           <div className="z-[1] flex flex-col md:flex-row items-start self-stretch w-full">
             {values.map((value, index) => (
               <div
@@ -43,15 +45,7 @@ export const ProjectsSection = (): JSX.Element => {
                   index === 0
                     ? "mt-[-1.00px] mb-[-1.00px] ml-[-1.00px] md:mt-[-1.00px] md:mb-[-1.00px] md:ml-[-1.00px]"
                     : "mt-[-1.00px] mb-[-1.00px] md:mt-[-1.00px] md:mb-[-1.00px]"
-                } ${value.zIndex} ${
-                  index < values.length - 1
-                    ? "border-b md:border-r [border-right-style:solid] md:border-b-0"
-                    : ""
-                } ${
-                  index === 0 ? "" : "border-b [border-bottom-style:solid]"
-                } ${
-                  index === values.length - 1 ? "mr-[-1.00px] md:mr-[-1.00px]" : ""
-                } flex flex-col items-center justify-center self-stretch border-[#04070926]`}
+                } ${value.zIndex} flex flex-col items-center justify-center self-stretch`}
               >
                 <div className="text-lg font-bold text-[#040709] text-center self-stretch">
                   {value.label}
@@ -101,9 +95,9 @@ export const ProjectsSection = (): JSX.Element => {
               </div>
 
               <img
-                className="flex-1 grow h-[300px] sm:h-[400px] lg:h-[552px] object-cover w-full"
+                className="flex-1 grow h-[300px] sm:h-[400px] lg:h-[552px] object-cover w-full rounded-md"
                 alt="Placeholder image"
-                src="/placeholder-image-4.png"
+                src= {whyChooseUsImage}
               />
             </div>
           </div>

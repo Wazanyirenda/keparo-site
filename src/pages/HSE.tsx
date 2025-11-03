@@ -1,116 +1,248 @@
+import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Shield, HardHat, Leaf, AlertTriangle, CheckCircle, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Shield, Heart, Leaf, Award, Users, Handshake, Cog, Home, CheckCircle, AlertTriangle } from "lucide-react";
 import safetyImage from "@/assets/safety.jpg";
+import { useNavigate } from "react-router-dom";
 
 const HSE = () => {
-  const safetyPolicies = [
+  const navigate = useNavigate();
+
+  const hseCorePillars = [
     {
       icon: Shield,
-      title: "Zero Tolerance Policy",
-      description: "Absolute zero tolerance approach to accidents and unsafe practices across all projects.",
+      title: "Safety First",
+      description: "Absolute zero tolerance approach to accidents and unsafe practices across all projects. We prioritize the safety of our team, clients, and the public above all else.",
     },
     {
-      icon: HardHat,
-      title: "PPE Requirements",
-      description: "Mandatory personal protective equipment for all personnel on site at all times.",
+      icon: Heart,
+      title: "Health & Wellbeing",
+      description: "Comprehensive health programs and wellness initiatives to ensure our personnel remain healthy, safe, and productive throughout their careers with us.",
     },
     {
-      icon: Users,
-      title: "Trained Personnel",
-      description: "All staff undergo comprehensive safety training and regular refresher courses.",
+      icon: Leaf,
+      title: "Environmental Stewardship",
+      description: "Commitment to sustainable practices, waste reduction, and environmental protection in all our construction and operational activities.",
     },
     {
-      icon: AlertTriangle,
-      title: "Risk Assessment",
-      description: "Thorough risk assessments conducted before commencement of any work activities.",
+      icon: Award,
+      title: "Compliance & Training",
+      description: "Full compliance with all regulations and international standards, supported by comprehensive training programs for all personnel.",
     },
   ];
 
-  const environmentalCommitments = [
+  const whyHseCentral = [
+    {
+      icon: Users,
+      title: "Protecting Our People",
+      description: "Every team member is valuable. We ensure their safety through rigorous training, proper equipment, and a culture of accountability.",
+    },
+    {
+      icon: Handshake,
+      title: "Upholding Client Trust",
+      description: "Clients trust us to deliver projects safely and responsibly. Our HSE record demonstrates our commitment to their confidence.",
+    },
+    {
+      icon: Cog,
+      title: "Ensuring Efficiency",
+      description: "Safe operations are efficient operations. Proper safety protocols reduce downtime, improve productivity, and ensure project timelines.",
+    },
     {
       icon: Leaf,
-      title: "Waste Reduction",
-      description: "Systematic approach to minimizing waste and promoting recycling on all projects.",
+      title: "Reducing Environmental Impact",
+      description: "Sustainable practices protect the environment while meeting regulatory requirements and reducing long-term operational costs.",
     },
     {
       icon: CheckCircle,
-      title: "Compliance",
-      description: "Full compliance with all Zambian environmental regulations and international standards.",
+      title: "Guaranteeing Compliance",
+      description: "We maintain full compliance with Zambian regulations and international standards, ensuring projects proceed without regulatory delays.",
     },
     {
-      icon: Leaf,
-      title: "Fuel Efficiency",
-      description: "Regular maintenance of equipment to ensure optimal fuel efficiency and reduced emissions.",
-    },
-    {
-      icon: CheckCircle,
-      title: "Sustainable Practices",
-      description: "Implementation of sustainable construction practices and materials wherever possible.",
+      icon: Home,
+      title: "Building Community Trust",
+      description: "Our commitment to safety and environmental responsibility builds trust with local communities and stakeholders.",
     },
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
-      {/* Header */}
-      <section className="bg-gradient-hero text-white py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative w-full min-h-[600px] flex items-center justify-center">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${safetyImage})`,
+          }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
             Health, Safety & Environment
           </h1>
-          <p className="text-xl md:text-2xl opacity-90 max-w-3xl animate-fade-in">
-            Your safety and environmental responsibility are our top priorities
+          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto">
+            Building responsibility, ensuring safety, living with integrity.
           </p>
         </div>
       </section>
 
-      {/* Introduction */}
-      <section className="py-16 bg-background">
+      {/* Introduction Text Section */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Our Commitment to Safety</h2>
-              <div className="space-y-4 text-muted-foreground">
-                <p>
-                  At Keparo Enterprises, we believe that no project is worth compromising the health and safety of our team, clients, or the environment. Our comprehensive HSE policies are integrated into every aspect of our operations.
-                </p>
-                <p>
-                  We maintain the highest standards of safety culture, ensuring that all personnel are properly trained, equipped with appropriate PPE, and empowered to stop work if they identify any safety concerns.
-                </p>
-                <p>
-                  Our zero-tolerance approach to accidents has earned us an excellent safety record and the trust of major clients across Zambia.
-                </p>
-              </div>
-            </div>
+          <p className="text-center text-muted-foreground max-w-4xl mx-auto text-lg">
+            At Keparo Enterprises, we believe that no project is worth compromising the health and safety of our team, clients, or the environment. Our comprehensive HSE policies are integrated into every aspect of our operations, ensuring that we deliver excellence while maintaining the highest standards of safety and environmental responsibility.
+          </p>
+        </div>
+      </section>
+
+      {/* Our HSE Core Pillars */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
+            Our HSE Core Pillars
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {hseCorePillars.map((pillar, index) => (
+              <Card key={index} className="border-none shadow-medium">
+                <CardContent className="p-6 text-center">
+                  <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full mb-4">
+                    <pillar.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-foreground">{pillar.title}</h3>
+                  <p className="text-muted-foreground text-sm">{pillar.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Commitments */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
+            Featured Commitments
+          </h2>
+          
+          {/* Block 1: Workplace Safety */}
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-16 max-w-6xl mx-auto">
             <div className="relative h-96 rounded-lg overflow-hidden shadow-strong">
               <img
                 src={safetyImage}
-                alt="Safety on construction site"
+                alt="Workplace Safety & Risk Management"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
+                Workplace Safety & Risk Management
+              </h3>
+              <p className="text-muted-foreground mb-6 text-lg">
+                Comprehensive safety protocols, rigorous risk assessments, and continuous monitoring ensure that every project site maintains the highest safety standards. Our proactive approach to identifying and mitigating risks protects our team and ensures project success.
+              </p>
+              <Button 
+                className="bg-primary text-white hover:bg-primary/90"
+                onClick={() => navigate("/services")}
+              >
+                Learn More About Safety
+              </Button>
+            </div>
+          </div>
+
+          {/* Block 2: Environmental Sustainability */}
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-16 max-w-6xl mx-auto">
+            <div className="order-2 md:order-1">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
+                Environmental Sustainability Initiatives
+              </h3>
+              <p className="text-muted-foreground mb-6 text-lg">
+                We are committed to sustainable construction practices that minimize environmental impact. From waste reduction and recycling programs to energy-efficient construction methods, we build for a sustainable future.
+              </p>
+              <Button 
+                className="bg-primary text-white hover:bg-primary/90"
+                onClick={() => navigate("/services")}
+              >
+                Explore Our Initiatives
+              </Button>
+            </div>
+            <div className="relative h-96 rounded-lg overflow-hidden shadow-strong order-1 md:order-2">
+              <img
+                src={safetyImage}
+                alt="Environmental Sustainability"
                 className="w-full h-full object-cover"
               />
             </div>
           </div>
+
+          {/* Block 3: Training & Certification */}
+          <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div className="relative h-96 rounded-lg overflow-hidden shadow-strong">
+              <img
+                src={safetyImage}
+                alt="Training & Certification Programs"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
+                Training & Certification Programs
+              </h3>
+              <p className="text-muted-foreground mb-6 text-lg">
+                Ongoing training and certification programs ensure all personnel are equipped with the latest safety knowledge and best practices. We invest in our team's development to maintain excellence in safety and operational performance.
+              </p>
+              <Button 
+                className="bg-primary text-white hover:bg-primary/90"
+                onClick={() => navigate("/services")}
+              >
+                View Our Programs
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Safety Policies */}
-      <section className="py-16 bg-muted">
+      {/* Our HSE Performance Highlights */}
+      <section className="py-16 bg-primary text-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Safety Policies & Procedures</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Comprehensive safety measures to protect everyone on site
-            </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+            Our HSE Performance Highlights
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto text-center">
+            <div>
+              <div className="text-5xl md:text-6xl font-bold mb-2">500,000+</div>
+              <div className="text-lg opacity-90">Safe Working Hours</div>
+            </div>
+            <div>
+              <div className="text-5xl md:text-6xl font-bold mb-2">ISO 45001</div>
+              <div className="text-lg opacity-90">Certified</div>
+            </div>
+            <div>
+              <div className="text-5xl md:text-6xl font-bold mb-2">Zero</div>
+              <div className="text-lg opacity-90">Lost Time Injuries</div>
+            </div>
+            <div>
+              <div className="text-5xl md:text-6xl font-bold mb-2">100%</div>
+              <div className="text-lg opacity-90">Staff Trained</div>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {safetyPolicies.map((policy, index) => (
-              <Card key={index} className="hover:shadow-medium transition-shadow">
+      {/* Why HSE is Central to Everything We Do */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
+            Why HSE is Central to Everything We Do
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+            {whyHseCentral.map((item, index) => (
+              <Card key={index} className="border-none shadow-medium">
                 <CardContent className="p-6 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-accent/10 rounded-full mb-4">
-                    <policy.icon className="w-8 h-8 text-accent" />
+                  <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full mb-4">
+                    <item.icon className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-3">{policy.title}</h3>
-                  <p className="text-muted-foreground text-sm">{policy.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-foreground">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm">{item.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -118,92 +250,58 @@ const HSE = () => {
         </div>
       </section>
 
-      {/* Safety Requirements */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Safety Requirements on Site</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-4 flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary mr-2" />
-                    Mandatory Equipment
-                  </h3>
-                  <ul className="space-y-2 text-muted-foreground text-sm">
-                    <li>• Safety helmets (hard hats)</li>
-                    <li>• High-visibility clothing</li>
-                    <li>• Steel-toed safety boots</li>
-                    <li>• Safety glasses/goggles</li>
-                    <li>• Hearing protection (where required)</li>
-                    <li>• Gloves appropriate to task</li>
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="font-semibold mb-4 flex items-center">
-                    <CheckCircle className="w-5 h-5 text-primary mr-2" />
-                    Training Requirements
-                  </h3>
-                  <ul className="space-y-2 text-muted-foreground text-sm">
-                    <li>• Induction for all site personnel</li>
-                    <li>• Equipment-specific training</li>
-                    <li>• First aid certification</li>
-                    <li>• Emergency response procedures</li>
-                    <li>• Regular safety refresher courses</li>
-                    <li>• Toolbox talks and briefings</li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
+      {/* Clients Trust Keparo */}
+      <section className="py-16 bg-primary text-white">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-2xl md:text-3xl font-bold mb-8 max-w-4xl mx-auto">
+            Our clients trust Keparo because we prioritize safety and sustainability in every project.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button 
+              variant="outline" 
+              className="border-white text-white hover:bg-white/10"
+              onClick={() => navigate("/clients")}
+            >
+              Client 1
+            </Button>
+            <Button 
+              variant="outline" 
+              className="border-white text-white hover:bg-white/10"
+              onClick={() => navigate("/clients")}
+            >
+              Client 2
+            </Button>
+            <Button 
+              variant="outline" 
+              className="border-white text-white hover:bg-white/10"
+              onClick={() => navigate("/clients")}
+            >
+              Client 3
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Environmental Commitment */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Environmental Commitment</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Building responsibly for a sustainable future
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {environmentalCommitments.map((commitment, index) => (
-              <Card key={index} className="hover:shadow-medium transition-shadow">
-                <CardContent className="p-6 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-light rounded-full mb-4">
-                    <commitment.icon className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-3">{commitment.title}</h3>
-                  <p className="text-muted-foreground text-sm">{commitment.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="py-16 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-5xl font-bold mb-2">0</div>
-              <div className="text-lg opacity-90">Lost Time Injuries (Target)</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold mb-2">100%</div>
-              <div className="text-lg opacity-90">Staff Safety Trained</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold mb-2">15+</div>
-              <div className="text-lg opacity-90">Years Safety Excellence</div>
-            </div>
+      {/* Partner with a team */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-2xl md:text-3xl font-bold mb-8 text-foreground max-w-4xl mx-auto">
+            Partner with a team that values safety, quality, and sustainability.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button 
+              className="bg-primary text-white hover:bg-primary/90 px-8 py-6 text-lg"
+              onClick={() => navigate("/contact")}
+            >
+              Contact Our Team
+            </Button>
+            <Button 
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-6 text-lg"
+              onClick={() => navigate("/portfolio")}
+            >
+              View Our Portfolio
+            </Button>
           </div>
         </div>
       </section>

@@ -3,22 +3,25 @@ import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import mibulaImage from "@/assets/mibula.png";
+import corridorImage from "@/assets/corridor.png";
+import cumminsRenovationImage from "@/assets/cummins.png";
 
 const portfolioProjects = [
   {
-    image: "/placeholder-image-1.png",
+    image: mibulaImage,
     title: "Mimbula minerals workshop",
     description: "Advanced industrial facility design and construction",
     tags: ["Mining", "Infrastructure", "Engineering"],
   },
   {
-    image: "/placeholder-image-2.png",
+    image: corridorImage,
     title: "Corridor logistics warehouse",
     description: "Large-scale logistics infrastructure development",
     tags: ["Logistics", "Construction", "Design"],
   },
   {
-    image: "/placeholder-image-3.png",
+    image: cumminsRenovationImage,
     title: "Cummins Zambia renovation",
     description: "Industrial facility modernization and upgrade",
     tags: ["Renovation", "Maintenance", "Engineering"],
@@ -30,7 +33,7 @@ export const PortfolioSection = (): JSX.Element => {
     <section className="flex flex-col items-center gap-20 px-4 py-12 sm:px-8 sm:py-16 md:px-16 md:py-28 w-full bg-[#f2f2f2]">
       <div className="flex flex-col max-w-screen-xl items-center gap-20 w-full">
         <header className="max-w-screen-md flex flex-col items-center gap-4 w-full">
-          <div className="inline-flex items-center self-stretch">
+          <div className="flex items-center justify-center">
             <p className="w-fit mt-[-1.00px] text-sm font-semibold text-[#040709] text-center">
               Portfolio
             </p>

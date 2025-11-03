@@ -2,9 +2,9 @@ import React from "react";
 
 export const FooterSection = (): JSX.Element => {
   return (
-    <footer className="flex flex-col items-center gap-20 px-16 py-12 w-full bg-[#f2f2f2]">
+    <footer className="flex flex-col items-center gap-20 px-4 py-8 md:px-16 md:py-12 w-full bg-[#f2f2f2]">
       <div className="flex flex-col max-w-screen-xl items-start gap-20 w-full">
-        <div className="flex items-start gap-20 w-full">
+        <div className="flex flex-col md:flex-row items-start gap-12 md:gap-20 w-full">
           <div className="flex flex-col items-start gap-6 flex-1">
             <div className="w-fit font-bold text-black text-lg">
               Keparo

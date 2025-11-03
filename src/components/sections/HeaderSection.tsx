@@ -1,11 +1,13 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/fabric.jpeg";
+import { useNavigate } from "react-router-dom";
 export const HeaderSection = (): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <section className="flex flex-col min-h-[600px] md:min-h-[750px] lg:min-h-[900px] items-center justify-center gap-20 px-4 sm:px-8 md:px-12 lg:px-16 py-0 relative w-full bg-[#f2f2f2]">
       <div
-        className="absolute w-full h-full top-0 left-0"
+        className="absolute w-full h-full top-0 left-0 filter brightness-75"
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundSize: "cover",
@@ -30,6 +32,7 @@ export const HeaderSection = (): JSX.Element => {
 
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4 w-full sm:w-auto relative flex-[0_0_auto]">
             <Button
+              onClick={() => navigate("/services")}
               variant="outline"
               className="h-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 relative flex-[0_0_auto] bg-white rounded-xl border border-solid hover:bg-white/90 w-full sm:w-auto"
             >
@@ -38,7 +41,9 @@ export const HeaderSection = (): JSX.Element => {
               </span>
             </Button>
 
-            <Button className="h-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 relative flex-[0_0_auto] bg-[#4e4dcb] rounded-xl hover:bg-[#4e4dcb]/90 w-full sm:w-auto">
+            <Button 
+            onClick={() => navigate("/contact")}
+            className="h-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 relative flex-[0_0_auto] bg-[#4e4dcb] rounded-xl hover:bg-[#4e4dcb]/90 w-full sm:w-auto">
               <span className="relative w-fit font-medium text-white text-base">
                 Get Quote
               </span>
