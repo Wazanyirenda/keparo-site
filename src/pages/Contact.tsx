@@ -3,8 +3,21 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Globe,
+  Linkedin,
+  Facebook,
+  Instagram,
+  MessageSquare,
+  Users,
+} from "lucide-react";
+import heroImage from "@/assets/hero-construction.jpg";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -12,7 +25,7 @@ const Contact = () => {
     name: "",
     email: "",
     phone: "",
-    company: "",
+    subject: "inquiry",
     message: "",
   });
 
@@ -22,187 +35,220 @@ const Contact = () => {
       title: "Message sent!",
       description: "We'll get back to you as soon as possible.",
     });
-    setFormData({ name: "", email: "", phone: "", company: "", message: "" });
+    setFormData({ name: "", email: "", phone: "", subject: "inquiry", message: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: "Phone",
-      details: ["+260 967 674 611 (Operations)", "+260 960 923 998 (Office)"],
-    },
-    {
-      icon: Mail,
-      title: "Email",
-      details: ["keparo.enterprises@gmail.com"],
-      link: "mailto:keparo.enterprises@gmail.com",
-    },
+  const infoCards = [
     {
       icon: MapPin,
-      title: "Address",
-      details: ["Plot 18 Musenga, Off Kitwe Road", "Chingola, Zambia", "P.O. Box 11014"],
+      title: "Head Office",
+      lines: [
+        "Plot No. 12345, Industrial Area, Lusaka, Zambia",
+        "Mon–Fri, 8:00 AM – 5:00 PM",
+      ],
     },
     {
+      icon: Phone,
+      title: "Phone & Email",
+      lines: [
+        "+260 123 456 789",
+        "info@keparo.co.zm",
+      ],
+    },
+    {
+      icon: Globe,
+      title: "Connect Online",
+      lines: ["www.keparo.co.zm"],
+    },
+  ];
+
+  const whyClients = [
+    {
       icon: Clock,
-      title: "Business Hours",
-      details: ["Monday - Friday: 8:00 AM - 5:00 PM", "Saturday: 8:00 AM - 12:00 PM"],
+      title: "Fast Response Times",
+      text: "Quick turnaround on all inquiries and project communications",
+    },
+    {
+      icon: MessageSquare,
+      title: "Transparent Communication",
+      text: "Clear, honest updates throughout every project phase",
+    },
+    {
+      icon: Users,
+      title: "Experienced Professionals",
+      text: "Skilled team with years of industry expertise",
+    },
+    {
+      icon: Globe,
+      title: "Nationwide Coverage",
+      text: "Serving clients across Zambia with reliable service",
     },
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
-      {/* Header */}
-      <section className="bg-gradient-hero text-white py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Contact Us</h1>
-          <p className="text-xl md:text-2xl opacity-90 max-w-3xl animate-fade-in">
-            Let's discuss how we can help with your project
+    <div className="min-h-screen pt-24 pb-0">
+      {/* Hero */}
+      <section className="relative w-full min-h-[420px] flex items-center justify-center">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Get in Touch with Keparo Enterprises Ltd</h1>
+          <p className="text-white/90 text-lg md:text-xl max-w-3xl mx-auto">
+            We’re ready to discuss your next project, answer your questions, or provide a custom quote.
           </p>
         </div>
       </section>
 
-      {/* Contact Form and Info */}
-      <section className="py-16 bg-background">
+      {/* Intro */}
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {/* Contact Form */}
-            <div className="lg:col-span-2">
-              <Card className="shadow-medium">
-                <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold mb-6">Get a Quote</h2>
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium mb-2">
-                          Full Name *
-                        </label>
-                        <Input
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleChange}
-                          required
-                          placeholder="John Doe"
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium mb-2">
-                          Email Address *
-                        </label>
-                        <Input
-                          id="email"
-                          name="email"
-                          type="email"
-                          value={formData.email}
-                          onChange={handleChange}
-                          required
-                          placeholder="john@example.com"
-                        />
-                      </div>
-                    </div>
+          <p className="text-center text-muted-foreground max-w-4xl mx-auto">
+            At Keparo Enterprises Ltd, we’re committed to providing timely and reliable support for all your project needs.
+            Whether you’re planning a large‑scale build or need specialized fabrication, our team is ready to assist.
+          </p>
+        </div>
+      </section>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                          Phone Number *
-                        </label>
-                        <Input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          value={formData.phone}
-                          onChange={handleChange}
-                          required
-                          placeholder="+260 XXX XXX XXX"
-                        />
+      {/* Three Info Cards */}
+      <section className="py-4 bg-muted/40">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {infoCards.map((item, idx) => (
+              <Card key={idx} className="shadow-soft">
+                <CardContent className="p-6">
+                  <div className="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-4 mx-auto">
+                    <item.icon className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-center font-semibold mb-2">{item.title}</h3>
+                  <div className="space-y-1 text-sm text-muted-foreground text-center">
+                    {item.lines.map((l, i) => (
+                      <p key={i}>{l}</p>
+                    ))}
+                    {item.title === "Connect Online" && (
+                      <div className="flex items-center justify-center gap-3 pt-2">
+                        <Linkedin className="w-4 h-4" />
+                        <Facebook className="w-4 h-4" />
+                        <Instagram className="w-4 h-4" />
                       </div>
-                      <div>
-                        <label htmlFor="company" className="block text-sm font-medium mb-2">
-                          Company Name
-                        </label>
-                        <Input
-                          id="company"
-                          name="company"
-                          value={formData.company}
-                          onChange={handleChange}
-                          placeholder="Your Company"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium mb-2">
-                        Project Details *
-                      </label>
-                      <Textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        required
-                        rows={6}
-                        placeholder="Please describe your project requirements..."
-                      />
-                    </div>
-
-                    <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90">
-                      Send Message
-                    </Button>
-                  </form>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            {/* Contact Information */}
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => (
-                <Card key={index} className="shadow-soft">
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-primary-light rounded-full flex items-center justify-center flex-shrink-0">
-                        <info.icon className="w-6 h-6 text-primary" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold mb-2">{info.title}</h3>
-                        {info.details.map((detail, idx) => (
-                          <p key={idx} className="text-sm text-muted-foreground">
-                            {info.link ? (
-                              <a href={info.link} className="hover:text-primary transition-colors">
-                                {detail}
-                              </a>
-                            ) : (
-                              detail
-                            )}
-                          </p>
-                        ))}
-                      </div>
+      {/* Send Us a Message */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">Send Us a Message</h2>
+          <p className="text-center text-sm text-muted-foreground mb-8">Fill out the form below, and our team will get back to you promptly.</p>
+          <div className="max-w-4xl mx-auto">
+            <Card className="shadow-medium">
+              <CardContent className="p-8">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium mb-2">Full Name</label>
+                      <Input id="name" name="name" value={formData.name} onChange={handleChange} required placeholder="John Doe" />
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium mb-2">Email Address</label>
+                      <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required placeholder="john@example.com" />
+                    </div>
+                  </div>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-medium mb-2">Phone Number</label>
+                      <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} required placeholder="+260 123 456 789" />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2">Subject</label>
+                      <Select value={formData.subject} onValueChange={(v) => setFormData((p) => ({ ...p, subject: v }))}>
+                        <SelectTrigger>
+                          <SelectValue placeholder="Select subject" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="inquiry">Inquiry</SelectItem>
+                          <SelectItem value="quote">Request a Quote</SelectItem>
+                          <SelectItem value="support">Support</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+                    <Textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={6} required placeholder="Write your message here..." />
+                  </div>
+                  <div className="flex justify-center">
+                    <Button type="submit" className="px-8">Submit Message</Button>
+                  </div>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Map */}
+      <section className="py-16 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="relative">
+              <Card className="overflow-hidden shadow-medium">
+                <div className="h-80 md:h-96 bg-gray-300/60 flex items-center justify-center">
+                  <div className="text-center text-foreground/70">
+                    <MapPin className="w-10 h-10 mx-auto mb-2" />
+                    <div className="font-semibold">Interactive Map</div>
+                    <div className="text-sm">Keparo Enterprises Ltd Location</div>
+                  </div>
+                </div>
+              </Card>
+              <Card className="absolute left-4 bottom-4 shadow-strong">
+                <CardContent className="p-4">
+                  <div className="text-sm font-semibold mb-1">Keparo Enterprises Ltd</div>
+                  <div className="text-xs text-muted-foreground mb-3">Plot No. 12345, Industrial Area, Lusaka, Zambia</div>
+                  <Button size="sm" variant="outline" className="bg-white">Get Directions</Button>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Map Placeholder */}
-      <section className="py-16 bg-muted">
+      {/* Why Clients Trust */}
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold mb-6 text-center">Visit Our Location</h2>
-            <Card className="overflow-hidden shadow-medium">
-              <div className="bg-gradient-hero h-96 flex items-center justify-center text-white">
-                <div className="text-center">
-                  <MapPin className="w-16 h-16 mx-auto mb-4" />
-                  <p className="text-lg font-semibold">Plot 18 Musenga, Off Kitwe Road</p>
-                  <p className="text-lg">Chingola, Zambia</p>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Why Clients Trust Keparo</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl mx-auto text-center">
+            {whyClients.map((f, i) => (
+              <div key={i}>
+                <div className="w-14 h-14 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto mb-4">
+                  <f.icon className="w-7 h-7" />
                 </div>
+                <div className="font-semibold mb-1">{f.title}</div>
+                <div className="text-xs text-muted-foreground max-w-xs mx-auto">{f.text}</div>
               </div>
-            </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="py-14 bg-primary">
+        <div className="container mx-auto px-4 text-center text-white">
+          <h3 className="text-2xl md:text-3xl font-bold mb-6">Ready to start your project or request a quote?</h3>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Button className="px-6">Request a Quote</Button>
+            <Button className="px-6 bg-white text-foreground hover:bg-white/90" variant="secondary">Call Us Now</Button>
           </div>
         </div>
       </section>
