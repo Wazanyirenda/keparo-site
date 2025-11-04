@@ -2,6 +2,7 @@ import { ChevronRightIcon } from "lucide-react";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import whyChooseUsImage from "@/assets/why choose.jpeg";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 
 const values = [
@@ -14,8 +15,9 @@ const values = [
 ];
 
 export const ProjectsSection = (): JSX.Element => {
+  const { ref, isVisible } = useScrollAnimation();
   return (
-    <section className="flex flex-col items-center gap-20 px-4 py-12 md:px-16 md:py-28 w-full bg-[#f2f2f2]">
+    <section ref={ref} className={`flex flex-col items-center gap-20 px-4 py-12 md:px-16 md:py-28 w-full bg-[#f2f2f2] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="flex flex-col max-w-screen-xl items-center gap-20 w-full">
         <header className="flex-col max-w-screen-md items-center gap-4 w-full flex">
           <div className="inline-flex items-center">
@@ -94,11 +96,13 @@ export const ProjectsSection = (): JSX.Element => {
                 </div>
               </div>
 
-              <img
-                className="flex-1 grow h-[300px] sm:h-[400px] lg:h-[552px] object-cover w-full rounded-md"
-                alt="Placeholder image"
-                src= {whyChooseUsImage}
-              />
+              <div className="flex-1 grow h-[300px] sm:h-[400px] lg:h-[552px] w-full rounded-md overflow-hidden group">
+                <img
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  alt="Placeholder image"
+                  src={whyChooseUsImage}
+                />
+              </div>
             </div>
           </div>
         </div>

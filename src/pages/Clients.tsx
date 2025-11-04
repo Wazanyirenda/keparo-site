@@ -1,20 +1,27 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Building2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Building2, ChevronRight } from "lucide-react";
+import heroImage from "@/assets/hero-construction.jpg";
+import warehouseImage from "@/assets/warehouse.jpg";
+import machineryImage from "@/assets/machinery.jpg";
+import cumminsLogo from "@/assets/cummins.png";
+import corridorLogo from "@/assets/corridor.png";
+import mimbulaLogo from "@/assets/mimbula-logo.png";
 
 const Clients = () => {
   const clients = [
-    { name: "Cummins Zambia", sector: "Power & Energy" },
-    { name: "Kansanshi Mining PLC", sector: "Mining" },
-    { name: "Mimbula Minerals", sector: "Mining" },
-    { name: "Moxico Resources", sector: "Mining" },
-    { name: "WBHO Construction", sector: "Construction" },
-    { name: "Lubambe Copper Mine", sector: "Mining" },
-    { name: "Corridor Logistics", sector: "Logistics" },
-    { name: "Palsana Investments", sector: "Investment & Development" },
-    { name: "Lusanga Group", sector: "Property Development" },
-    { name: "First Quantum Minerals", sector: "Mining" },
-    { name: "Chambishi Metals", sector: "Mining & Smelting" },
-    { name: "Zambezi Portland Cement", sector: "Manufacturing" },
+    { logo: cumminsLogo, name: "Cummins Zambia", sector: "Power & Energy" },
+    { logo: mimbulaLogo, name: "Kansanshi Mining FQMO", sector: "Mining" },
+    { logo: mimbulaLogo, name: "Mimbula Minerals Ltd", sector: "Mining" },
+    { logo: undefined, name: "Moxico Resources PLC", sector: "Mining" },
+    { logo: undefined, name: "Bafokeng Hydraulics", sector: "Engineering" },
+    { logo: undefined, name: "WBHO", sector: "Construction" },
+    { logo: undefined, name: "Musa Superior Products", sector: "Manufacturing" },
+    { logo: undefined, name: "Lubambe Copper Mine", sector: "Mining" },
+    { logo: undefined, name: "Lusanga Group", sector: "Industrial" },
+    { logo: undefined, name: "Lemmer Hydraulics", sector: "Engineering" },
+    { logo: undefined, name: "Ansultech Fire Systems", sector: "Safety Systems" },
+    { logo: corridorLogo, name: "Corridor Logistics", sector: "Logistics" },
   ];
 
   const testimonials = [
@@ -36,39 +43,81 @@ const Clients = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
-      {/* Header */}
-      <section className="bg-gradient-hero text-white py-20">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in">Our Clients</h1>
-          <p className="text-xl md:text-2xl opacity-90 max-w-3xl animate-fade-in">
-            Trusted by leading companies across Zambia
+    <div className="min-h-screen pt-24 pb-0">
+      {/* Hero */}
+      <section className="relative w-full min-h-[420px] flex items-center justify-center">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }} />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="relative z-10 container mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">Our Clients & Partners</h1>
+          <p className="text-white/90 max-w-3xl mx-auto">
+            We partner with leading organizations across Zambia to deliver exceptional construction and engineering solutions.
           </p>
         </div>
       </section>
 
-      {/* Clients Grid */}
-      <section className="py-16 bg-background">
+      {/* Intro */}
+      <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Companies We Work With</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              We're proud to serve diverse sectors including mining, construction, logistics, and manufacturing
-            </p>
-          </div>
+          <p className="text-center text-muted-foreground max-w-4xl mx-auto">
+            Our success is built on strong partnerships. We value trust, communication, and excellence in every project we deliver. Over 15 years, Keparo has become a preferred partner for leaders in mining, manufacturing, and infrastructure development throughout Zambia.
+          </p>
+        </div>
+      </section>
 
+      {/* Trusted by Leaders */}
+      <section className="py-12 bg-muted/40">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">Trusted By Industry Leaders</h2>
           <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {clients.map((client, index) => (
-              <Card key={index} className="hover:shadow-medium transition-shadow">
+              <Card key={index} className="shadow-soft">
                 <CardContent className="p-6 text-center">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-light rounded-full mb-4">
-                    <Building2 className="w-8 h-8 text-primary" />
-                  </div>
-                  <h3 className="font-semibold mb-2">{client.name}</h3>
-                  <p className="text-sm text-muted-foreground">{client.sector}</p>
+                  {client.logo ? (
+                    <img src={client.logo} alt={client.name} className="h-10 object-contain mx-auto mb-3" />
+                  ) : (
+                    <div className="inline-flex items-center justify-center w-12 h-12 bg-primary-light rounded-full mb-3">
+                      <Building2 className="w-6 h-6 text-primary" />
+                    </div>
+                  )}
+                  <div className="font-semibold">{client.name}</div>
+                  <div className="text-xs text-muted-foreground">{client.sector}</div>
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partnerships That Deliver */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">Partnerships That Deliver</h2>
+          <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
+            <div className="rounded-lg overflow-hidden shadow-strong">
+              <img src={machineryImage} alt="Workshop Facility Development" className="w-full h-full object-cover" />
+            </div>
+            <div>
+              <div className="text-sm text-muted-foreground font-semibold mb-2">MIMBULA MINERALS</div>
+              <h3 className="text-xl font-bold mb-3">Workshop Facility Development</h3>
+              <p className="text-muted-foreground mb-4">
+                Delivered a comprehensive workshop facility for Mimbula Minerals, including specialized equipment installation and safety systems integration.
+              </p>
+              <Button variant="link" className="p-0 text-primary">View Project <ChevronRight className="ml-1 w-4 h-4" /></Button>
+            </div>
+          </div>
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div className="order-2 md:order-1">
+              <div className="text-sm text-muted-foreground font-semibold mb-2">CORRIDOR LOGISTICS</div>
+              <h3 className="text-xl font-bold mb-3">Warehouse Complex</h3>
+              <p className="text-muted-foreground mb-4">
+                Constructed a state-of-the-art logistics warehouse featuring advanced storage systems and efficient loading dock configurations.
+              </p>
+              <Button variant="link" className="p-0 text-primary">View Project <ChevronRight className="ml-1 w-4 h-4" /></Button>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-strong order-1 md:order-2">
+              <img src={warehouseImage} alt="Warehouse Complex" className="w-full h-full object-cover" />
+            </div>
           </div>
         </div>
       </section>
@@ -76,13 +125,7 @@ const Clients = () => {
       {/* Testimonials */}
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">What Our Clients Say</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Don't just take our word for it
-            </p>
-          </div>
-
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {testimonials.map((testimonial, index) => (
               <Card key={index} className="shadow-medium">
@@ -90,8 +133,8 @@ const Clients = () => {
                   <div className="text-4xl text-primary mb-4">"</div>
                   <p className="text-muted-foreground mb-6 italic">{testimonial.text}</p>
                   <div className="border-t pt-4">
-                    <p className="font-semibold">{testimonial.author}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+                    <p className="font-semibold">{testimonial.company}</p>
+                    <p className="text-sm text-muted-foreground">{testimonial.author}</p>
                   </div>
                 </CardContent>
               </Card>
@@ -100,41 +143,24 @@ const Clients = () => {
         </div>
       </section>
 
-      {/* Sectors Served */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-8">Industries We Serve</h2>
-            <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-              {["Mining", "Construction", "Logistics", "Manufacturing", "Energy", "Property Development", "Commercial", "Industrial"].map((industry, index) => (
-                <div
-                  key={index}
-                  className="px-6 py-3 bg-primary-light text-primary font-semibold rounded-full"
-                >
-                  {industry}
-                </div>
-              ))}
-            </div>
-          </div>
+      {/* Banner */}
+      <section className="relative w-full min-h-[320px] flex items-center justify-center">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }} />
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 text-center text-white px-4">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4">Proud to build Zambia's future together with our clients</h3>
+          <Button className="bg-emerald-600 hover:bg-emerald-600/90">View Our Projects</Button>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-16 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-5xl font-bold mb-2">50+</div>
-              <div className="text-lg opacity-90">Active Clients</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold mb-2">98%</div>
-              <div className="text-lg opacity-90">Client Retention Rate</div>
-            </div>
-            <div>
-              <div className="text-5xl font-bold mb-2">100%</div>
-              <div className="text-lg opacity-90">Satisfaction Guarantee</div>
-            </div>
+      {/* Final CTA */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4">Let's Build Something Together</h3>
+          <p className="text-muted-foreground mb-6 max-w-3xl mx-auto">Interested in working with us? Contact our team to discuss your next project.</p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Button>Get a Quote</Button>
+            <Button variant="secondary" className="bg-primary-light text-primary hover:bg-primary/10">Contact Us</Button>
           </div>
         </div>
       </section>

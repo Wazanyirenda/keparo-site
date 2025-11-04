@@ -1,12 +1,14 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export const CallToActionSection = (): JSX.Element => {
   const navigate = useNavigate();
+  const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="flex flex-col items-center gap-20 px-4 py-12 md:px-16 md:py-28 w-full bg-[#f2f2f2]">
+    <section ref={ref} className={`flex flex-col items-center gap-20 px-4 py-12 md:px-16 md:py-28 w-full bg-[#f2f2f2] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="flex flex-col max-w-screen-xl items-center gap-20 w-full">
         <div className="flex-col max-w-screen-md items-center gap-8 w-full flex">
           <div className="flex flex-col items-center gap-6 w-full">

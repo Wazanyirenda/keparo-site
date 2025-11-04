@@ -1,54 +1,170 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/fabric.jpeg";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import { useNavigate } from "react-router-dom";
+import constructionImage from "@/assets/Structural Fabrication.jpeg";
+import fabricationImage from "@/assets/Structural Fabrication.jpeg";
+import machineHireImage from "@/assets/machine hire.jpeg";
+import modularBuildingsImage from "@/assets/modular buildings.jpeg";
+import conversionsImage from "@/assets/container.jpeg";
+
+const heroSlides = [
+  {
+    image: constructionImage,
+    title: "Building Zambia's future with precision",
+    description: "Keparo Enterprises delivers industrial solutions across Zambia. We transform complex engineering challenges into robust, reliable infrastructure with 15 years of proven expertise.",
+  },
+  {
+    image: fabricationImage,
+    title: "Custom steel structures and precision manufacturing",
+    description: "Our advanced fabrication division specializes in custom steel structures and precision manufacturing. We deliver tailored solutions for complex industrial challenges.",
+  },
+  {
+    image: machineHireImage,
+    title: "High-performance industrial equipment rental solutions",
+    description: "Keparo provides high-performance industrial equipment rental solutions to support your construction and operational needs with expert technical support.",
+  },
+  {
+    image: modularBuildingsImage,
+    title: "Flexible, efficient prefabricated structures",
+    description: "We deliver flexible, efficient prefabricated structures designed for rapid deployment, ideal for temporary facilities and remote sites.",
+  },
+  {
+    image: conversionsImage,
+    title: "Container modifications for specialized applications",
+    description: "Keparo transforms standard containers into specialized industrial solutions, combining innovation with practical functionality.",
+  },
+];
+
 export const HeaderSection = (): JSX.Element => {
   const navigate = useNavigate();
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [animationKey, setAnimationKey] = useState(0);
+
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+
+    setCurrent(api.selectedScrollSnap());
+
+    api.on("select", () => {
+      const newIndex = api.selectedScrollSnap();
+      setAnimationKey((prev) => prev + 1);
+      setTimeout(() => {
+        setCurrent(newIndex);
+      }, 100);
+    });
+  }, [api]);
+
+  const currentSlide = heroSlides[current] || heroSlides[0];
+
   return (
-    <section className="flex flex-col min-h-[600px] md:min-h-[750px] lg:min-h-[900px] items-center justify-center gap-20 px-4 sm:px-8 md:px-12 lg:px-16 py-0 relative w-full bg-[#f2f2f2]">
-      <div
-        className="absolute w-full h-full top-0 left-0 filter brightness-75"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+     <section className="flex flex-col h-[100vh] items-start justify-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 py-0 relative w-full overflow-hidden">
+      {/* Background Carousel */}
+      <Carousel
+        setApi={setApi}
+        opts={{
+          align: "start",
+          loop: true,
         }}
-      />
+        plugins={[
+          Autoplay({
+            delay: 5000,
+            stopOnInteraction: false,
+            stopOnMouseEnter: true,
+          }),
+        ]}
+        className="absolute inset-0 w-full h-full"
+      >
+        <CarouselContent className="h-full -ml-0">
+          {heroSlides.map((slide, index) => (
+            <CarouselItem key={index} className="pl-0 basis-full h-full">
+              <div
+                className="w-full h-[800px] transition-opacity duration-1000"
+                style={{
+                  backgroundImage: `url(${slide.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  minHeight: "600px",
+                }}
+              />
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-black/60" />
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
 
-      <div className="flex flex-col max-w-screen-xl items-center gap-12 md:gap-16 lg:gap-20 relative w-full flex-[0_0_auto] z-10">
-        <div className="flex flex-col max-w-screen-md items-center w-full flex-[0_0_auto] gap-6 md:gap-8 relative">
-          <div className="flex flex-col items-center gap-6 relative w-full flex-[0_0_auto]">
-            <h1 className="relative w-full mt-[-1.00px] text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center">
-              Building Zambia&#39;s future with precision
-            </h1>
+      {/* Content Overlay - Left Aligned */}
+      <div className="relative z-10 flex flex-col items-start justify-center w-full max-w-4xl text-left px-4">
+        <div className="flex flex-col items-start gap-6 md:gap-8 w-full max-w-3xl">
+          {/* Main Heading - Staggered Animation */}
+          <h1
+            key={`title-${animationKey}`}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight animate-slide-in-left"
+            style={{
+              animationDelay: "0.1s",
+              animationFillMode: "both",
+            }}
+          >
+            {currentSlide.title}
+          </h1>
 
-            <p className="relative w-full text-base sm:text-lg text-white text-center">
-              Keparo Enterprises delivers industrial solutions across Zambia. We
-              transform complex engineering challenges into robust, reliable
-              infrastructure with 15 years of proven expertise.
-            </p>
-          </div>
+          {/* Descriptive Paragraph - Staggered Animation */}
+          <p
+            key={`description-${animationKey}`}
+            className="text-base sm:text-lg md:text-xl text-white/95 leading-relaxed max-w-2xl animate-slide-in-left"
+            style={{
+              animationDelay: "0.3s",
+              animationFillMode: "both",
+            }}
+          >
+            {currentSlide.description}
+          </p>
 
-          <div className="flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4 w-full sm:w-auto relative flex-[0_0_auto]">
+          {/* Call-to-Action Buttons - Staggered Animation */}
+          <div
+            key={`buttons-${animationKey}`}
+            className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 mt-2 animate-slide-in-left"
+            style={{
+              animationDelay: "0.5s",
+              animationFillMode: "both",
+            }}
+          >
+            <Button
+              onClick={() => navigate("/about")}
+              variant="outline"
+              className="h-auto px-6 py-2.5 bg-white rounded-xl border border-solid border-white/20 hover:bg-white/90 text-[#040709] font-medium"
+            >
+              About us
+            </Button>
             <Button
               onClick={() => navigate("/services")}
-              variant="outline"
-              className="h-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 relative flex-[0_0_auto] bg-white rounded-xl border border-solid hover:bg-white/90 w-full sm:w-auto"
+              className="h-auto px-6 py-2.5 bg-[#4e4dcb] rounded-xl hover:bg-[#4e4dcb]/90 text-white font-medium"
             >
-              <span className="relative w-fit font-medium text-[#040709] text-base">
-                Services
-              </span>
-            </Button>
-
-            <Button 
-            onClick={() => navigate("/contact")}
-            className="h-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 relative flex-[0_0_auto] bg-[#4e4dcb] rounded-xl hover:bg-[#4e4dcb]/90 w-full sm:w-auto">
-              <span className="relative w-fit font-medium text-white text-base">
-                Get Quote
-              </span>
+              Learn more
             </Button>
           </div>
+        </div>
+
+        {/* Dots Navigation */}
+        <div className="flex items-center justify-start gap-2 mt-8 md:mt-12 z-20">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => api?.scrollTo(index)}
+              className={`rounded-full transition-all duration-300 ${
+                current === index
+                  ? "bg-white w-8 h-2"
+                  : "bg-white/50 hover:bg-white/75 w-2 h-2"
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

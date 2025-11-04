@@ -1,142 +1,141 @@
 import { ChevronRightIcon } from "lucide-react";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import mimbulaLogo from "@/assets/mimbula-logo.png";
 import testimonialAvatar from "@/assets/mimbula avatar.jpg";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
-const testimonialData = {
-  logo: mimbulaLogo,
-  quote:
-    "Keparo transformed our industrial vision into a robust reality with exceptional precision.",
-  avatar: testimonialAvatar,
-  name: "John Mwila",
-  title: "Operations Director, Mimbula Minerals",
-  caseStudyLink: "#",
-};
+// NOTE: This implementation uses Font Awesome icon class names (e.g. "fa fa-star").
+// Make sure Font Awesome CSS is available (via CDN link in index.html or installing `@fortawesome/fontawesome-free`) so the icons render correctly.
 
-const paginationDots = [
-  { active: true },
-  { active: false },
-  { active: false },
-  { active: false },
-  { active: false },
-  { active: false },
+const testimonials = [
+  {
+    logo: mimbulaLogo,
+    quote: "Keparo transformed our industrial vision into a robust reality with exceptional precision.",
+    avatar: testimonialAvatar,
+    name: "John Mwila",
+    title: "Operations Director, Mimbula Minerals",
+    caseStudyLink: "#",
+    iconClass: "fa fa-building",
+  },
+  {
+    logo: mimbulaLogo,
+    quote: "Their fabrication team delivered outstanding accuracy and fast turnaround times.",
+    avatar: testimonialAvatar,
+    name: "Sarah Banda",
+    title: "Project Manager, Zambezi Logistics",
+    caseStudyLink: "#",
+    iconClass: "fa fa-cog",
+  },
+  {
+    logo: mimbulaLogo,
+    quote: "Responsive, professional and on-schedule — highly recommended for industrial works.",
+    avatar: testimonialAvatar,
+    name: "Peter Lungu",
+    title: "Site Engineer, Copper Ridge",
+    caseStudyLink: "#",
+    iconClass: "fa fa-truck",
+  },
 ];
 
 export const TestimonialsSection = (): JSX.Element => {
-  return (
-    <section className="flex flex-col items-center gap-20 px-4 py-12 md:px-16 md:py-28 w-full bg-[#f2f2f2]">
-      <div className="flex-col max-w-screen-xl items-start gap-20 flex w-full">
-        <div className="flex flex-col lg:flex-row items-start gap-20 w-full">
-          <div className="flex-col items-start justify-center gap-2 flex-1 self-stretch flex">
-            <div className="items-start pt-0 pb-24 px-0 self-stretch flex flex-col gap-4 w-full">
-              <h2 className="mt-[-1.00px] text-2xl sm:text-3xl md:text-4xl font-bold text-[#040709] self-stretch">
-                Client voices
-              </h2>
+  const { ref, isVisible } = useScrollAnimation();
+  const [api, setApi] = useState<CarouselApi | undefined>(undefined);
+  const [current, setCurrent] = useState(0);
 
-              <p className="self-stretch text-lg text-[#040709]">
-                What our partners say about our work
-              </p>
-            </div>
+  useEffect(() => {
+    if (!api) return;
+    setCurrent(api.selectedScrollSnap());
+    api.on("select", () => setCurrent(api.selectedScrollSnap()));
+  }, [api]);
+
+  return (
+    <section ref={ref} className={`flex flex-col items-center gap-12 px-4 py-12 md:px-16 md:py-20 w-full bg-[#f2f2f2] transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+      <div className="max-w-screen-xl w-full">
+        <div className="flex flex-col lg:flex-row items-start gap-12 w-full">
+          <div className="flex-1">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#040709]">
+              Client voices
+            </h2>
+            <p className="mt-2 text-lg text-[#040709]">What our partners say about our work</p>
           </div>
 
-          <div className="flex-col items-start gap-12 flex-1 flex">
-            <Card className="w-full border-[#04070926]">
-              <CardContent className="p-4 sm:p-6 md:p-8 flex flex-col gap-8">
-                <div className="flex-col items-start gap-12 w-full flex">
-                  <div className="w-[120px] h-12 relative">
-                    <img
-                      className="absolute top-[calc(50.00%_-_10px)] left-[calc(50.00%_-_58px)] w-[116px] h-[19px]"
-                      alt="Logo"
-                      src={testimonialData.logo}
-                    />
-                  </div>
-
-                  <div className="flex-col items-start gap-6 w-full flex">
-                    <p className="self-stretch mt-[-1.00px] text-lg text-[#040709]">
-                      &#34;{testimonialData.quote}&#34;
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 w-full">
-                      <Avatar className="w-14 h-14">
-                        <AvatarImage
-                          src={testimonialData.avatar}
-                          alt="Avatar image"
-                          className="object-cover"
-                        />
-                      </Avatar>
-
-                      <div className="flex flex-col items-start flex-1">
-                        <div className="self-stretch mt-[-1.00px] text-base font-semibold text-[#040709]">
-                          {testimonialData.name}
+          <div className="flex-1">
+            <Carousel
+              setApi={setApi}
+              opts={{ align: 'center', loop: true }}
+              plugins={[Autoplay({ delay: 6000, stopOnInteraction: true, stopOnMouseEnter: true })]}
+              className="w-full"
+            >
+              <CarouselContent>
+                {testimonials.map((t, idx) => (
+                  <CarouselItem key={idx} className="p-2">
+                    <Card className="w-full border-[#04070926]">
+                      <CardContent className="p-6 flex flex-col gap-6">
+                        <div className="flex items-start gap-4">
+                          <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                            {/* FontAwesome icon — requires FontAwesome CSS */}
+                            <i className={`${t.iconClass} text-[#040709] text-xl`} aria-hidden="true" />
+                          </div>
+                          <img src={t.logo} alt="Client logo" className="h-8 object-contain" />
                         </div>
 
-                        <div className="self-stretch text-base text-[#040709]">
-                          {testimonialData.title}
+                        <p className="text-lg text-[#040709]">“{t.quote}”</p>
+
+                        <div className="flex items-center gap-4">
+                          <Avatar className="w-12 h-12">
+                            <AvatarImage src={t.avatar} alt={`${t.name} avatar`} className="object-cover" />
+                          </Avatar>
+                          <div>
+                            <div className="font-semibold text-[#040709]">{t.name}</div>
+                            <div className="text-sm text-[#040709]">{t.title}</div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
-                <Button
-                  variant="ghost"
-                  className="inline-flex items-center justify-center gap-2 h-auto p-0 rounded-xl hover:bg-transparent"
-                  asChild
-                >
-                  <a href={testimonialData.caseStudyLink}>
-                    <span className="text-base text-[#040709]">
-                      Read case study
-                    </span>
-                    <ChevronRightIcon className="w-6 h-6" />
-                  </a>
-                </Button>
-              </CardContent>
-            </Card>
+                        <div className="flex items-center justify-between">
+                          <a href={t.caseStudyLink} className="inline-flex items-center gap-2 text-base text-[#040709]">
+                            Read case study
+                            <ChevronRightIcon className="w-5 h-5" />
+                          </a>
 
-            <div className="items-center justify-between w-full flex">
-              <div className="items-start gap-2 inline-flex">
-                {paginationDots.map((dot, index) => (
-                  <button
-                    key={index}
-                    className={`w-2 h-2 bg-[#040709] rounded ${
-                      dot.active ? "" : "opacity-20"
-                    }`}
-                    aria-label={`Go to slide ${index + 1}`}
-                    aria-current={dot.active ? "true" : "false"}
-                  />
+                          <div className="flex items-center gap-2">
+                            <button
+                              onClick={() => api?.scrollPrev()}
+                              aria-label="Previous testimonial"
+                              className="p-2 bg-[#f2f2f2] rounded-lg"
+                            >
+                              <img src="/arrow-back.svg" alt="Prev" className="w-5 h-5" />
+                            </button>
+                            <button
+                              onClick={() => api?.scrollNext()}
+                              aria-label="Next testimonial"
+                              className="p-2 bg-[#f2f2f2] rounded-lg"
+                            >
+                              <img src="/arrow-forward.svg" alt="Next" className="w-5 h-5" />
+                            </button>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </CarouselItem>
                 ))}
-              </div>
+              </CarouselContent>
+            </Carousel>
 
-              <div className="items-start gap-4 inline-flex">
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="h-auto p-3 bg-[#f2f2f2] rounded-lg border-[#04070926]"
-                  aria-label="Previous testimonial"
-                >
-                  <img
-                    className="w-6 h-6"
-                    alt="Arrow back"
-                    src="/arrow-back.svg"
-                  />
-                </Button>
-
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="h-auto p-3 bg-[#f2f2f2] rounded-lg border-[#04070926]"
-                  aria-label="Next testimonial"
-                >
-                  <img
-                    className="w-6 h-6"
-                    alt="Arrow forward"
-                    src="/arrow-forward.svg"
-                  />
-                </Button>
-              </div>
+            {/* Dots */}
+            <div className="flex items-center gap-2 mt-4">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => api?.scrollTo(i)}
+                  className={`w-2 h-2 rounded-full ${current === i ? 'bg-[#040709]' : 'bg-[#040709] opacity-30'}`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>

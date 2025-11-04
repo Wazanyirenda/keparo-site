@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import mibulaImage from "@/assets/mibula.png";
 import corridorImage from "@/assets/corridor.png";
 import cumminsRenovationImage from "@/assets/cummins.png";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const portfolioProjects = [
   {
@@ -29,8 +30,9 @@ const portfolioProjects = [
 ];
 
 export const PortfolioSection = (): JSX.Element => {
+  const { ref, isVisible } = useScrollAnimation();
   return (
-    <section className="flex flex-col items-center gap-20 px-4 py-12 sm:px-8 sm:py-16 md:px-16 md:py-28 w-full bg-[#f2f2f2]">
+    <section ref={ref} className={`flex flex-col items-center gap-20 px-4 py-12 sm:px-8 sm:py-16 md:px-16 md:py-28 w-full bg-[#f2f2f2] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="flex flex-col max-w-screen-xl items-center gap-20 w-full">
         <header className="max-w-screen-md flex flex-col items-center gap-4 w-full">
           <div className="flex items-center justify-center">
@@ -56,13 +58,15 @@ export const PortfolioSection = (): JSX.Element => {
               {portfolioProjects.map((project, index) => (
                 <Card
                   key={index}
-                  className="flex flex-col items-start bg-[#f2f2f2] border border-solid border-[#04070926]"
+                  className="flex flex-col items-start bg-[#f2f2f2] border border-solid border-[#04070926] overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:scale-[1.02]"
                 >
-                  <img
-                    className="self-stretch w-full h-[200px] sm:h-[228px] object-cover"
-                    alt={project.title}
-                    src={project.image}
-                  />
+                  <div className="self-stretch w-full h-[200px] sm:h-[228px] overflow-hidden">
+                    <img
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      alt={project.title}
+                      src={project.image}
+                    />
+                  </div>
 
                   <CardContent className="flex flex-col items-start gap-6 p-6 self-stretch w-full">
                     <div className="flex flex-col items-start gap-4 self-stretch w-full">

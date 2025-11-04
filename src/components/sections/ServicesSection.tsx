@@ -2,9 +2,11 @@ import { ChevronRightIcon } from "lucide-react";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import storyImage from "@/assets/steel fabrication and processing.jpeg";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 export const ServicesSection = (): JSX.Element => {
+  const { ref, isVisible } = useScrollAnimation();
   return (
-    <section className="flex flex-col items-center gap-20 px-4 py-12 sm:px-8 sm:py-16 md:px-16 md:py-28 w-full ">
+    <section ref={ref} className={`flex flex-col items-center gap-20 px-4 py-12 sm:px-8 sm:py-16 md:px-16 md:py-28 w-full transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="flex-col max-w-screen-xl items-center gap-12 sm:gap-16 md:gap-20 bg-white flex w-full">
         <div className="flex-col max-w-screen-md items-center gap-6 sm:gap-8 w-full flex">
           <div className="flex flex-col items-center gap-4 w-full">

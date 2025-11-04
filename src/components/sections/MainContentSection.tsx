@@ -8,6 +8,7 @@ import machineHireImage from "@/assets/machine hire.jpeg";
 import modularBuildingsImage from "@/assets/modular buildings.jpeg";
 import conversionsImage from "@/assets/container.jpeg";
 import { useNavigate } from "react-router-dom";
+import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 const services = [
   {
@@ -70,9 +71,10 @@ const services = [
 
 export const MainContentSection = (): JSX.Element => {
   const navigate = useNavigate();
+  const { ref, isVisible } = useScrollAnimation();
   return (
     <section className="flex flex-col items-center w-full bg-[#f2f2f2]">
-      <div className="flex flex-col w-full max-w-[90rem] px-4 py-12 md:px-16 md:py-24">
+      <div ref={ref} className={`flex flex-col w-full max-w-[90rem] px-4 py-12 md:px-16 md:py-24 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <header className="flex flex-col items-center mb-8 sm:mb-12 md:mb-16">
           <div className="inline-flex mb-4">
             <h3 className="text-sm font-semibold text-[#040709]">
@@ -94,12 +96,13 @@ export const MainContentSection = (): JSX.Element => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 w-full">
           <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8">
             <Card
-              className="flex flex-col items-start justify-between h-[300px] sm:h-[400px] md:h-[512px] p-6 sm:p-8 w-full border-0 rounded-2xl overflow-hidden relative group"
+              className="flex flex-col items-start justify-between h-[300px] sm:h-[400px] md:h-[512px] p-6 sm:p-8 w-full border-0 rounded-2xl overflow-hidden relative group transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
               style={{
                 background: `linear-gradient(0deg,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.3) 100%),url(${services[0].image}) center/cover no-repeat`,
               }}
             >
-              <CardContent className="flex flex-col h-full">
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-500" />
+              <CardContent className="flex flex-col h-full relative z-10">
                 <div className="flex flex-col gap-2 mb-4">
                   <span className="text-sm font-semibold text-white/90">
                     {services[0].tagline}
@@ -140,12 +143,13 @@ export const MainContentSection = (): JSX.Element => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
               <Card
-                className="flex flex-col items-start justify-between p-6 sm:p-8 h-[300px] sm:h-[280px] border-0 rounded-2xl overflow-hidden group relative"
+                className="flex flex-col items-start justify-between p-6 sm:p-8 h-[300px] sm:h-[280px] border-0 rounded-2xl overflow-hidden group relative transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
                 style={{
                   background: `linear-gradient(0deg,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.3) 100%),url(${services[1].image}) center/cover no-repeat`,
                 }}
               >
-                <CardContent className="flex flex-col items-start gap-2 self-stretch w-full p-0">
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-500" />
+                <CardContent className="flex flex-col items-start gap-2 self-stretch w-full p-0 relative z-10">
                   <h4 className="text-lg sm:text-xl font-bold text-white">
                     {services[1].title}
                   </h4>
@@ -169,12 +173,13 @@ export const MainContentSection = (): JSX.Element => {
               </Card>
 
               <Card
-                className="flex flex-col items-start justify-between p-6 h-[300px] sm:h-[280px] flex-1 self-stretch border-0 rounded-2xl overflow-hidden group relative"
+                className="flex flex-col items-start justify-between p-6 h-[300px] sm:h-[280px] flex-1 self-stretch border-0 rounded-2xl overflow-hidden group relative transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
                 style={{
                   background: `linear-gradient(0deg,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.3) 100%),url(${services[2].image}) center/cover no-repeat`,
                 }}
               >
-                <CardContent className="flex flex-col items-start gap-2 self-stretch w-full p-0">
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-500" />
+                <CardContent className="flex flex-col items-start gap-2 self-stretch w-full p-0 relative z-10">
                   <h4 className="text-lg sm:text-xl font-bold text-white">
                     {services[2].title}
                   </h4>
@@ -201,12 +206,13 @@ export const MainContentSection = (): JSX.Element => {
 
           <div className="flex flex-col items-start justify-center w-full gap-4 sm:gap-6 lg:gap-8">
             <Card
-              className="flex flex-col items-start justify-between p-6 sm:p-8 w-full h-[300px] sm:h-[400px] md:h-[280px] border-0 rounded-2xl overflow-hidden group relative"
+              className="flex flex-col items-start justify-between p-6 sm:p-8 w-full h-[300px] sm:h-[400px] md:h-[280px] border-0 rounded-2xl overflow-hidden group relative transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
               style={{
                 background: `linear-gradient(0deg,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.3) 100%),url(${services[3].image}) center/cover no-repeat`,
               }}
             >
-              <CardContent className="flex flex-col items-start gap-2 self-stretch w-full p-0">
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-500" />
+              <CardContent className="flex flex-col items-start gap-2 self-stretch w-full p-0 relative z-10">
                 <h3 className="text-xl sm:text-2xl font-bold text-white">
                   {services[3].title}
                 </h3>
@@ -240,12 +246,13 @@ export const MainContentSection = (): JSX.Element => {
             </Card>
 
             <Card
-              className="flex flex-col items-start justify-between h-[300px] sm:h-[400px] md:h-[512px] p-6 sm:p-8 w-full border-0 rounded-2xl overflow-hidden relative group"
+              className="flex flex-col items-start justify-between h-[300px] sm:h-[400px] md:h-[512px] p-6 sm:p-8 w-full border-0 rounded-2xl overflow-hidden relative group transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
               style={{
                 background: `linear-gradient(0deg,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.3) 100%),url(${services[4].image}) center/cover no-repeat`,
               }}
             >
-              <CardContent className="flex flex-col items-start gap-6 self-stretch w-full p-0">
+              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-500" />
+              <CardContent className="flex flex-col items-start gap-6 self-stretch w-full p-0 relative z-10">
                 <div className="flex flex-col gap-1">
                   <span className="text-sm font-semibold text-white/90">
                     {services[4].tagline}
