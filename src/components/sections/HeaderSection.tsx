@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useNavigate } from "react-router-dom";
-import constructionImage from "@/assets/Structural Fabrication.jpeg";
+import constructionImage from "@/assets/hero-construction.jpg";
 import fabricationImage from "@/assets/Structural Fabrication.jpeg";
 import machineHireImage from "@/assets/machine hire.jpeg";
 import modularBuildingsImage from "@/assets/modular buildings.jpeg";
@@ -40,7 +40,7 @@ const heroSlides = [
 export const HeaderSection = (): JSX.Element => {
   const navigate = useNavigate();
   const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState<number | undefined>(undefined);
   const [animationKey, setAnimationKey] = useState(0);
 
   useEffect(() => {
@@ -48,18 +48,27 @@ export const HeaderSection = (): JSX.Element => {
       return;
     }
 
-    setCurrent(api.selectedScrollSnap());
+    const initialIndex = api.selectedScrollSnap();
+    setCurrent(initialIndex);
 
-    api.on("select", () => {
+    const handleSelect = () => {
       const newIndex = api.selectedScrollSnap();
-      setAnimationKey((prev) => prev + 1);
-      setTimeout(() => {
-        setCurrent(newIndex);
-      }, 100);
-    });
-  }, [api]);
+      if (newIndex !== current) {
+        setAnimationKey((prev) => prev + 1);
+        setTimeout(() => {
+          setCurrent(newIndex);
+        }, 100);
+      }
+    };
 
-  const currentSlide = heroSlides[current] || heroSlides[0];
+    api.on("select", handleSelect);
+
+    return () => {
+      api.off("select", handleSelect);
+    };
+  }, [api, current]);
+
+  const currentSlide = typeof current === "number" ? heroSlides[current] : null;
 
   return (
      <section className="flex flex-col h-[100vh] items-start justify-center px-4 sm:px-8 md:px-12 lg:px-16 xl:px-24 py-0 relative w-full overflow-hidden">
@@ -72,18 +81,18 @@ export const HeaderSection = (): JSX.Element => {
         }}
         plugins={[
           Autoplay({
-            delay: 5000,
+            delay: 10000,
             stopOnInteraction: false,
             stopOnMouseEnter: true,
           }),
         ]}
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full filter brightness-75"
       >
         <CarouselContent className="h-full -ml-0">
           {heroSlides.map((slide, index) => (
-            <CarouselItem key={index} className="pl-0 basis-full h-full">
+            <CarouselItem key={index} className="pl-0 basis-full h-full relative">
               <div
-                className="w-full h-[800px] transition-opacity duration-1000"
+                className="w-full h-full transition-opacity duration-1000"
                 style={{
                   backgroundImage: `url(${slide.image})`,
                   backgroundSize: "cover",
@@ -111,7 +120,7 @@ export const HeaderSection = (): JSX.Element => {
               animationFillMode: "both",
             }}
           >
-            {currentSlide.title}
+            {currentSlide?.title}
           </h1>
 
           {/* Descriptive Paragraph - Staggered Animation */}
@@ -123,7 +132,7 @@ export const HeaderSection = (): JSX.Element => {
               animationFillMode: "both",
             }}
           >
-            {currentSlide.description}
+            {currentSlide?.description}
           </p>
 
           {/* Call-to-Action Buttons - Staggered Animation */}

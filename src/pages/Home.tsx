@@ -18,7 +18,7 @@ const Home = (): JSX.Element => {
       <ProjectsSection />
       <TestimonialsSection />
       <CallToActionSection />
-      <FooterSection />
+      
     </div>
   );
 };
