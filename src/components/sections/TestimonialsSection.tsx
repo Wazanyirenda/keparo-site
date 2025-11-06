@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -108,14 +108,16 @@ export const TestimonialsSection = (): JSX.Element => {
                               aria-label="Previous testimonial"
                               className="p-2 bg-[#f2f2f2] rounded-lg"
                             >
-                              <img src="/arrow-back.svg" alt="Prev" className="w-5 h-5" />
+                              {/* <img src="/arrow-back.svg" alt="Prev" className="w-5 h-5" /> */}
+                              <ChevronLeftIcon className="w-6 h-6" />
                             </button>
                             <button
                               onClick={() => api?.scrollNext()}
                               aria-label="Next testimonial"
                               className="p-2 bg-[#f2f2f2] rounded-lg"
                             >
-                              <img src="/arrow-forward.svg" alt="Next" className="w-5 h-5" />
+                              {/* <img src="/arrow-forward.svg" alt="Next" className="w-5 h-5" /> */}
+                              <ChevronRightIcon className="w-6 h-6" />
                             </button>
                           </div>
                         </div>

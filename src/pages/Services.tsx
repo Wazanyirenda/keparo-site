@@ -8,6 +8,9 @@ import machineHireImage from "@/assets/machine hire.jpeg";
 import modularBuildingsImage from "@/assets/modular buildings.jpeg";
 import conversionsImage from "@/assets/container.jpeg";
 import servicesImage from "@/assets/services bg.png";
+import { useNavigate } from "react-router-dom";
+
+
 export const ServicesPage = (): JSX.Element => {
   const services = [
   {
@@ -120,13 +123,15 @@ const whyChooseFeatures = [
   },
 ];
 
+const navigate = useNavigate();
+
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
       <section
         className="relative flex flex-col items-center justify-center h-[400px] px-8 md:px-16 w-full"
         style={{
-          backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.6) 100%), url(${servicesImage})`,
+          backgroundImage: `linear-gradient(0deg, rgba(44, 41, 41, 0.6) 0%, rgba(66, 64, 64, 0.6) 100%), url(${servicesImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -171,12 +176,13 @@ const whyChooseFeatures = [
                   <h3 className="text-lg font-bold text-gray-900">{service.title}</h3>
                   <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
                 </div>
-                <Button
+                {/* <Button
+                  onClick={() => navigate('/services')}
                   variant="link"
                   className="p-0 h-auto text-indigo-600 hover:text-indigo-700 justify-start w-fit font-semibold"
                 >
                   Read More →
-                </Button>
+                </Button> */}
               </Card>
             ))}
           </div>
@@ -199,8 +205,10 @@ const whyChooseFeatures = [
               <p className="text-gray-700 leading-relaxed">
                 Our construction team specializes in everything from residential homes to large commercial structures. With our experienced team and proven project management methodologies, we deliver quality results on time and within budget.
               </p>
-              <Button className="w-fit bg-gray-800 hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg">
-                Learn More about Construction
+              <Button 
+              onClick={() =>navigate('/portfolio')}
+              className="w-fit bg-gray-800 hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg">
+                See more Construction websites
               </Button>
             </div>
           </div>
@@ -216,7 +224,9 @@ const whyChooseFeatures = [
               <p className="text-gray-700 leading-relaxed">
                 Our state-of-the-art fabrication facility combines traditional craftsmanship with modern technology. From structural steel to custom metalwork, we deliver excellence for every project requirement.
               </p>
-              <Button className="w-fit bg-gray-800 hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg">
+              <Button 
+              onClick={() =>navigate('/portfolio')}
+              className="w-fit bg-gray-800 hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg">
                 See Fabrication Projects
               </Button>
             </div>
@@ -247,7 +257,9 @@ const whyChooseFeatures = [
               <p className="text-gray-700 leading-relaxed">
                 Transform shipping containers into functional spaces including offices, homes, and storage facilities. Our innovative conversion solutions deliver sustainable buildings with exceptional durability and cost-effectiveness.
               </p>
-              <Button className="w-fit bg-gray-800 hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg">
+              <Button 
+              onClick={() =>navigate('/portfolio')}
+              className="w-fit bg-gray-800 hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg">
                 Explore Container Projects
               </Button>
             </div>

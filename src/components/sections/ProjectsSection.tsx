@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import whyChooseUsImage from "@/assets/why choose.jpeg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-
+import { useNavigate } from "react-router-dom";
 
 const values = [
   { label: "Experience", zIndex: "z-[5]" },
@@ -16,6 +16,7 @@ const values = [
 
 export const ProjectsSection = (): JSX.Element => {
   const { ref, isVisible } = useScrollAnimation();
+   const navigate = useNavigate();
   return (
     <section ref={ref} className={`flex flex-col items-center gap-20 px-4 py-12 md:px-16 md:py-28 w-full bg-[#f2f2f2] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="flex flex-col max-w-screen-xl items-center gap-20 w-full">
@@ -80,15 +81,17 @@ export const ProjectsSection = (): JSX.Element => {
 
                 <div className="flex items-center gap-6 self-stretch w-full">
                   <Button
+                   onClick={() => navigate("/services")}
                     variant="outline"
-                    className="h-auto gap-2 px-6 py-2.5 mt-[-1.00px] mb-[-1.00px] ml-[-1.00px] rounded-xl border-[#04070926] font-medium text-[#040709] text-base"
+                    className="h-auto gap-2 px-6 py-2.5 mt-[-1.00px] mb-[-1.00px] ml-[-1.00px] rounded-xl border-[#04070926] font-medium text-[#040709] hover:bg-[#4c5f6a] text-base"
                   >
                     Explore
                   </Button>
 
                   <Button
+                   onClick={() => navigate("/about")}
                     variant="ghost"
-                    className="h-auto gap-2 rounded-xl font-medium text-[#040709] text-base"
+                    className="h-auto gap-2 rounded-xl font-medium text-[#040709] hover:bg-[#4e4dcb] text-base"
                   >
                     Details
                     <ChevronRightIcon className="w-6 h-6" />

@@ -98,7 +98,7 @@ export const HeaderSection = (): JSX.Element => {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
-                  minHeight: "600px",
+                  minHeight: "700px",
                 }}
               />
               {/* Dark Overlay */}
@@ -145,17 +145,17 @@ export const HeaderSection = (): JSX.Element => {
             }}
           >
             <Button
-              onClick={() => navigate("/about")}
+              onClick={() => navigate("/services")}
               variant="outline"
-              className="h-auto px-6 py-2.5 bg-white rounded-xl border border-solid border-white/20 hover:bg-white/90 text-[#040709] font-medium"
+              className="h-auto px-6 py-2.5 bg-white rounded-xl border border-solid border-[white]/20 hover:bg-white/90 hover:text-[#000000] font-medium"
             >
-              About us
+              Services
             </Button>
             <Button
-              onClick={() => navigate("/services")}
+              onClick={() => navigate("/contact")}
               className="h-auto px-6 py-2.5 bg-[#4e4dcb] rounded-xl hover:bg-[#4e4dcb]/90 text-white font-medium"
             >
-              Learn more
+              Get Quote
             </Button>
           </div>
         </div>

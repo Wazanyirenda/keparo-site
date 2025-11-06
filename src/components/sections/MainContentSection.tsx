@@ -10,6 +10,8 @@ import conversionsImage from "@/assets/container.jpeg";
 import { useNavigate } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
+import MagicBento from './MagicBento'
+
 const services = [
   {
     id: 1,
@@ -95,6 +97,19 @@ export const MainContentSection = (): JSX.Element => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 w-full">
           <div className="flex flex-col gap-4 sm:gap-6 lg:gap-8">
+{/*             
+            <MagicBento
+              textAutoHide={true}
+              enableStars={false}
+              enableSpotlight={true}
+              enableBorderGlow={true}
+              enableTilt={true}
+              enableMagnetism={false}
+              clickEffect={true}
+              spotlightRadius={300}
+              particleCount={1}
+              glowColor="78, 77, 203"
+            > */}
             <Card
               className="flex flex-col items-start justify-between h-[300px] sm:h-[400px] md:h-[512px] p-6 sm:p-8 w-full border-0 rounded-2xl overflow-hidden relative group transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl"
               style={{
@@ -118,7 +133,7 @@ export const MainContentSection = (): JSX.Element => {
               </CardContent>
 
               <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-                <Button
+                {/* <Button
                 onClick={() => navigate("/services")}
                   variant="outline"
                   className="h-10 sm:h-9 px-4 py-2 rounded-lg border border-white/20 bg-transparent hover:bg-white/10 text-white hover:text-white min-w-[100px]"
@@ -126,11 +141,11 @@ export const MainContentSection = (): JSX.Element => {
                   <span className="text-sm font-medium">
                     Learn more
                   </span>
-                </Button>
+                </Button> */}
 
                 <Button
                 onClick={() => navigate("/services")}
-                  variant="link"
+                  variant="ghost"
                   className="h-10 sm:h-9 p-0 text-white hover:text-white/90 flex items-center gap-1"
                 >
                   <span className="text-sm font-medium">
@@ -140,6 +155,7 @@ export const MainContentSection = (): JSX.Element => {
                 </Button>
               </div>
             </Card>
+{/* </MagicBento> */}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
               <Card
@@ -222,7 +238,7 @@ export const MainContentSection = (): JSX.Element => {
               </CardContent>
 
               <div className="flex items-center gap-4 mt-auto">
-                <Button
+                {/* <Button
                 onClick={() => navigate("/services")}
                   variant="outline"
                   className="h-9 px-4 py-2 rounded-lg border border-white/20 bg-transparent hover:bg-white/10 text-white hover:text-white"
@@ -230,7 +246,7 @@ export const MainContentSection = (): JSX.Element => {
                   <span className="text-sm font-medium">
                     Explore
                   </span>
-                </Button>
+                </Button> */}
 
                 <Button
                   onClick={() => navigate("/services")}
@@ -238,7 +254,7 @@ export const MainContentSection = (): JSX.Element => {
                   className="h-9 p-0 text-white hover:text-white/90 flex items-center gap-1"
                 >
                   <span className="text-sm font-medium">
-                    Details
+                    View Details
                   </span>
                   <ChevronRightIcon className="w-4 h-4" />
                 </Button>
