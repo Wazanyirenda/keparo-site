@@ -9,81 +9,81 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 215 25% 15%;
+    --foreground: 204 28% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 204 28% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 204 28% 20%;
 
-    /* Corporate blue primary */
-    --primary: 212 85% 38%;
+    /* Brand primary - Indigo */
+    --primary: 240 55% 55%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 212 75% 92%;
+    --primary-light: 240 55% 90%;
     
-    /* Grey secondary */
-    --secondary: 215 20% 45%;
+    /* Brand secondary - Blue Bayoux */
+    --secondary: 202 16% 36%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 215 20% 96%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 202 30% 94%;
+    --muted-foreground: 202 15% 35%;
 
-    /* Orange accent for CTAs */
-    --accent: 25 95% 53%;
+    /* Brand accent - Elephant */
+    --accent: 199 54% 16%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 20% 88%;
-    --input: 215 20% 88%;
-    --ring: 212 85% 38%;
+    --border: 202 24% 85%;
+    --input: 202 24% 85%;
+    --ring: 240 55% 55%;
 
     --radius: 0.5rem;
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(212 85% 38%) 0%, hsl(212 75% 28%) 100%);
-    --gradient-overlay: linear-gradient(to bottom, hsl(215 25% 15% / 0.7), hsl(212 85% 15% / 0.8));
+    --gradient-hero: linear-gradient(135deg, hsl(240 55% 55%) 0%, hsl(199 54% 16%) 100%);
+    --gradient-overlay: linear-gradient(to bottom, hsl(204 28% 20% / 0.75), hsl(199 54% 16% / 0.85));
     
     /* Shadows */
-    --shadow-soft: 0 2px 12px hsl(215 25% 15% / 0.08);
-    --shadow-medium: 0 4px 20px hsl(215 25% 15% / 0.12);
-    --shadow-strong: 0 8px 32px hsl(215 25% 15% / 0.16);
+    --shadow-soft: 0 2px 12px hsl(204 28% 20% / 0.08);
+    --shadow-medium: 0 4px 20px hsl(204 28% 20% / 0.12);
+    --shadow-strong: 0 8px 32px hsl(204 28% 20% / 0.16);
   }
 
   .dark {
-    --background: 215 30% 8%;
+    --background: 205 35% 10%;
     --foreground: 0 0% 98%;
 
-    --card: 215 28% 12%;
+    --card: 205 32% 14%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 215 28% 12%;
+    --popover: 205 32% 14%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 212 75% 55%;
+    --primary: 240 55% 62%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 212 65% 20%;
+    --primary-light: 240 50% 30%;
 
-    --secondary: 215 20% 25%;
+    --secondary: 202 20% 28%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 215 25% 15%;
-    --muted-foreground: 215 15% 65%;
+    --muted: 202 24% 20%;
+    --muted-foreground: 202 12% 70%;
 
-    --accent: 25 95% 53%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 199 60% 20%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 25% 20%;
-    --input: 215 25% 20%;
-    --ring: 212 75% 55%;
+    --border: 202 22% 24%;
+    --input: 202 22% 24%;
+    --ring: 240 55% 62%;
     
-    --gradient-hero: linear-gradient(135deg, hsl(212 75% 25%) 0%, hsl(212 85% 15%) 100%);
-    --gradient-overlay: linear-gradient(to bottom, hsl(215 30% 8% / 0.85), hsl(212 85% 8% / 0.95));
+    --gradient-hero: linear-gradient(135deg, hsl(240 55% 40%) 0%, hsl(199 60% 18%) 100%);
+    --gradient-overlay: linear-gradient(to bottom, hsl(205 35% 10% / 0.85), hsl(199 60% 12% / 0.95));
   }
 }
 
@@ -94,5 +94,62 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+  }
+}
+
+/* Scroll Animation Classes */
+@layer utilities {
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 }

@@ -13,6 +13,7 @@ import Clients from "./pages/Clients";
 import HSE from "./pages/HSE";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +23,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="flex flex-col min-h-screen font-['Inter']">
+        <div className="flex flex-col min-h-screen font-['Inter'] overflow-hidden">
           <Navigation />
           <main className="flex-1">
             <Routes>
@@ -36,6 +37,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
+          <WhatsAppButton />
           <Footer />
         </div>
       </BrowserRouter>
