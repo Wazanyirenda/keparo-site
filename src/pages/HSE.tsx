@@ -122,12 +122,6 @@ const HSE = () => {
         <div className="container mx-auto px-4">
           <p className="text-center text-muted-foreground max-w-4xl mx-auto text-lg">
             At Keparo Enterprises, we believe that no project is worth compromising the health and safety of our team, clients, or the environment. Our comprehensive HSE policies are integrated into every aspect of our operations, ensuring that we deliver excellence while maintaining the highest standards of safety and environmental responsibility.
-            At Keparo Enterprises, we believe that no project is worth
-            compromising the health and safety of our team, clients, or the
-            environment. Our comprehensive HSE policies are integrated into
-            every aspect of our operations, ensuring that we deliver excellence
-            while maintaining the highest standards of safety and environmental
-            responsibility.
           </p>
         </div>
       </section>
@@ -147,12 +141,6 @@ const HSE = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-foreground">{pillar.title}</h3>
                   <p className="text-muted-foreground text-sm">{pillar.description}</p>
-                  <h3 className="text-xl font-bold mb-3 text-foreground">
-                    {pillar.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {pillar.description}
-                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -192,36 +180,6 @@ const HSE = () => {
             </div>
           </div>
 
-
-          {/* Block 1: Workplace Safety */}
-          <div className="grid md:grid-cols-2 gap-8 items-center mb-16 max-w-6xl mx-auto">
-            <div className="relative h-96 rounded-lg overflow-hidden shadow-strong">
-              <img
-                src={safetyImage}
-                alt="Workplace Safety & Risk Management"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-                Workplace Safety & Risk Management
-              </h3>
-              <p className="text-muted-foreground mb-6 text-lg">
-                Comprehensive safety protocols, rigorous risk assessments, and
-                continuous monitoring ensure that every project site maintains
-                the highest safety standards. Our proactive approach to
-                identifying and mitigating risks protects our team and ensures
-                project success.
-              </p>
-              <Button
-                className="bg-primary text-white hover:bg-primary/90"
-                onClick={() => navigate("/services")}
-              >
-                Learn More About Safety
-              </Button>
-            </div>
-          </div>
-
           {/* Block 2: Environmental Sustainability */}
           <div className="grid md:grid-cols-2 gap-8 items-center mb-16 max-w-6xl mx-auto">
             <div className="order-2 md:order-1">
@@ -230,12 +188,6 @@ const HSE = () => {
               </h3>
               <p className="text-muted-foreground mb-6 text-lg">
                 We are committed to sustainable construction practices that minimize environmental impact. From waste reduction and recycling programs to energy-efficient construction methods, we build for a sustainable future.
-              </p>
-              <Button 
-                We are committed to sustainable construction practices that
-                minimize environmental impact. From waste reduction and
-                recycling programs to energy-efficient construction methods, we
-                build for a sustainable future.
               </p>
               <Button
                 className="bg-primary text-white hover:bg-primary/90"
@@ -268,12 +220,6 @@ const HSE = () => {
               </h3>
               <p className="text-muted-foreground mb-6 text-lg">
                 Ongoing training and certification programs ensure all personnel are equipped with the latest safety knowledge and best practices. We invest in our team's development to maintain excellence in safety and operational performance.
-              </p>
-              <Button 
-                Ongoing training and certification programs ensure all personnel
-                are equipped with the latest safety knowledge and best
-                practices. We invest in our team's development to maintain
-                excellence in safety and operational performance.
               </p>
               <Button
                 className="bg-primary text-white hover:bg-primary/90"
@@ -328,12 +274,6 @@ const HSE = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-foreground">{item.title}</h3>
                   <p className="text-muted-foreground text-sm">{item.description}</p>
-                  <h3 className="text-xl font-bold mb-3 text-foreground">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {item.description}
-                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -346,13 +286,6 @@ const HSE = () => {
         <div className="container mx-auto px-4 text-center">
           <p className="text-2xl md:text-3xl font-bold mb-8 max-w-4xl mx-auto">
             Our clients trust Keparo because we prioritize safety and sustainability in every project.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button 
-              variant="outline" 
-              className="border-white text-white hover:bg-white/10"
-            Our clients trust Keparo because we prioritize safety and
-            sustainability in every project.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
@@ -408,24 +341,6 @@ const HSE = () => {
             >
               View Our Portfolio
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* New Section with Image and Text Overlay */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="relative rounded-lg overflow-hidden shadow-lg">
-            <img
-              src="/images/Iframe.png"
-              alt="Keparo Image"
-              className="w-full h-auto object-cover"
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-              <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-white">
-                Your Text Here
-              </h2>
-            </div>
           </div>
         </div>
       </section>
