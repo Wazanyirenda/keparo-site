@@ -2,6 +2,7 @@ import React from "react";
 import { CallToActionSection } from "@/components/sections/CallToActionSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { HeaderSection } from "@/components/sections/HeaderSection";
+import LogoLoopSection from "@/components/sections/LogoLoopSection";
 import { MainContentSection } from "@/components/sections/MainContentSection";
 import { PortfolioSection } from "@/components/sections/PortfolioSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
@@ -12,6 +13,7 @@ const Home = (): JSX.Element => {
   return (
     <div className="inline-flex flex-col items-start relative w-full">
       <HeaderSection />
+      <LogoLoopSection />
       <ServicesSection />
       <MainContentSection />
       <PortfolioSection />
