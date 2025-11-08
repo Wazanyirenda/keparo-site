@@ -268,7 +268,8 @@ export const MainContentSection = (): JSX.Element => {
               }}
             >
               <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-500" />
-              <CardContent className="flex flex-col items-start gap-6 self-stretch w-full p-0 relative z-10">
+              <CardContent 
+              className="flex flex-col items-start gap-6 self-stretch w-full p-0 relative z-10">
                 <div className="flex flex-col gap-1">
                   <span className="text-sm font-semibold text-white/90">
                     {services[4].tagline}
@@ -284,7 +285,7 @@ export const MainContentSection = (): JSX.Element => {
               </CardContent>
 
               <div className="flex items-center gap-4 mt-auto">
-                <Button
+                {/* <Button
                 onClick={() => navigate("/services")}
                   variant="outline"
                   className="h-9 px-4 py-2 rounded-lg border border-white/20 bg-transparent hover:bg-white/10 text-white hover:text-white"
@@ -292,7 +293,7 @@ export const MainContentSection = (): JSX.Element => {
                   <span className="text-sm font-medium">
                     Explore
                   </span>
-                </Button>
+                </Button> */}
 
                 <Button
                 onClick={() => navigate("/services")}
@@ -300,7 +301,7 @@ export const MainContentSection = (): JSX.Element => {
                   className="h-9 p-0 text-white hover:text-white/90 flex items-center gap-1"
                 >
                   <span className="text-sm font-medium">
-                    Details
+                    View Details
                   </span>
                   <ChevronRightIcon className="w-4 h-4" />
                 </Button>

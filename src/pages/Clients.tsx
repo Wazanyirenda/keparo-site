@@ -2,25 +2,34 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Building2, ChevronRight } from "lucide-react";
 import heroImage from "@/assets/hero-construction.jpg";
-import warehouseImage from "@/assets/warehouse.jpg";
-import machineryImage from "@/assets/machinery.jpg";
-import cumminsLogo from "@/assets/cummins.png";
-import corridorLogo from "@/assets/corridor.png";
+import warehouseImage from "@/assets/corridor.png";
+import machineryImage from "@/assets/mibula.png";
+import cumminsLogo from "@/assets/Cummins logo.png";
+import corridorLogo from "@/assets/corridor logistics logo.jpeg";
 import mimbulaLogo from "@/assets/mimbula-logo.png";
+import kansanshiLogo from "@/assets/FQM logo.png";
+import MoxicoLogo from "@/assets/moxico-logo.webp";
+import bafokengLogo from "@/assets/bafokeng_zambia_logo.png";
+import wbhiLogo from "@/assets/WBHO logo.png";
+import lubambeLogo from "@/assets/lubambe_logo.png";
+import lusangaLogo from "@/assets/lusanga group logo.png";
+import lemmerLogo from "@/assets/Lemmer Hydraulics logo.png";
+import ansultechLogo from "@/assets/Ansultech Fire Systems logo.png";
+
 
 const Clients = () => {
   const clients = [
     { logo: cumminsLogo, name: "Cummins Zambia", sector: "Power & Energy" },
-    { logo: mimbulaLogo, name: "Kansanshi Mining FQMO", sector: "Mining" },
+    { logo: kansanshiLogo, name: "Kansanshi Mining FQMO", sector: "Mining" },
     { logo: mimbulaLogo, name: "Mimbula Minerals Ltd", sector: "Mining" },
-    { logo: undefined, name: "Moxico Resources PLC", sector: "Mining" },
-    { logo: undefined, name: "Bafokeng Hydraulics", sector: "Engineering" },
-    { logo: undefined, name: "WBHO", sector: "Construction" },
-    { logo: undefined, name: "Musa Superior Products", sector: "Manufacturing" },
-    { logo: undefined, name: "Lubambe Copper Mine", sector: "Mining" },
-    { logo: undefined, name: "Lusanga Group", sector: "Industrial" },
-    { logo: undefined, name: "Lemmer Hydraulics", sector: "Engineering" },
-    { logo: undefined, name: "Ansultech Fire Systems", sector: "Safety Systems" },
+    { logo: MoxicoLogo, name: "Moxico Resources PLC", sector: "Mining" },
+    { logo: bafokengLogo, name: "Bafokeng Hydraulics", sector: "Engineering" },
+    { logo: wbhiLogo, name: "WBHO", sector: "Construction" },
+    { logo: undefined, name: "Musa Superior Products", sector:  "Manufacturing" },
+    { logo: lubambeLogo, name: "Lubambe Copper Mine", sector: "Mining" },
+    { logo: lusangaLogo, name: "Lusanga Group", sector: "Industrial" },
+    { logo: lemmerLogo, name: "Lemmer Hydraulics", sector: "Engineering" },
+    { logo: ansultechLogo, name: "Ansultech Fire Systems", sector: "Safety Systems" },
     { logo: corridorLogo, name: "Corridor Logistics", sector: "Logistics" },
   ];
 
@@ -149,7 +158,7 @@ const Clients = () => {
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 text-center text-white px-4">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">Proud to build Zambia's future together with our clients</h3>
-          <Button className="bg-emerald-600 hover:bg-emerald-600/90">View Our Projects</Button>
+          <Button className="bg-[#4e4dcb] hover:bg-[#4c5f6a]/90">View Our Projects</Button>
         </div>
       </section>
 
