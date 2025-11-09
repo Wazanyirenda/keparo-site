@@ -32,12 +32,12 @@ const portfolioProjects = [
 export const PortfolioSection = (): JSX.Element => {
   const { ref, isVisible } = useScrollAnimation();
   return (
-    <section ref={ref} className={`flex flex-col items-center gap-20 px-4 py-12 sm:px-8 sm:py-16 md:px-16 md:py-28 w-full bg-[#f2f2f2] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <section ref={ref} className={`flex flex-col items-center gap-20 px-4 py-12 sm:px-8 sm:py-16 md:px-16 md:py-28 w-full bg-[#00000] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="flex flex-col max-w-screen-xl items-center gap-20 w-full">
         <header className="max-w-screen-md flex flex-col items-center gap-4 w-full">
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center ">
             <p className="w-fit mt-[-1.00px] text-sm font-semibold text-[#040709] text-center">
-              Portfolio
+              Our Work
             </p>
           </div>
 

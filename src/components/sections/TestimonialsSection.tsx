@@ -8,7 +8,8 @@ import testimonialAvatar from "@/assets/mimbula avatar.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-
+import cummingsLogo from "@/assets/Cummins logo.png"
+import lemmerLogo from "@/assets/Lemmer Hydraulics logo.png";
 // NOTE: This implementation uses Font Awesome icon class names (e.g. "fa fa-star").
 // Make sure Font Awesome CSS is available (via CDN link in index.html or installing `@fortawesome/fontawesome-free`) so the icons render correctly.
 
@@ -23,20 +24,20 @@ const testimonials = [
     iconClass: "fa fa-building",
   },
   {
-    logo: mimbulaLogo,
+    logo: cummingsLogo,
     quote: "Their fabrication team delivered outstanding accuracy and fast turnaround times.",
-    avatar: testimonialAvatar,
+    avatar: cummingsLogo,
     name: "Sarah Banda",
-    title: "Project Manager, Zambezi Logistics",
+    title: "Project Manager, Cummings Zambia",
     caseStudyLink: "#",
     iconClass: "fa fa-cog",
   },
   {
-    logo: mimbulaLogo,
+    logo: lemmerLogo,
     quote: "Responsive, professional and on-schedule — highly recommended for industrial works.",
-    avatar: testimonialAvatar,
+    avatar: lemmerLogo,
     name: "Peter Lungu",
-    title: "Site Engineer, Copper Ridge",
+    title: "Site Engineer, Lemmer hydraulics",
     caseStudyLink: "#",
     iconClass: "fa fa-truck",
   },
@@ -54,20 +55,25 @@ export const TestimonialsSection = (): JSX.Element => {
   }, [api]);
 
   return (
-    <section ref={ref} className={`flex flex-col items-center gap-12 px-4 py-12 md:px-16 md:py-20 w-full bg-[#f2f2f2] transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+    <section
+      ref={ref}
+      className={`flex flex-col items-center gap-12 px-4 py-12 md:px-16 md:py-20 w-full bg-white transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+      }`}
+    >
       <div className="max-w-screen-xl w-full">
         <div className="flex flex-col lg:flex-row items-start gap-12 w-full">
-          <div className="flex-1">
+          <div className="w-full lg:w-1/2">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#040709]">
               Client voices
             </h2>
             <p className="mt-2 text-lg text-[#040709]">What our partners say about our work</p>
           </div>
 
-          <div className="flex-1">
+          <div className="w-full lg:w-1/2 ">
             <Carousel
               setApi={setApi}
-              opts={{ align: 'center', loop: true }}
+              opts={{ align: "center", loop: true }}
               plugins={[Autoplay({ delay: 6000, stopOnInteraction: true, stopOnMouseEnter: true })]}
               className="w-full"
             >
@@ -75,7 +81,7 @@ export const TestimonialsSection = (): JSX.Element => {
                 {testimonials.map((t, idx) => (
                   <CarouselItem key={idx} className="p-2">
                     <Card className="w-full border-[#04070926]">
-                      <CardContent className="p-6 flex flex-col gap-6">
+                      <CardContent className="p-4 flex flex-col gap-6">
                         <div className="flex items-start gap-4">
                           <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
                             {/* FontAwesome icon — requires FontAwesome CSS */}
