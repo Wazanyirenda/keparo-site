@@ -1,17 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import {
-  Shield,
-  Heart,
-  Leaf,
-  Award,
-  Users,
-  Handshake,
-  Cog,
-  Home,
-  CheckCircle,
-} from "lucide-react";
+import { Shield, Heart, Leaf, Award, Users, Handshake, Cog, Home, CheckCircle, AlertTriangle } from "lucide-react";
 import safetyImage from "@/assets/safety.jpg";
 import { useNavigate } from "react-router-dom";
 
@@ -22,26 +12,22 @@ const HSE = () => {
     {
       icon: Shield,
       title: "Safety First",
-      description:
-        "Absolute zero tolerance approach to accidents and unsafe practices across all projects. We prioritize the safety of our team, clients, and the public above all else.",
+      description: "Absolute zero tolerance approach to accidents and unsafe practices across all projects. We prioritize the safety of our team, clients, and the public above all else.",
     },
     {
       icon: Heart,
       title: "Health & Wellbeing",
-      description:
-        "Comprehensive health programs and wellness initiatives to ensure our personnel remain healthy, safe, and productive throughout their careers with us.",
+      description: "Comprehensive health programs and wellness initiatives to ensure our personnel remain healthy, safe, and productive throughout their careers with us.",
     },
     {
       icon: Leaf,
       title: "Environmental Stewardship",
-      description:
-        "Commitment to sustainable practices, waste reduction, and environmental protection in all our construction and operational activities.",
+      description: "Commitment to sustainable practices, waste reduction, and environmental protection in all our construction and operational activities.",
     },
     {
       icon: Award,
       title: "Compliance & Training",
-      description:
-        "Full compliance with all regulations and international standards, supported by comprehensive training programs for all personnel.",
+      description: "Full compliance with all regulations and international standards, supported by comprehensive training programs for all personnel.",
     },
   ];
 
@@ -49,38 +35,32 @@ const HSE = () => {
     {
       icon: Users,
       title: "Protecting Our People",
-      description:
-        "Every team member is valuable. We ensure their safety through rigorous training, proper equipment, and a culture of accountability.",
+      description: "Every team member is valuable. We ensure their safety through rigorous training, proper equipment, and a culture of accountability.",
     },
     {
       icon: Handshake,
       title: "Upholding Client Trust",
-      description:
-        "Clients trust us to deliver projects safely and responsibly. Our HSE record demonstrates our commitment to their confidence.",
+      description: "Clients trust us to deliver projects safely and responsibly. Our HSE record demonstrates our commitment to their confidence.",
     },
     {
       icon: Cog,
       title: "Ensuring Efficiency",
-      description:
-        "Safe operations are efficient operations. Proper safety protocols reduce downtime, improve productivity, and ensure project timelines.",
+      description: "Safe operations are efficient operations. Proper safety protocols reduce downtime, improve productivity, and ensure project timelines.",
     },
     {
       icon: Leaf,
       title: "Reducing Environmental Impact",
-      description:
-        "Sustainable practices protect the environment while meeting regulatory requirements and reducing long-term operational costs.",
+      description: "Sustainable practices protect the environment while meeting regulatory requirements and reducing long-term operational costs.",
     },
     {
       icon: CheckCircle,
       title: "Guaranteeing Compliance",
-      description:
-        "We maintain full compliance with Zambian regulations and international standards, ensuring projects proceed without regulatory delays.",
+      description: "We maintain full compliance with Zambian regulations and international standards, ensuring projects proceed without regulatory delays.",
     },
     {
       icon: Home,
       title: "Building Community Trust",
-      description:
-        "Our commitment to safety and environmental responsibility builds trust with local communities and stakeholders.",
+      description: "Our commitment to safety and environmental responsibility builds trust with local communities and stakeholders.",
     },
   ];
 
@@ -178,7 +158,7 @@ const HSE = () => {
               <p className="text-muted-foreground mb-6 text-lg">
                 We are committed to sustainable construction practices that minimize environmental impact. From waste reduction and recycling programs to energy-efficient construction methods, we build for a sustainable future.
               </p>
-              <Button
+              <Button 
                 className="bg-primary text-white hover:bg-primary/90"
                 onClick={() => navigate("/services")}
               >
@@ -210,7 +190,7 @@ const HSE = () => {
               <p className="text-muted-foreground mb-6 text-lg">
                 Ongoing training and certification programs ensure all personnel are equipped with the latest safety knowledge and best practices. We invest in our team's development to maintain excellence in safety and operational performance.
               </p>
-              <Button
+              <Button 
                 className="bg-primary text-white hover:bg-primary/90"
                 onClick={() => navigate("/services")}
               >
@@ -277,23 +257,23 @@ const HSE = () => {
             Our clients trust Keparo because we prioritize safety and sustainability in every project.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button
-              variant="outline"
-              className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition"
+            <Button 
+              variant="outline" 
+              className="border-white text-white hover:bg-white/10"
               onClick={() => navigate("/clients")}
             >
               Client 1
             </Button>
-            <Button
-              variant="outline"
-              className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition"
+            <Button 
+              variant="outline" 
+              className="border-white text-white hover:bg-white/10"
               onClick={() => navigate("/clients")}
             >
               Client 2
             </Button>
-            <Button
-              variant="outline"
-              className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-primary transition"
+            <Button 
+              variant="outline" 
+              className="border-white text-white hover:bg-white/10"
               onClick={() => navigate("/clients")}
             >
               Client 3
@@ -309,13 +289,13 @@ const HSE = () => {
             Partner with a team that values safety, quality, and sustainability.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button
+            <Button 
               className="bg-primary text-white hover:bg-primary/90 px-8 py-6 text-lg"
               onClick={() => navigate("/contact")}
             >
               Contact Our Team
             </Button>
-            <Button
+            <Button 
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-6 text-lg"
               onClick={() => navigate("/portfolio")}
