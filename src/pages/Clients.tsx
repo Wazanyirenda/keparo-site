@@ -12,7 +12,7 @@ import kansanshiLogo from "@/assets/FQM logo.png";
 import MoxicoLogo from "@/assets/moxico-logo.webp";
 import bafokengLogo from "@/assets/bafokeng_zambia_logo.png";
 import wbhiLogo from "@/assets/WBHO logo.png";
-import lubambeLogo from "@/assets/lubambe_logo.png";
+import lubambeLogo from "@/assets/Lubambe_Logo.png";
 import lusangaLogo from "@/assets/lusanga group logo.png";
 import lemmerLogo from "@/assets/Lemmer Hydraulics logo.png";
 import ansultechLogo from "@/assets/Ansultech Fire Systems logo.png";
