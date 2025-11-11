@@ -1,7 +1,7 @@
 import { ChevronRightIcon } from "lucide-react";
 import React from "react";
 import { Button } from "@/components/ui/button";
-import storyImage from "@/assets/steel fabrication and processing.jpeg";
+import storyImage from "@/assets/our story.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useNavigate } from "react-router-dom";
 export const ServicesSection = (): JSX.Element => {
@@ -12,7 +12,7 @@ export const ServicesSection = (): JSX.Element => {
       <div className="flex-col max-w-screen-xl items-center gap-12 sm:gap-16 md:gap-20 bg-white flex w-full">
         <div className="flex-col max-w-screen-md items-center gap-6 sm:gap-8 w-full flex">
           <div className="flex flex-col items-center gap-4 w-full">
-            <div className="inline-flex items-center">
+             <div className="inline-block bg-[#e0e0e0] px-4 py-1 rounded-full text-sm font-semibold text-[#040709] border border-gray-200">
               <p className="mt-[-1.00px] text-sm font-semibold text-[#040709] text-center">
                 Our story
               </p>
@@ -35,9 +35,9 @@ export const ServicesSection = (): JSX.Element => {
             <Button
              onClick={() => navigate("/about")}
               variant="outline"
-              className="h-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 mt-[-1.00px] mb-[-1.00px] ml-[-1.00px] rounded-xl border border-solid border-[#04070926] bg-transparent hover:bg-[#4c5f6a] w-full sm:w-auto"
+              className="h-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 mt-[-1.00px] mb-[-1.00px] ml-[-1.00px] rounded-xl border border-solid border-[#04070926] bg-transparent hover:bg-[#4e4dcb]  w-full sm:w-auto"
             >
-              <span className="font-medium text-[#040709] text-base">
+              <span className="font-medium hover:text-white text-[#040709] text-base">
                 About us
               </span>
             </Button>
