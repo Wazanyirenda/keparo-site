@@ -1,7 +1,7 @@
 import { ChevronRightIcon } from "lucide-react";
 import React from "react";
 import { Button } from "@/components/ui/button";
-import storyImage from "@/assets/steel fabrication and processing.jpeg";
+import storyImage from "@/assets/our story.jpg";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useNavigate } from "react-router-dom";
 export const ServicesSection = (): JSX.Element => {

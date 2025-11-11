@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import constructionImage from "@/assets/Warehouse and cold storage area.jpeg";
-import fabricationImage from "@/assets/Structural Fabrication.jpeg";
+import fabricationImage from "@/assets/steel fabrication.jpg";
 import machineHireImage from "@/assets/machine hire.jpeg";
 import modularBuildingsImage from "@/assets/modular buildings.jpeg";
 import conversionsImage from "@/assets/container.jpeg";
@@ -132,7 +132,7 @@ export const MainContentSection = (): JSX.Element => {
                 </p>
               </CardContent>
 
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 relative z-10">
                 {/* <Button
                 onClick={() => navigate("/services")}
                   variant="outline"
@@ -145,7 +145,7 @@ export const MainContentSection = (): JSX.Element => {
 
                 <Button
                 onClick={() => navigate("/services")}
-                  variant="ghost"
+                  variant="link"
                   className="h-10 sm:h-9 p-0 text-white hover:text-white/90 flex items-center gap-1"
                 >
                   <span className="text-sm font-medium">
@@ -174,7 +174,7 @@ export const MainContentSection = (): JSX.Element => {
                   </p>
                 </CardContent>
 
-                <div className="mt-auto">
+                <div className="mt-auto relative z-10">
                   <Button
                   onClick={() => navigate("/services")}
                     variant="link"
@@ -204,7 +204,7 @@ export const MainContentSection = (): JSX.Element => {
                   </p>
                 </CardContent>
 
-                <div className="mt-auto">
+                <div className="mt-auto relative z-10">
                   <Button
                   onClick={() => navigate("/services")}
                     variant="link"
@@ -237,7 +237,7 @@ export const MainContentSection = (): JSX.Element => {
                 </p>
               </CardContent>
 
-              <div className="flex items-center gap-4 mt-auto">
+              <div className="flex items-center gap-4 mt-auto relative z-10">
                 {/* <Button
                 onClick={() => navigate("/services")}
                   variant="outline"
@@ -284,7 +284,7 @@ export const MainContentSection = (): JSX.Element => {
                 </p>
               </CardContent>
 
-              <div className="flex items-center gap-4 mt-auto">
+              <div className="flex items-center gap-4 mt-auto relative z-10">
                 {/* <Button
                 onClick={() => navigate("/services")}
                   variant="outline"

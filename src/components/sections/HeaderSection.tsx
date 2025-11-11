@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useNavigate } from "react-router-dom";
-import constructionImage from "@/assets/hero-construction.jpg";
-import fabricationImage from "@/assets/Structural Fabrication.jpeg";
-import machineHireImage from "@/assets/machine hire.jpeg";
-import modularBuildingsImage from "@/assets/modular buildings.jpeg";
-import conversionsImage from "@/assets/container.jpeg";
+import constructionImage from "@/assets/hero image.jpg";
+import fabricationImage from "@/assets/steel fabrication.jpg";
+import machineHireImage from "@/assets/machine hire.jpg";
+import modularBuildingsImage from "@/assets/prefabricated.jpg";
+import conversionsImage from "@/assets/container.jpg";
 
 const heroSlides = [
   {
@@ -98,7 +98,7 @@ export const HeaderSection = (): JSX.Element => {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
-                  minHeight: "700px",
+                  minHeight: "850px",
                 }}
               />
               {/* Dark Overlay */}
