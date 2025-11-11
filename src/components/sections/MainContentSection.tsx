@@ -78,7 +78,7 @@ export const MainContentSection = (): JSX.Element => {
     <section className="flex flex-col items-center w-full bg-[#f2f2f2]">
       <div ref={ref} className={`flex flex-col w-full max-w-[90rem] px-4 py-12 md:px-16 md:py-24 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <header className="flex flex-col items-center mb-8 sm:mb-12 md:mb-16">
-          <div className="inline-flex mb-4">
+           <div className="inline-block bg-white px-4 py-1 rounded-full text-sm font-semibold text-[#040709] border border-gray-200">
             <h3 className="text-sm font-semibold text-[#040709]">
               Services
             </h3>

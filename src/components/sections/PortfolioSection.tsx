@@ -7,6 +7,7 @@ import mibulaImage from "@/assets/mibula.png";
 import corridorImage from "@/assets/corridor.png";
 import cumminsRenovationImage from "@/assets/cummins.png";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useNavigate } from "react-router-dom";
 
 const portfolioProjects = [
   {
@@ -31,11 +32,12 @@ const portfolioProjects = [
 
 export const PortfolioSection = (): JSX.Element => {
   const { ref, isVisible } = useScrollAnimation();
+  const navigate = useNavigate();
   return (
     <section ref={ref} className={`flex flex-col items-center gap-20 px-4 py-12 sm:px-8 sm:py-16 md:px-16 md:py-28 w-full bg-[#00000] transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
       <div className="flex flex-col max-w-screen-xl items-center gap-20 w-full">
         <header className="max-w-screen-md flex flex-col items-center gap-4 w-full">
-          <div className="flex items-center justify-center ">
+           <div className="inline-block bg-[#e0e0e0] px-4 py-1 rounded-full text-sm font-semibold text-[#040709] border border-gray-200">
             <p className="w-fit mt-[-1.00px] text-sm font-semibold text-[#040709] text-center">
               Our Work
             </p>
@@ -94,11 +96,12 @@ export const PortfolioSection = (): JSX.Element => {
                         ))}
                       </div>
                     </div>
-
+                        
                     <div className="flex flex-col items-start gap-4 self-stretch w-full">
                       <Button
+                      onClick={()=>navigate("./Portfolio")}
                         variant="ghost"
-                        className="inline-flex items-center justify-center gap-2 h-auto p-0 rounded-xl hover:bg-transparent"
+                        className="inline-flex items-center justify-center gap-2 h-auto p-0 rounded-xl hover:bg-[transparent]"
                       >
                         <span className="w-fit font-medium text-[#040709] text-base">
                           View project
@@ -114,10 +117,11 @@ export const PortfolioSection = (): JSX.Element => {
 
           <div className="inline-flex flex-col items-start gap-4">
             <Button
+            onClick={()=>navigate("./Portfolio")}
               variant="outline"
-              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 h-auto mt-[-1.00px] mb-[-1.00px] ml-[-1.00px] mr-[-1.00px] rounded-xl border border-solid border-[#04070926]"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 h-auto mt-[-1.00px] mb-[-1.00px] ml-[-1.00px] mr-[-1.00px] rounded-xl border border-solid border-[#04070926] hover:bg-[#4e4dcb] hover:text-white"
             >
-              <span className="w-fit font-medium text-[#040709] text-base">
+              <span className="w-fit font-medium text-[#040709] text-base hover:text-white">
                 View all projects
               </span>
             </Button>

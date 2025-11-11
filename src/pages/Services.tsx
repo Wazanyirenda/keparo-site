@@ -173,7 +173,7 @@ const navigate = useNavigate();
             heroInView ? "animate-fade-in-up" : "opacity-0"
           }`}
         >
-          <h1 className="text-5xl font-bold text-white">Our Services</h1>
+          <h1 className="text-5xl font-bold text-white mb-4">Our Services</h1>
           <p className="text-lg text-white/90">
             Delivering construction, fabrication, modular and machinery solutions across Zambia.
           </p>
