@@ -98,7 +98,7 @@ export const HeaderSection = (): JSX.Element => {
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
-                  minHeight: "850px",
+                  minHeight: "1500px",
                 }}
               />
               {/* Dark Overlay */}
