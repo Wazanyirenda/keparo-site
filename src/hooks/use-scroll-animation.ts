@@ -67,3 +67,4 @@ export const useAnimatedCounter = (target: number, duration = 2000) => {
   return { ref, count };
 };
 
+
