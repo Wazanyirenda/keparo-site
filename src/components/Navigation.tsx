@@ -32,29 +32,31 @@ const Navigation = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-      isScrolled ? "translate-y-0 shadow-lg" : "-translate-y-full"
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 translate-y-0 shadow-lg ${
+      isScrolled ? "lg:translate-y-0" : "lg:-translate-y-full"
     }`}>
-      {/* Top Bar with Contact Info - hidden when navbar appears */}
-      <div className="bg-gradient-to-r from-accent via-accent to-accent/90 text-white">
+      {/* Top Bar with Contact Info - hidden on desktop when nav is hidden */}
+      <div className={`lg:block bg-gradient-to-r from-accent via-accent to-accent/90 text-white ${
+        isScrolled ? "lg:hidden" : ""
+      }`}>
         <div className="container mx-auto px-4 py-2.5">
           <div className="flex flex-wrap items-center justify-between text-sm">
-            <div className="flex flex-wrap items-center gap-4 md:gap-6">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6">
               <div className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                 <MapPin size={14} />
-                <span className="hidden sm:inline">Chingola, Zambia</span>
-                <span className="sm:hidden">Chingola</span>
+                <span className="hidden sm:inline">Plot 18 Musenga, Off Kitwe Road, Chingola, Zambia</span>
+                <span className="sm:hidden text-xs">Plot 18 Musenga, Chingola</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone size={14} />
-                <a href="tel:+260967674611" className="hover:opacity-80 transition-opacity">
+                <a href="tel:+260967674611" className="hover:opacity-80 transition-opacity text-xs sm:text-sm">
                   +260 967 674 611
                 </a>
               </div>
             </div>
-            <div className="hidden md:flex items-center gap-2">
+            <div className="hidden sm:flex items-center gap-2">
               <Mail size={14} />
-              <a href="mailto:keparo.enterprises@gmail.com" className="hover:opacity-80 transition-opacity">
+              <a href="mailto:keparo.enterprises@gmail.com" className="hover:opacity-80 transition-opacity text-xs md:text-sm">
                 keparo.enterprises@gmail.com
               </a>
             </div>
@@ -70,7 +72,7 @@ const Navigation = () => {
               <img 
                 src={logo} 
                 alt="Keparo Enterprises Ltd" 
-                className="h-14 md:h-16 w-auto transition-all duration-300 group-hover:scale-105"
+                className="h-12 sm:h-14 md:h-16 w-auto transition-all duration-300 group-hover:scale-105"
               />
             </Link>
 

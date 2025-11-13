@@ -6,7 +6,7 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary text-secondary-foreground">
+    <footer className="bg-gray-900 text-gray-100">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -19,7 +19,6 @@ const Footer = () => {
             <p className="text-sm opacity-90">
               15+ years of excellence in construction and specialized machine hire services in Zambia.
             </p>
-            <p className="text-xs opacity-75">TPIN: 1001591067</p>
           </div>
 
           {/* Quick Links */}
@@ -72,7 +71,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-secondary-foreground/20 mt-8 pt-8 text-center text-sm opacity-75">
+        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm opacity-90">
           <p>&copy; {currentYear} Keparo Enterprises Ltd. All rights reserved.</p>
           <p className="mt-2">
             Designed by{" "}
@@ -80,7 +79,7 @@ const Footer = () => {
               href="https://techversesolutions.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-accent hover:underline transition-all duration-200"
+              className="text-white underline hover:opacity-80 transition-all duration-200"
             >
               Tech Verse Solutions
             </a>
