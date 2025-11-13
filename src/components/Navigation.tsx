@@ -35,10 +35,8 @@ const Navigation = () => {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 translate-y-0 shadow-lg ${
       isScrolled ? "lg:translate-y-0" : "lg:-translate-y-full"
     }`}>
-      {/* Top Bar with Contact Info - hidden on desktop when nav is hidden */}
-      <div className={`lg:block bg-gradient-to-r from-accent via-accent to-accent/90 text-white ${
-        isScrolled ? "lg:hidden" : ""
-      }`}>
+      {/* Top Bar with Contact Info - always visible */}
+      <div className="block bg-gradient-to-r from-accent via-accent to-accent/90 text-white">
         <div className="container mx-auto px-4 py-2.5">
           <div className="flex flex-wrap items-center justify-between text-sm">
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6">
@@ -47,11 +45,16 @@ const Navigation = () => {
                 <span className="hidden sm:inline">Plot 18 Musenga, Off Kitwe Road, Chingola, Zambia</span>
                 <span className="sm:hidden text-xs">Plot 18 Musenga, Chingola</span>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone size={14} />
-                <a href="tel:+260967674611" className="hover:opacity-80 transition-opacity text-xs sm:text-sm">
-                  +260 967 674 611
-                </a>
+              <div className="flex items-center gap-2 sm:gap-2 flex-1 sm:flex-initial justify-between sm:justify-start">
+                <Phone size={14} className="flex-shrink-0" />
+                <div className="flex flex-col sm:flex-row sm:gap-3">
+                  <a href="tel:+260967674611" className="hover:opacity-80 transition-opacity text-xs sm:text-sm">
+                    +260 967 674 611 <span className="hidden md:inline text-xs opacity-75">(Operations)</span>
+                  </a>
+                  <a href="tel:+260960923998" className="hover:opacity-80 transition-opacity text-xs sm:text-sm">
+                    +260 960 923 998 <span className="hidden md:inline text-xs opacity-75">(Office)</span>
+                  </a>
+                </div>
               </div>
             </div>
             <div className="hidden sm:flex items-center gap-2">
