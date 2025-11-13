@@ -213,7 +213,7 @@ const navigate = useNavigate();
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className={`w-12 h-12 ${service.color} rounded-full flex items-center justify-center bg-[#E0E7Fe]/90`}>
-                  <service.icon className="w-6 h-6 text-[indigo] " />
+                  <service.icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex flex-col gap-3">
                   <h3 className="text-lg font-bold text-gray-900">{service.title}</h3>
@@ -358,7 +358,7 @@ const navigate = useNavigate();
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className={`w-16 h-16 ${feature.color} rounded-full flex items-center justify-center bg-[#E0E7Fe]/90`}>
-                  <feature.icon className="w-8 h-8 text-indigo" />
+                  <feature.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900">{feature.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
