@@ -81,9 +81,9 @@ const About = () => {
   });
 
   return (
-    <div className="min-h-screen pt-24">
+    <div className="min-h-screen">
       {/* Hero Section with Stats */}
-      <section className="relative bg-accent text-white py-16 sm:py-20 md:py-24 overflow-hidden">
+      <section className="relative bg-accent text-white pt-28 sm:pt-32 md:pt-36 pb-16 sm:pb-20 md:pb-24 lg:pt-16 lg:pb-20 xl:pt-24 xl:pb-24 overflow-hidden">
         <div 
           className="absolute inset-0 opacity-20"
           style={{
@@ -93,8 +93,8 @@ const About = () => {
           }}
         />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-            <div className="animate-fade-in text-center lg:text-left">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:items-center">
+            <div className="animate-fade-in text-center lg:text-left mt-12 sm:mt-16 md:mt-20 lg:mt-0">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
                 About Keparo Enterprises
               </h1>
@@ -123,11 +123,11 @@ const About = () => {
               </div>
             </div>
             
-            <div className="hidden lg:flex justify-center">
+            <div className="hidden lg:flex justify-center items-center">
               <img 
                 src={warehouseImg} 
                 alt="Keparo Facilities" 
-                className="rounded-lg shadow-strong w-full max-w-xl"
+                className="rounded-lg shadow-strong w-full max-w-2xl scale-110"
               />
             </div>
           </div>
