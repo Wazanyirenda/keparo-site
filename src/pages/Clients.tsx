@@ -75,7 +75,7 @@ const Clients = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-0">
+    <div className="min-h-screen pb-0">
       {/* Hero */}
       <section ref={heroRef} className="relative w-full min-h-[420px] flex items-center justify-center">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }} />
