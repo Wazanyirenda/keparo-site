@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import logoFooter from "@/assets/logo-footer.jpg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,9 +11,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <h3 className="font-bold text-xl bg-gradient-hero bg-clip-text text-transparent">
-              KEPARO
-            </h3>
+            <img 
+              src={logoFooter} 
+              alt="Keparo Enterprises Ltd" 
+              className="h-12 w-auto mb-4"
+            />
             <p className="text-sm opacity-90">
               15+ years of excellence in construction and specialized machine hire services in Zambia.
             </p>
@@ -71,6 +74,17 @@ const Footer = () => {
 
         <div className="border-t border-secondary-foreground/20 mt-8 pt-8 text-center text-sm opacity-75">
           <p>&copy; {currentYear} Keparo Enterprises Ltd. All rights reserved.</p>
+          <p className="mt-2">
+            Designed by{" "}
+            <a 
+              href="https://techversesolutions.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-accent hover:underline transition-all duration-200"
+            >
+              Tech Verse Solutions
+            </a>
+          </p>
         </div>
       </div>
     </footer>
