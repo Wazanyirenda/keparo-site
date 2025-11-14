@@ -13,7 +13,7 @@ import kansanshiLogo from "@/assets/FQM logo.png";
 import MoxicoLogo from "@/assets/moxico-logo.webp";
 import bafokengLogo from "@/assets/bafokeng_zambia_logo.png";
 import wbhiLogo from "@/assets/WBHO logo.png";
-import lubambeLogo from "@/assets/lubambe_logo.png";
+import lubambeLogo from "@/assets/Lubambe_Logo.png";
 import lusangaLogo from "@/assets/lusanga group logo.png";
 import lemmerLogo from "@/assets/Lemmer Hydraulics logo.png";
 import ansultechLogo from "@/assets/Ansultech Fire Systems logo.png";
@@ -76,7 +76,7 @@ const Clients = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-0">
+    <div className="min-h-screen pb-0">
       {/* Hero */}
       <section ref={heroRef} className="relative w-full min-h-[420px] flex items-center justify-center">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }} />
