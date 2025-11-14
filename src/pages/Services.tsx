@@ -19,54 +19,63 @@ export const ServicesPage = (): JSX.Element => {
     icon: Building2,
     title: "Construction",
     description: "Complete construction services from foundation to completion with superior quality and reliability.",
+    color: "bg-indigo-500",
   },
   {
     id: 2,
     icon: Wrench,
     title: "Structural Fabrication",
     description: "Custom steel fabrication services for commercial structures with precision engineering.",
+    color: "bg-blue-500",
   },
   {
     id: 3,
     icon: Zap,
     title: "Plasma & Fiber Laser Cutting",
     description: "Advanced cutting services with precision laser and fiber laser technology for complex projects.",
+    color: "bg-green-500",
   },
   {
     id: 4,
     icon: Warehouse,
     title: "Steel Portal Frames",
     description: "Durable steel frame structures for warehouses, factories, and buildings.",
+    color: "bg-yellow-500",
   },
   {
     id: 5,
     icon: Truck,
     title: "Machine Hire & Access Equipment",
     description: "Comprehensive equipment rental solutions for industrial projects.",
+    color: "bg-red-500",
   },
   {
     id: 6,
     icon: Container,
     title: "Container Conversions",
     description: "Custom container conversions for homes, offices, and storage facilities.",
+    color: "bg-purple-500",
   },
   {
     id: 7,
     icon: Home,
     title: "Prefabricated Buildings",
     description: "Modern prefab solutions for homes, shops, and storage facilities with quick deployment.",
+    color: "bg-pink-500",
   },
   {
     id: 8,
     icon: Package,
     title: "Flat Pack Prefab Structures",
     description: "Authorized agents for Cube Modular with innovative flat pack building solutions.",
+    color: "bg-teal-500",
   },
   {
     id: 9,
     icon: Cog,
     title: "Steel & Machinery Supply",
     description: "Supply of new and used plant and machinery for construction and industrial sectors.",
+    color: "bg-gray-500",
   },
 ];
 
@@ -76,36 +85,42 @@ const whyChooseFeatures = [
     icon: Clock,
     title: "15+ Years Experience",
     description: "Extensive industry experience with proven track record of successful projects.",
+    color: "bg-indigo-500",
   },
   {
     id: 2,
     icon: Target,
     title: "On-Time, On-Budget",
     description: "Reliable project management ensuring timely completion and cost control.",
+    color: "bg-blue-500",
   },
   {
     id: 3,
     icon: Users,
     title: "Skilled Team",
     description: "Expert engineers and skilled workers with extensive capabilities.",
+    color: "bg-green-500",
   },
   {
     id: 4,
     icon: Leaf,
     title: "Environmental Responsibility",
     description: "Sustainable practices and environmental commitment in all implementations.",
+    color: "bg-yellow-500",
   },
   {
     id: 5,
     icon: Award,
     title: "Client-Focused Approach",
     description: "Flexible solutions tailored to meet specific client requirements and timely delivery.",
+    color: "bg-red-500",
   },
   {
     id: 6,
     icon: Shield,
     title: "Quality Assurance",
     description: "Rigorous quality processes ensuring exceptional workmanship standards.",
+    color: "bg-purple-500",
   },
 ];
 
@@ -197,8 +212,8 @@ const navigate = useNavigate();
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center bg-[#E0E7Fe]/90`}>
-                  <service.icon className="w-6 h-6 text-[indigo] " />
+                <div className={`w-12 h-12 ${service.color} rounded-full flex items-center justify-center bg-[#E0E7Fe]/90`}>
+                  <service.icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex flex-col gap-3">
                   <h3 className="text-lg font-bold text-gray-900">{service.title}</h3>
@@ -342,8 +357,8 @@ const navigate = useNavigate();
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center bg-[#E0E7Fe]/90`}>
-                  <feature.icon className="w-8 h-8 text-indigo" />
+                <div className={`w-16 h-16 ${feature.color} rounded-full flex items-center justify-center bg-[#E0E7Fe]/90`}>
+                  <feature.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900">{feature.title}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>

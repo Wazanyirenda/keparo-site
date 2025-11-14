@@ -2,11 +2,11 @@ import { ChevronRightIcon } from "lucide-react";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import constructionImage from "@/assets/Warehouse and cold storage area.jpeg";
+import constructionImage from "@/assets/Niru group warehouse development.jpg";
 import fabricationImage from "@/assets/steel fabrication.jpg";
-import machineHireImage from "@/assets/machine hire.jpeg";
+import machineHireImage from "@/assets/machine hire.jpg";
 import modularBuildingsImage from "@/assets/modular buildings.jpeg";
-import conversionsImage from "@/assets/container.jpeg";
+import conversionsImage from "@/assets/container.jpg";
 import { useNavigate } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 

@@ -77,7 +77,7 @@ const Portfolio = () => {
   const categories = ["All", "Construction", "Warehouse", "Industrial", "Residential", "Commercial", "Conversions", "Equipment"];
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
+    <div className="min-h-screen pb-16">
       {/* Header */}
       <section className="bg-gradient-hero text-white py-20">
         <div className="container mx-auto px-4">
