@@ -22,10 +22,17 @@ export const CallToActionSection = (): JSX.Element => {
             </p>
           </div>
 
+<<<<<<< HEAD
           <div className="inline-flex flex-col sm:flex-row items-start gap-4">
             <Button 
               onClick={() => navigate("/contact")} 
               className="h-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl border-none bg-[linear-gradient(135deg,rgba(81,64,195,1)_0%,rgba(122,118,99,1)_100%)] before:content-[''] before:absolute before:inset-0 before:p-px before:rounded-xl before:[background:linear-gradient(104deg,rgba(81,64,195,1)_0%,rgba(122,118,99,1)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none hover:opacity-90">
+=======
+          <div className="inline-flex flex-col sm:flex-row items-start gap-4 w-full sm:w-auto">
+            <Button 
+              onClick={() => navigate("/contact")} 
+              className="w-full sm:w-auto h-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl border-none bg-[linear-gradient(135deg,rgba(81,64,195,1)_0%,rgba(81,64,195,1)_0%)] before:content-[''] before:absolute before:inset-0 before:p-px before:rounded-xl before:[background:linear-gradient(104deg,rgba(81,64,195,1)_0%,rgba(122,118,99,1)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none hover:opacity-90">
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
               <span className="font-medium text-white text-base">
                 Get Quote
               </span>
@@ -34,7 +41,11 @@ export const CallToActionSection = (): JSX.Element => {
             <Button
               variant="outline"
               onClick={() => navigate("/portfolio")} 
+<<<<<<< HEAD
               className="h-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl border border-solid border-[#04070926] bg-transparent hover:bg-[#04070908]"
+=======
+              className="w-full sm:w-auto h-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl border border-solid border-[#04070926] bg-transparent hover:bg-[#04070908]"
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
             >
               <span className="font-medium text-[#040709] text-base">Our portfolio</span>
             </Button>

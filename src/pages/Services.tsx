@@ -2,11 +2,19 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronRightIcon, Building2, Wrench, Zap, Warehouse, Truck, Container, Home, Package, Cog, Clock, Users, Leaf, Target, Award, Shield } from "lucide-react";
+<<<<<<< HEAD
 import constructionImage from "@/assets/Warehouse and cold storage area.jpeg";
 import fabricationImage from "@/assets/Structural Fabrication.jpeg";
 import machineHireImage from "@/assets/machine hire.jpeg";
 import modularBuildingsImage from "@/assets/modular buildings.jpeg";
 import conversionsImage from "@/assets/container.jpeg";
+=======
+import constructionImage from "@/assets/Niru group warehouse development.jpg";
+import fabricationImage from "@/assets/steel fabrication.jpg";
+import machineHireImage from "@/assets/machine hire.jpeg";
+import modularBuildingsImage from "@/assets/modular buildings.jpeg";
+import conversionsImage from "@/assets/container.jpg";
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
 import servicesImage from "@/assets/services bg.png";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
@@ -163,7 +171,11 @@ const navigate = useNavigate();
         ref={heroRef}
         className="relative flex flex-col items-center justify-center h-[400px] px-8 md:px-16 w-full"
         style={{
+<<<<<<< HEAD
           backgroundImage: `linear-gradient(0deg, rgba(44, 41, 41, 0.6) 0%, rgba(66, 64, 64, 0.6) 100%), url(${servicesImage})`,
+=======
+          backgroundImage: `linear-gradient(0deg, rgba(53, 53, 54, 0.6) 0%, rgba(116, 106, 106, 0.6) 100%), url(${servicesImage})`,
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -173,7 +185,11 @@ const navigate = useNavigate();
             heroInView ? "animate-fade-in-up" : "opacity-0"
           }`}
         >
+<<<<<<< HEAD
           <h1 className="text-5xl font-bold text-white">Our Services</h1>
+=======
+          <h1 className="text-5xl font-bold text-white mb-4">Our Services</h1>
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
           <p className="text-lg text-white/90">
             Delivering construction, fabrication, modular and machinery solutions across Zambia.
           </p>
@@ -212,7 +228,11 @@ const navigate = useNavigate();
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+<<<<<<< HEAD
                 <div className={`w-12 h-12 ${service.color} rounded-lg flex items-center justify-center`}>
+=======
+                <div className={`w-12 h-12 ${service.color} rounded-full flex items-center justify-center bg-[#E0E7Fe]/90`}>
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
                   <service.icon className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex flex-col gap-3">
@@ -265,7 +285,11 @@ const navigate = useNavigate();
           </div>
         </div>
       </section>
+<<<<<<< HEAD
 
+=======
+ 
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
       {/* Precision Fabrication */}
       <section className="flex flex-col items-center px-8 md:px-16 py-16 w-full bg-white">
         <div ref={fabricationRef} className="max-w-screen-xl w-full">
@@ -357,7 +381,11 @@ const navigate = useNavigate();
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+<<<<<<< HEAD
                 <div className={`w-16 h-16 ${feature.color} rounded-full flex items-center justify-center`}>
+=======
+                <div className={`w-16 h-16 ${feature.color} rounded-full flex items-center justify-center bg-[#E0E7Fe]/90`}>
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900">{feature.title}</h3>
@@ -392,10 +420,21 @@ const navigate = useNavigate();
             </p>
           </div>
           <div className="flex gap-4">
+<<<<<<< HEAD
             <Button className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg">
               Get A Quote
             </Button>
             <Button className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-lg">
+=======
+            <Button 
+            onClick={()=>navigate("/contact")}
+            className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-2.5 rounded-lg">
+              Get A Quote
+            </Button>
+            <Button 
+            onClick={()=>navigate("/contact")}
+            className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-lg">
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
               Contact Us
             </Button>
           </div>

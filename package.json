@@ -40,9 +40,13 @@
     "@radix-ui/react-toggle": "^1.1.9",
     "@radix-ui/react-toggle-group": "^1.1.10",
     "@radix-ui/react-tooltip": "^1.2.7",
+<<<<<<< HEAD
     "@react-google-maps/api": "^2.20.7",
     "@tanstack/react-query": "^5.83.0",
     "aos": "^2.3.4",
+=======
+    "@tanstack/react-query": "^5.83.0",
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -52,7 +56,10 @@
     "framer-motion": "^12.23.24",
     "gsap": "^3.13.0",
     "input-otp": "^1.4.2",
+<<<<<<< HEAD
     "leaflet": "^1.9.4",
+=======
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
     "lucide-react": "^0.462.0",
     "next-themes": "^0.3.0",
     "react": "^18.3.1",
@@ -61,7 +68,10 @@
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.61.1",
     "react-intersection-observer": "^10.0.0",
+<<<<<<< HEAD
     "react-leaflet": "^5.0.0",
+=======
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
     "react-resizable-panels": "^2.1.9",
     "react-router-dom": "^6.30.1",
     "recharts": "^2.15.4",
@@ -83,7 +93,10 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^15.15.0",
+<<<<<<< HEAD
     "lovable-tagger": "^1.1.11",
+=======
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3",

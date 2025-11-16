@@ -3,11 +3,19 @@ import { Button } from "@/components/ui/button";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { useNavigate } from "react-router-dom";
+<<<<<<< HEAD
 import constructionImage from "@/assets/hero-construction.jpg";
 import fabricationImage from "@/assets/Structural Fabrication.jpeg";
 import machineHireImage from "@/assets/machine hire.jpeg";
 import modularBuildingsImage from "@/assets/modular buildings.jpeg";
 import conversionsImage from "@/assets/container.jpeg";
+=======
+import constructionImage from "@/assets/hero image.jpg";
+import fabricationImage from "@/assets/steel fabrication.jpg";
+import machineHireImage from "@/assets/machine hire.jpg";
+import modularBuildingsImage from "@/assets/prefabricated.jpg";
+import conversionsImage from "@/assets/container.jpg";
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
 
 const heroSlides = [
   {
@@ -92,13 +100,20 @@ export const HeaderSection = (): JSX.Element => {
           {heroSlides.map((slide, index) => (
             <CarouselItem key={index} className="pl-0 basis-full h-full relative">
               <div
+<<<<<<< HEAD
                 className="w-full h-full transition-opacity duration-1000"
+=======
+                className="w-full h-full min-h-screen transition-opacity duration-1000"
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
                 style={{
                   backgroundImage: `url(${slide.image})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
+<<<<<<< HEAD
                   minHeight: "700px",
+=======
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
                 }}
               />
               {/* Dark Overlay */}
@@ -109,7 +124,11 @@ export const HeaderSection = (): JSX.Element => {
       </Carousel>
 
       {/* Content Overlay - Left Aligned */}
+<<<<<<< HEAD
       <div className="relative z-10 flex flex-col items-start justify-center w-full max-w-4xl text-left px-4">
+=======
+      <div className="relative z-10 flex flex-col items-start justify-center w-full max-w-4xl text-left px-4 lg:mt-20">
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
         <div className="flex flex-col items-start gap-6 md:gap-8 w-full max-w-3xl">
           {/* Main Heading - Staggered Animation */}
           <h1
@@ -138,7 +157,11 @@ export const HeaderSection = (): JSX.Element => {
           {/* Call-to-Action Buttons - Staggered Animation */}
           <div
             key={`buttons-${animationKey}`}
+<<<<<<< HEAD
             className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4 mt-2 animate-slide-in-left"
+=======
+            className="flex flex-row items-start gap-3 sm:gap-4 mt-2 animate-slide-in-left"
+>>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
             style={{
               animationDelay: "0.5s",
               animationFillMode: "both",
