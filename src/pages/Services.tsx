@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { ChevronRightIcon, Building2, Wrench, Zap, Warehouse, Truck, Container, Home, Package, Cog, Clock, Users, Leaf, Target, Award, Shield } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Building2, Wrench, Zap, Warehouse, Truck, Container, Home, Package, Cog, Clock, Users, Leaf, Target, Award, Shield } from "lucide-react";
 import constructionImage from "@/assets/Niru group warehouse development.jpg";
 import fabricationImage from "@/assets/steel fabrication.jpg";
 import machineHireImage from "@/assets/machine hire.jpeg";
@@ -10,76 +10,16 @@ import conversionsImage from "@/assets/container.jpg";
 import servicesImage from "@/assets/services bg.png";
 import { useInView } from "react-intersection-observer";
 import { useNavigate } from "react-router-dom";
-
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import ServiceDetail from "@/components/ServiceDetail";
+import { Service } from "@/types/service";
+import { servicesData } from "@/data/services";
 
 export const ServicesPage = (): JSX.Element => {
-  const services = [
-  {
-    id: 1,
-    icon: Building2,
-    title: "Construction",
-    description: "Complete construction services from foundation to completion with superior quality and reliability.",
-    color: "bg-indigo-600"
-  },
-  {
-    id: 2,
-    icon: Wrench,
-    title: "Structural Fabrication",
-    description: "Custom steel fabrication services for commercial structures with precision engineering.",
-    color: "bg-indigo-600"
-  },
-  {
-    id: 3,
-    icon: Zap,
-    title: "Plasma & Fiber Laser Cutting",
-    description: "Advanced cutting services with precision laser and fiber laser technology for complex projects.",
-    color: "bg-indigo-600"
-  },
-  {
-    id: 4,
-    icon: Warehouse,
-    title: "Steel Portal Frames",
-    description: "Durable steel frame structures for warehouses, factories, and buildings.",
-    color: "bg-indigo-600"
-  },
-  {
-    id: 5,
-    icon: Truck,
-    title: "Machine Hire & Access Equipment",
-    description: "Comprehensive equipment rental solutions for industrial projects.",
-    color: "bg-indigo-600"
-  },
-  {
-    id: 6,
-    icon: Container,
-    title: "Container Conversions",
-    description: "Custom container conversions for homes, offices, and storage facilities.",
-    color: "bg-indigo-600"
-  },
-  {
-    id: 7,
-    icon: Home,
-    title: "Prefabricated Buildings",
-    description: "Modern prefab solutions for homes, shops, and storage facilities with quick deployment.",
-    color: "bg-indigo-600"
-  },
-  {
-    id: 8,
-    icon: Package,
-    title: "Flat Pack Prefab Structures",
-    description: "Authorized agents for Cube Modular with innovative flat pack building solutions.",
-    color: "bg-indigo-600"
-  },
-  {
-    id: 9,
-    icon: Cog,
-    title: "Steel & Machinery Supply",
-    description: "Supply of new and used plant and machinery for construction and industrial sectors.",
-    color: "bg-indigo-600"
-  },
-];
+  const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-const whyChooseFeatures = [
+  const whyChooseFeatures = [
   {
     id: 1,
     icon: Clock,
@@ -123,6 +63,18 @@ const whyChooseFeatures = [
     color: "bg-indigo-600"
   },
 ];
+
+const iconMap: { [key: string]: React.ElementType } = {
+    "building-2": Building2,
+    wrench: Wrench,
+    zap: Zap,
+    warehouse: Warehouse,
+    truck: Truck,
+    container: Container,
+    home: Home,
+    package: Package,
+    cog: Cog,
+  };
 
 const navigate = useNavigate();
 
@@ -204,30 +156,36 @@ const navigate = useNavigate();
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <Card
-                key={service.id}
-                className={`flex flex-col gap-6 p-6 border border-gray-200 rounded-lg bg-white hover:shadow-lg transition-shadow ${
-                  coreServicesInView ? "animate-fade-in-up" : "opacity-0"
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className={`w-12 h-12 ${service.color} rounded-full flex items-center justify-center bg-[#E0E7Fe]/90`}>
-                  <service.icon className="w-6 h-6 text-white" />
-                </div>
-                <div className="flex flex-col gap-3">
-                  <h3 className="text-lg font-bold text-gray-900">{service.title}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
-                </div>
-                {/* <Button
-                  onClick={() => navigate('/services')}
-                  variant="link"
-                  className="p-0 h-auto text-indigo-600 hover:text-indigo-700 justify-start w-fit font-semibold"
+            {servicesData.map((service, index) => {
+              const IconComponent = iconMap[service.icon];
+              return (
+                <Card
+                  key={service.id}
+                  className={`flex flex-col gap-6 p-6 border border-gray-200 rounded-lg bg-white hover:shadow-lg transition-shadow ${
+                    coreServicesInView ? "animate-fade-in-up" : "opacity-0"
+                  }`}
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  Read More →
-                </Button> */}
-              </Card>
-            ))}
+                  <div className={`w-12 h-12 ${service.color} rounded-full flex items-center justify-center`}>
+                    {IconComponent && <IconComponent className="w-6 h-6 text-white" />}
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <h3 className="text-lg font-bold text-gray-900">{service.title}</h3>
+                    <p className="text-sm text-gray-600 leading-relaxed">{service.description}</p>
+                  </div>
+                  <Button
+                    onClick={() => {
+                      setSelectedService(service);
+                      setIsDialogOpen(true);
+                    }}
+                    variant="link"
+                    className="p-0 h-auto text-primary hover:text-primary/80 justify-start w-fit font-semibold"
+                  >
+                    Read More →
+                  </Button>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -405,6 +363,12 @@ const navigate = useNavigate();
           </div>
         </div>
       </section>
+
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="max-w-4xl p-0 border-0">
+          {selectedService && <ServiceDetail service={selectedService} />}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

@@ -76,12 +76,12 @@ const Footer = () => {
           <p className="mt-2">
             Designed by{" "}
             <a 
-              href="https://techversesolutions.com" 
+              href="https://techsphere-dun.vercel.app" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-white underline hover:opacity-80 transition-all duration-200"
             >
-              Tech Verse Solutions
+              Techverse Solutions
             </a>
           </p>
         </div>
