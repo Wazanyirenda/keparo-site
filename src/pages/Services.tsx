@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Building2, Wrench, Zap, Warehouse, Truck, Container, Home, Package, Cog, Clock, Users, Leaf, Target, Award, Shield } from "lucide-react";
 import constructionImage from "@/assets/Niru group warehouse development.jpg";
-import fabricationImage from "@/assets/steel fabrication.jpg";
+import fabricationImage from "@/assets/structFabrication2.jpg";
 import machineHireImage from "@/assets/machine hire.jpeg";
 import modularBuildingsImage from "@/assets/modular buildings.jpeg";
 import conversionsImage from "@/assets/container.jpg";
