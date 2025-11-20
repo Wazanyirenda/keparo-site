@@ -67,7 +67,3 @@ export const useAnimatedCounter = (target: number, duration = 2000) => {
   return { ref, count };
 };
 
-<<<<<<< HEAD
-=======
-
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c

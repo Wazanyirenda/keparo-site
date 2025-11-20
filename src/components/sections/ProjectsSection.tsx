@@ -3,15 +3,9 @@ import { Button } from "@/components/ui/button";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { useNavigate } from "react-router-dom";
 import CardSwap, { Card } from '../CardSwap';
-<<<<<<< HEAD
-import StructuralFabrication from "@/assets/Structural Fabrication.jpeg";
-import SteelFabrication from "@/assets/steel fabrication and processing.jpeg";
-import Warehouse from "@/assets/Warehouse and cold storage area.jpeg";
-=======
 import StructuralFabrication from "@/assets/steel fabrication.jpg";
 import SteelFabrication from "@/assets/steel fabrication and processing.jpeg";
 import Warehouse from "@/assets/Niru group warehouse development.jpg";
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
 
 export const ProjectsSection = (): JSX.Element => {
   const { ref, isVisible } = useScrollAnimation();

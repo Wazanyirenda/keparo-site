@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 // Full compiled Contact page with animated pin on map
-=======
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -33,11 +30,7 @@ const Contact = () => {
     message: "",
   });
 
-<<<<<<< HEAD
   const handleSubmit = (e) => {
-=======
-  const handleSubmit = (e: React.FormEvent) => {
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
     e.preventDefault();
     toast({
       title: "Message sent!",
@@ -46,11 +39,7 @@ const Contact = () => {
     setFormData({ name: "", email: "", phone: "", subject: "inquiry", message: "" });
   };
 
-<<<<<<< HEAD
   const handleChange = (e) => {
-=======
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -58,26 +47,12 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Head Office",
-<<<<<<< HEAD
       lines: ["Plot No. 12345, Industrial Area, Lusaka, Zambia", "Mon–Fri, 8:00 AM – 5:00 PM"],
-=======
-      lines: [
-        "Plot No. 12345, Industrial Area, Lusaka, Zambia",
-        "Mon–Fri, 8:00 AM – 5:00 PM",
-      ],
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
     },
     {
       icon: Phone,
       title: "Phone & Email",
-<<<<<<< HEAD
       lines: ["+260 123 456 789", "info@keparo.co.zm"],
-=======
-      lines: [
-        "+260 123 456 789",
-        "info@keparo.co.zm",
-      ],
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
     },
     {
       icon: Globe,
@@ -110,29 +85,15 @@ const Contact = () => {
   ];
 
   return (
-<<<<<<< HEAD
     <div className="min-h-screen pt-24 pb-0">
       {/* Hero */}
       <section className="relative w-full min-h-[420px] flex items-center justify-center">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }} />
-=======
-    <div className="min-h-screen pb-0">
-      {/* Hero */}
-      <section className="relative w-full min-h-[420px] flex items-center justify-center">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Get in Touch with Keparo Enterprises Ltd</h1>
           <p className="text-white/90 text-lg md:text-xl max-w-3xl mx-auto">
-<<<<<<< HEAD
             We're ready to discuss your next project, answer your questions, or provide a custom quote.
-=======
-            We’re ready to discuss your next project, answer your questions, or provide a custom quote.
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
           </p>
         </div>
       </section>
@@ -141,22 +102,13 @@ const Contact = () => {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <p className="text-center text-muted-foreground max-w-4xl mx-auto">
-<<<<<<< HEAD
             At Keparo Enterprises Ltd, we're committed to providing timely and reliable support for all your project needs.
             Whether you're planning a large-scale build or need specialized fabrication, our team is ready to assist.
-=======
-            At Keparo Enterprises Ltd, we’re committed to providing timely and reliable support for all your project needs.
-            Whether you’re planning a large‑scale build or need specialized fabrication, our team is ready to assist.
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
           </p>
         </div>
       </section>
 
-<<<<<<< HEAD
       {/* Info Cards */}
-=======
-      {/* Three Info Cards */}
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
       <section className="py-4 bg-muted/40">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -190,14 +142,10 @@ const Contact = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-2xl md:text-3xl font-bold text-center mb-2">Send Us a Message</h2>
-<<<<<<< HEAD
           <p className="text-center text-sm text-muted-foreground mb-8">
             Fill out the form below, and our team will get back to you promptly.
           </p>
 
-=======
-          <p className="text-center text-sm text-muted-foreground mb-8">Fill out the form below, and our team will get back to you promptly.</p>
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
           <div className="max-w-4xl mx-auto">
             <Card className="shadow-medium">
               <CardContent className="p-8">
@@ -212,10 +160,6 @@ const Contact = () => {
                       <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required placeholder="john@example.com" />
                     </div>
                   </div>
-<<<<<<< HEAD
-
-=======
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium mb-2">Phone Number</label>
@@ -235,19 +179,12 @@ const Contact = () => {
                       </Select>
                     </div>
                   </div>
-<<<<<<< HEAD
 
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
                     <Textarea id="message" name="message" rows={6} required placeholder="Write your message here..." value={formData.message} onChange={handleChange} />
                   </div>
 
-=======
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                    <Textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={6} required placeholder="Write your message here..." />
-                  </div>
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
                   <div className="flex justify-center">
                     <Button type="submit" className="px-8">Submit Message</Button>
                   </div>
@@ -258,7 +195,6 @@ const Contact = () => {
         </div>
       </section>
 
-<<<<<<< HEAD
       {/* Modern Map with Pin Drop Animation */}
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
@@ -290,29 +226,6 @@ const Contact = () => {
               <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-full animate-drop">
                 <MapPin className="w-8 h-8 text-red-600 drop-shadow-lg" />
               </div>
-=======
-      {/* Map */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="relative">
-              <Card className="overflow-hidden shadow-medium">
-                <div className="h-80 md:h-96 bg-gray-300/60 flex items-center justify-center">
-                  <div className="text-center text-foreground/70">
-                    <MapPin className="w-10 h-10 mx-auto mb-2" />
-                    <div className="font-semibold">Interactive Map</div>
-                    <div className="text-sm">Keparo Enterprises Ltd Location</div>
-                  </div>
-                </div>
-              </Card>
-              <Card className="absolute left-4 bottom-4 shadow-strong">
-                <CardContent className="p-4">
-                  <div className="text-sm font-semibold mb-1">Keparo Enterprises Ltd</div>
-                  <div className="text-xs text-muted-foreground mb-3">Plot No. 12345, Industrial Area, Lusaka, Zambia</div>
-                  <Button size="sm" variant="outline" className="bg-white">Get Directions</Button>
-                </CardContent>
-              </Card>
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
             </div>
           </div>
         </div>
@@ -336,11 +249,7 @@ const Contact = () => {
         </div>
       </section>
 
-<<<<<<< HEAD
       {/* CTA */}
-=======
-      {/* CTA Banner */}
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
       <section className="py-14 bg-primary">
         <div className="container mx-auto px-4 text-center text-white">
           <h3 className="text-2xl md:text-3xl font-bold mb-6">Ready to start your project or request a quote?</h3>
@@ -350,7 +259,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-<<<<<<< HEAD
 
       {/* CSS for Pin Drop Animation */}
       <style>
@@ -365,8 +273,6 @@ const Contact = () => {
           }
         `}
       </style>
-=======
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
     </div>
   );
 };

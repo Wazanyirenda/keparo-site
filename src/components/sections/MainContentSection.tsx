@@ -2,19 +2,11 @@ import { ChevronRightIcon } from "lucide-react";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-<<<<<<< HEAD
-import constructionImage from "@/assets/Warehouse and cold storage area.jpeg";
-import fabricationImage from "@/assets/Structural Fabrication.jpeg";
-import machineHireImage from "@/assets/machine hire.jpeg";
-import modularBuildingsImage from "@/assets/modular buildings.jpeg";
-import conversionsImage from "@/assets/container.jpeg";
-=======
 import constructionImage from "@/assets/Niru group warehouse development.jpg";
 import fabricationImage from "@/assets/steel fabrication.jpg";
 import machineHireImage from "@/assets/machine hire.jpg";
 import modularBuildingsImage from "@/assets/modular buildings.jpeg";
 import conversionsImage from "@/assets/container.jpg";
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
 import { useNavigate } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
@@ -86,11 +78,7 @@ export const MainContentSection = (): JSX.Element => {
     <section className="flex flex-col items-center w-full bg-[#f2f2f2]">
       <div ref={ref} className={`flex flex-col w-full max-w-[90rem] px-4 py-12 md:px-16 md:py-24 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <header className="flex flex-col items-center mb-8 sm:mb-12 md:mb-16">
-<<<<<<< HEAD
-          <div className="inline-flex mb-4">
-=======
            <div className="inline-block bg-white px-4 py-1 rounded-full text-sm font-semibold text-[#040709] border border-gray-200">
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
             <h3 className="text-sm font-semibold text-[#040709]">
               Services
             </h3>
@@ -144,11 +132,7 @@ export const MainContentSection = (): JSX.Element => {
                 </p>
               </CardContent>
 
-<<<<<<< HEAD
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-=======
               <div className="flex flex-wrap items-center gap-3 sm:gap-4 relative z-10">
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
                 {/* <Button
                 onClick={() => navigate("/services")}
                   variant="outline"
@@ -161,11 +145,7 @@ export const MainContentSection = (): JSX.Element => {
 
                 <Button
                 onClick={() => navigate("/services")}
-<<<<<<< HEAD
-                  variant="ghost"
-=======
                   variant="link"
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
                   className="h-10 sm:h-9 p-0 text-white hover:text-white/90 flex items-center gap-1"
                 >
                   <span className="text-sm font-medium">
@@ -194,11 +174,7 @@ export const MainContentSection = (): JSX.Element => {
                   </p>
                 </CardContent>
 
-<<<<<<< HEAD
-                <div className="mt-auto">
-=======
                 <div className="mt-auto relative z-10">
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
                   <Button
                   onClick={() => navigate("/services")}
                     variant="link"
@@ -228,11 +204,7 @@ export const MainContentSection = (): JSX.Element => {
                   </p>
                 </CardContent>
 
-<<<<<<< HEAD
-                <div className="mt-auto">
-=======
                 <div className="mt-auto relative z-10">
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
                   <Button
                   onClick={() => navigate("/services")}
                     variant="link"
@@ -265,11 +237,7 @@ export const MainContentSection = (): JSX.Element => {
                 </p>
               </CardContent>
 
-<<<<<<< HEAD
-              <div className="flex items-center gap-4 mt-auto">
-=======
               <div className="flex items-center gap-4 mt-auto relative z-10">
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
                 {/* <Button
                 onClick={() => navigate("/services")}
                   variant="outline"
@@ -316,11 +284,7 @@ export const MainContentSection = (): JSX.Element => {
                 </p>
               </CardContent>
 
-<<<<<<< HEAD
-              <div className="flex items-center gap-4 mt-auto">
-=======
               <div className="flex items-center gap-4 mt-auto relative z-10">
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
                 {/* <Button
                 onClick={() => navigate("/services")}
                   variant="outline"

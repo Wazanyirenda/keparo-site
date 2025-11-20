@@ -77,11 +77,7 @@ const Portfolio = () => {
   const categories = ["All", "Construction", "Warehouse", "Industrial", "Residential", "Commercial", "Conversions", "Equipment"];
 
   return (
-<<<<<<< HEAD
-    <div className="min-h-screen pt-24 pb-16">
-=======
     <div className="min-h-screen pb-16">
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
       {/* Header */}
       <section className="bg-gradient-hero text-white py-20">
         <div className="container mx-auto px-4">

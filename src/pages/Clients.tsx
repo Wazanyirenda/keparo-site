@@ -2,12 +2,8 @@ import { useInView } from "react-intersection-observer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Building2, ChevronRight } from "lucide-react";
-<<<<<<< HEAD
-import heroImage from "@/assets/hero-construction.jpg";
-=======
 import heroImage from "@/assets/our clients 2.jpg";
 import heroConstructionImage from "@/assets/hero-construction.jpg";
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
 import warehouseImage from "@/assets/corridor.png";
 import machineryImage from "@/assets/mibula.png";
 import cumminsLogo from "@/assets/Cummins logo.png";
@@ -79,19 +75,11 @@ const Clients = () => {
   ];
 
   return (
-<<<<<<< HEAD
-    <div className="min-h-screen pt-24 pb-0">
-      {/* Hero */}
-      <section ref={heroRef} className="relative w-full min-h-[420px] flex items-center justify-center">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }} />
-        <div className="absolute inset-0 bg-black/55" />
-=======
     <div className="min-h-screen pb-0">
       {/* Hero */}
       <section ref={heroRef} className="relative w-full min-h-[420px] flex items-center justify-center">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }} />
         <div className="absolute inset-0 bg-black/75" />
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
         <div className={`relative z-10 container mx-auto px-4 text-center ${heroInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">Our Clients & Partners</h1>
           <p className="text-white/90 max-w-3xl mx-auto">
@@ -189,11 +177,7 @@ const Clients = () => {
 
       {/* Banner */}
       <section className="relative w-full min-h-[320px] flex items-center justify-center">
-<<<<<<< HEAD
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroImage})` }} />
-=======
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${heroConstructionImage})` }} />
->>>>>>> ccb413f743a5c8e6e61b3637c3abaff78b47081c
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 text-center text-white px-4">
           <h3 className="text-2xl md:text-3xl font-bold mb-4">Proud to build Zambia's future together with our clients</h3>
