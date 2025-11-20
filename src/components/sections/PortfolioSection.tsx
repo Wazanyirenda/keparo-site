@@ -117,7 +117,12 @@ export const PortfolioSection = (): JSX.Element => {
 
           <div className="inline-flex flex-col items-start gap-4">
             <Button
-            onClick={()=>navigate("./Portfolio")}
+            onClick={() => {
+              navigate("/portfolio");
+              setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }, 100);
+            }}
               variant="outline"
               className="inline-flex items-center justify-center gap-2 px-6 py-2.5 h-auto mt-[-1.00px] mb-[-1.00px] ml-[-1.00px] mr-[-1.00px] rounded-xl border border-solid border-[#04070926] hover:bg-[#4e4dcb] hover:text-white"
             >
