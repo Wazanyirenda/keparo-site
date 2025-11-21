@@ -123,7 +123,7 @@ const Clients = () => {
       </section>
 
       {/* Partnerships That Deliver */}
-      <section ref={partnershipsRef} className="py-16 bg-white">
+      {/* <section ref={partnershipsRef} className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-2xl md:text-3xl font-bold text-center mb-12 ${partnershipsInView ? 'animate-fade-in-up' : 'opacity-0'}`}>Partnerships That Deliver</h2>
           <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
@@ -153,7 +153,7 @@ const Clients = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials */}
       <section ref={testimonialsRef} className="py-16 bg-muted">
