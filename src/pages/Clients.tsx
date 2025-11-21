@@ -17,9 +17,10 @@ import lubambeLogo from "@/assets/Lubambe_Logo.png";
 import lusangaLogo from "@/assets/lusanga group logo.png";
 import lemmerLogo from "@/assets/Lemmer Hydraulics logo.png";
 import ansultechLogo from "@/assets/Ansultech Fire Systems logo.png";
-
+import { useNavigate } from "react-router-dom";
 
 const Clients = () => {
+  const navigate = useNavigate();
   const { ref: heroRef, inView: heroInView } = useInView({
     threshold: 0.2,
     triggerOnce: true,
@@ -122,7 +123,7 @@ const Clients = () => {
       </section>
 
       {/* Partnerships That Deliver */}
-      <section ref={partnershipsRef} className="py-16 bg-white">
+      {/* <section ref={partnershipsRef} className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-6xl">
           <h2 className={`text-2xl md:text-3xl font-bold text-center mb-12 ${partnershipsInView ? 'animate-fade-in-up' : 'opacity-0'}`}>Partnerships That Deliver</h2>
           <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
@@ -152,7 +153,7 @@ const Clients = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials */}
       <section ref={testimonialsRef} className="py-16 bg-muted">
@@ -191,7 +192,9 @@ const Clients = () => {
           <h3 className="text-2xl md:text-3xl font-bold mb-4">Let's Build Something Together</h3>
           <p className="text-muted-foreground mb-6 max-w-3xl mx-auto">Interested in working with us? Contact our team to discuss your next project.</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <Button>Get a Quote</Button>
+            <Button
+            
+            >Services</Button>
             <Button variant="secondary" className="bg-primary-light text-primary hover:bg-primary/10">Contact Us</Button>
           </div>
         </div>
