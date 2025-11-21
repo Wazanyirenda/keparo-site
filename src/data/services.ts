@@ -9,12 +9,12 @@ import StructImage4 from "@/assets/structFabrication4.jpg";
 import fabricationImage from "@/assets/fabrication.jpg";
 import machineHireImage from "@/assets/machine hire.jpg";
 import modularBuildingsImage from "@/assets/modular buildings.jpeg";
-import conversionsImage from "@/assets/container-conversion.jpg";
+import conversionsImage from "@/assets/container.jpg";
 import warehouseImage from "@/assets/Mimbula structure.jpg";
 import plasmaCuttingImage from "@/assets/steel fabrication and processing.jpeg";
 import plasmaCuttingImage2 from "@/assets/plasma cut.jpg";
 import plasmaCuttingImage3 from "@/assets/our story.jpg";
-import steelSupplyImage from "@/assets/steel fabrication.jpg";
+import steelSupplyImage from "@/assets/structFabrication2.jpg";
 import flatpackImage from "@/assets/prefabricated.jpg";
 import structuralImage from "@/assets/structural work.jpg";
 
@@ -136,7 +136,7 @@ export const servicesData: Service[] = [
       "Provided full equipment solutions for major infrastructure projects.",
       "Recognized for excellent service and technical support.",
     ],
-    images: [machineHireImage, constructionImage, fabricationImage],
+    images: [machineHireImage],
     color: "bg-indigo-600",
   },
   {
