@@ -113,7 +113,7 @@ const navigate = useNavigate();
       {/* Hero Section */}
       <section
         ref={heroRef}
-        className="relative flex flex-col items-center justify-center h-[400px] px-8 md:px-16 w-full"
+        className="relative flex flex-col items-center justify-center min-h-[500px] pt-28 pb-16 sm:pt-32 md:pt-20 md:min-h-[400px] px-8 md:px-16 w-full"
         style={{
           backgroundImage: `linear-gradient(0deg, rgba(53, 53, 54, 0.6) 0%, rgba(116, 106, 106, 0.6) 100%), url(${servicesImage})`,
           backgroundSize: "cover",
@@ -125,8 +125,8 @@ const navigate = useNavigate();
             heroInView ? "animate-fade-in-up" : "opacity-0"
           }`}
         >
-          <h1 className="text-5xl font-bold text-white mb-4">Our Services</h1>
-          <p className="text-lg text-white/90">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mb-4">Our Services</h1>
+          <p className="text-base sm:text-lg text-white/90">
             Delivering construction, fabrication, modular and machinery solutions across Zambia.
           </p>
         </div>
