@@ -1,308 +1,259 @@
+// Full HSE page with InView animations instead of AOS
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Shield, Heart, Leaf, Award, Users, Handshake, Cog, Home, CheckCircle, AlertTriangle } from "lucide-react";
-import safetyImage from "@/assets/safety.jpg";
+import {
+  Shield,
+  Heart,
+  Leaf,
+  Award,
+  Users,
+  Handshake,
+  Cog,
+  Home,
+  CheckCircle,
+  Factory,
+  Globe,
+  Building,
+} from "lucide-react";
+import heroImage from "@/assets/Health and Safety.jpg";
+import workplaceSafetyImage from "@/assets/Health and Safety Measures.jpg";
+import environmentalImage from "@/assets/prefabricated.jpg";
+import trainingImage from "@/assets/Training and Certificate.png";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
+import { InView } from "react-intersection-observer";
+import "@/index.css";
 
 const HSE = () => {
   const navigate = useNavigate();
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const fadeLeft = {
+    hidden: { opacity: 0, x: -60 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const fadeRight = {
+    hidden: { opacity: 0, x: 60 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const zoomIn = {
+    hidden: { opacity: 0, scale: 0.85 },
+    visible: { opacity: 1, scale: 1 },
+  };
 
   const hseCorePillars = [
     {
       icon: Shield,
       title: "Safety First",
-      description: "Absolute zero tolerance approach to accidents and unsafe practices across all projects. We prioritize the safety of our team, clients, and the public above all else.",
+      description:
+        "Absolute zero tolerance approach to accidents and unsafe practices across all projects.",
     },
     {
       icon: Heart,
       title: "Health & Wellbeing",
-      description: "Comprehensive health programs and wellness initiatives to ensure our personnel remain healthy, safe, and productive throughout their careers with us.",
+      description:
+        "Comprehensive health programs ensuring our personnel remain safe and productive.",
     },
     {
       icon: Leaf,
       title: "Environmental Stewardship",
-      description: "Commitment to sustainable practices, waste reduction, and environmental protection in all our construction and operational activities.",
+      description:
+        "Committed to sustainable practices and environmental protection.",
     },
     {
       icon: Award,
       title: "Compliance & Training",
-      description: "Full compliance with all regulations and international standards, supported by comprehensive training programs for all personnel.",
+      description:
+        "Comprehensive training and compliance with international standards.",
     },
   ];
 
-  const whyHseCentral = [
+  const featuredCommitments = [
     {
-      icon: Users,
-      title: "Protecting Our People",
-      description: "Every team member is valuable. We ensure their safety through rigorous training, proper equipment, and a culture of accountability.",
+      title: "Workplace Safety & Risk Management",
+      text: "Comprehensive safety protocols and monitoring ensure the highest standards.",
+      btnText: "Learn More About Safety",
+      btnLink: "/services",
+      image: workplaceSafetyImage,
     },
     {
-      icon: Handshake,
-      title: "Upholding Client Trust",
-      description: "Clients trust us to deliver projects safely and responsibly. Our HSE record demonstrates our commitment to their confidence.",
+      title: "Environmental Sustainability Initiatives",
+      text: "We minimize environmental impact while increasing operational efficiency.",
+      btnText: "Explore Our Initiatives",
+      btnLink: "/services",
+      image: environmentalImage,
     },
     {
-      icon: Cog,
-      title: "Ensuring Efficiency",
-      description: "Safe operations are efficient operations. Proper safety protocols reduce downtime, improve productivity, and ensure project timelines.",
-    },
-    {
-      icon: Leaf,
-      title: "Reducing Environmental Impact",
-      description: "Sustainable practices protect the environment while meeting regulatory requirements and reducing long-term operational costs.",
-    },
-    {
-      icon: CheckCircle,
-      title: "Guaranteeing Compliance",
-      description: "We maintain full compliance with Zambian regulations and international standards, ensuring projects proceed without regulatory delays.",
-    },
-    {
-      icon: Home,
-      title: "Building Community Trust",
-      description: "Our commitment to safety and environmental responsibility builds trust with local communities and stakeholders.",
+      title: "Training & Certification Programs",
+      text: "Continuous upskilling ensures adherence to the latest safety standards.",
+      btnText: "View Our Programs",
+      btnLink: "/services",
+      image: trainingImage,
     },
   ];
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative w-full min-h-[600px] flex items-center justify-center">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${safetyImage})`,
-          }}
-        >
-          <div className="absolute inset-0 bg-black/60"></div>
-        </div>
+
+      {/* HERO */}
+      <section
+        className="relative w-full min-h-[600px] flex items-center justify-center parallax"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          <motion.h1
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            transition={{ duration: 0.7 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+          >
             Health, Safety & Environment
-          </h1>
-          <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto">
+          </motion.h1>
+
+          <motion.p
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            transition={{ duration: 0.9 }}
+            className="text-xl md:text-2xl text-white max-w-3xl mx-auto"
+          >
             Building responsibility, ensuring safety, living with integrity.
-          </p>
+          </motion.p>
         </div>
       </section>
 
-      {/* Introduction Text Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <p className="text-center text-muted-foreground max-w-4xl mx-auto text-lg">
-            At Keparo Enterprises, we believe that no project is worth compromising the health and safety of our team, clients, or the environment. Our comprehensive HSE policies are integrated into every aspect of our operations, ensuring that we deliver excellence while maintaining the highest standards of safety and environmental responsibility.
-          </p>
-        </div>
-      </section>
+      {/* INTRO */}
+      <InView triggerOnce>
+        {({ inView, ref }) => (
+          <section ref={ref} className="py-16 bg-white">
+            <motion.div
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              variants={fadeUp}
+              transition={{ duration: 0.7 }}
+              className="container mx-auto px-4"
+            >
+              <p className="text-center text-muted-foreground max-w-4xl mx-auto text-lg">
+                At Keparo Enterprises, we believe that no project is worth compromising health, safety, or environmental responsibility.
+              </p>
+            </motion.div>
+          </section>
+        )}
+      </InView>
 
-      {/* Our HSE Core Pillars */}
+      {/* CORE PILLARS */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
             Our HSE Core Pillars
           </h2>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {hseCorePillars.map((pillar, index) => (
-              <Card key={index} className="border-none shadow-medium">
-                <CardContent className="p-6 text-center">
-                  <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full mb-4">
-                    <pillar.icon className="w-10 h-10 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-foreground">{pillar.title}</h3>
-                  <p className="text-muted-foreground text-sm">{pillar.description}</p>
-                </CardContent>
-              </Card>
+              <InView triggerOnce key={index}>
+                {({ inView, ref }) => (
+                  <motion.div
+                    ref={ref}
+                    initial="hidden"
+                    animate={inView ? "visible" : "hidden"}
+                    variants={fadeUp}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
+                    <Card className="border-none shadow-medium hover:-translate-y-2 hover:shadow-xl transition-transform duration-300">
+                      <CardContent className="p-6 text-center">
+                        <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full mb-4">
+                          <pillar.icon className="w-10 h-10 text-white" />
+                        </div>
+                        <h3 className="text-xl font-bold mb-3 text-foreground">
+                          {pillar.title}
+                        </h3>
+                        <p className="text-muted-foreground text-sm">
+                          {pillar.description}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                )}
+              </InView>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Commitments */}
+      {/* FEATURED COMMITMENTS */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
             Featured Commitments
           </h2>
-          
-          {/* Block 1: Workplace Safety */}
-          <div className="grid md:grid-cols-2 gap-8 items-center mb-16 max-w-6xl mx-auto">
-            <div className="relative h-96 rounded-lg overflow-hidden shadow-strong">
-              <img
-                src={safetyImage}
-                alt="Workplace Safety & Risk Management"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-                Workplace Safety & Risk Management
-              </h3>
-              <p className="text-muted-foreground mb-6 text-lg">
-                Comprehensive safety protocols, rigorous risk assessments, and continuous monitoring ensure that every project site maintains the highest safety standards. Our proactive approach to identifying and mitigating risks protects our team and ensures project success.
-              </p>
-              <Button 
-                className="bg-primary text-white hover:bg-primary/90"
-                onClick={() => navigate("/services")}
+
+          {featuredCommitments.map((block, idx) => {
+            const isReversed = idx === 1;
+
+            return (
+              <div
+                key={idx}
+                className="grid md:grid-cols-2 gap-8 items-center mb-16 max-w-6xl mx-auto"
               >
-                Learn More About Safety
-              </Button>
-            </div>
-          </div>
+                {/* IMAGE */}
+                <InView triggerOnce>
+                  {({ inView, ref }) => (
+                    <motion.div
+                      ref={ref}
+                      className={`
+                        relative h-96 rounded-lg overflow-hidden shadow-strong
+                        transition-transform duration-500 hover:scale-105 parallax
+                        ${isReversed ? "order-2 md:order-2" : "order-1"}
+                      `}
+                      style={{ backgroundImage: `url(${block.image})` }}
+                      initial="hidden"
+                      animate={inView ? "visible" : "hidden"}
+                      variants={zoomIn}
+                      transition={{ duration: 0.6 }}
+                    />
+                  )}
+                </InView>
 
-          {/* Block 2: Environmental Sustainability */}
-          <div className="grid md:grid-cols-2 gap-8 items-center mb-16 max-w-6xl mx-auto">
-            <div className="order-2 md:order-1">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-                Environmental Sustainability Initiatives
-              </h3>
-              <p className="text-muted-foreground mb-6 text-lg">
-                We are committed to sustainable construction practices that minimize environmental impact. From waste reduction and recycling programs to energy-efficient construction methods, we build for a sustainable future.
-              </p>
-              <Button 
-                className="bg-primary text-white hover:bg-primary/90"
-                onClick={() => navigate("/services")}
-              >
-                Explore Our Initiatives
-              </Button>
-            </div>
-            <div className="relative h-96 rounded-lg overflow-hidden shadow-strong order-1 md:order-2">
-              <img
-                src={safetyImage}
-                alt="Environmental Sustainability"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+                {/* CONTENT */}
+                <InView triggerOnce>
+                  {({ inView, ref }) => (
+                    <motion.div
+                      ref={ref}
+                      className={`${isReversed ? "order-1 md:order-1" : "order-2"}`}
+                      initial="hidden"
+                      animate={inView ? "visible" : "hidden"}
+                      variants={isReversed ? fadeRight : fadeLeft}
+                      transition={{ duration: 0.7 }}
+                    >
+                      <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
+                        {block.title}
+                      </h3>
 
-          {/* Block 3: Training & Certification */}
-          <div className="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div className="relative h-96 rounded-lg overflow-hidden shadow-strong">
-              <img
-                src={safetyImage}
-                alt="Training & Certification Programs"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div>
-              <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
-                Training & Certification Programs
-              </h3>
-              <p className="text-muted-foreground mb-6 text-lg">
-                Ongoing training and certification programs ensure all personnel are equipped with the latest safety knowledge and best practices. We invest in our team's development to maintain excellence in safety and operational performance.
-              </p>
-              <Button 
-                className="bg-primary text-white hover:bg-primary/90"
-                onClick={() => navigate("/services")}
-              >
-                View Our Programs
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+                      <p className="text-muted-foreground mb-6 text-lg">
+                        {block.text}
+                      </p>
 
-      {/* Our HSE Performance Highlights */}
-      <section className="py-16 bg-primary text-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Our HSE Performance Highlights
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto text-center">
-            <div>
-              <div className="text-5xl md:text-6xl font-bold mb-2">500,000+</div>
-              <div className="text-lg opacity-90">Safe Working Hours</div>
-            </div>
-            <div>
-              <div className="text-5xl md:text-6xl font-bold mb-2">ISO 45001</div>
-              <div className="text-lg opacity-90">Certified</div>
-            </div>
-            <div>
-              <div className="text-5xl md:text-6xl font-bold mb-2">Zero</div>
-              <div className="text-lg opacity-90">Lost Time Injuries</div>
-            </div>
-            <div>
-              <div className="text-5xl md:text-6xl font-bold mb-2">100%</div>
-              <div className="text-lg opacity-90">Staff Trained</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why HSE is Central to Everything We Do */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
-            Why HSE is Central to Everything We Do
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {whyHseCentral.map((item, index) => (
-              <Card key={index} className="border-none shadow-medium">
-                <CardContent className="p-6 text-center">
-                  <div className="inline-flex items-center justify-center w-20 h-20 bg-primary rounded-full mb-4">
-                    <item.icon className="w-10 h-10 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-foreground">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Clients Trust Keparo */}
-      <section className="py-16 bg-primary text-white">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-2xl md:text-3xl font-bold mb-8 max-w-4xl mx-auto">
-            Our clients trust Keparo because we prioritize safety and sustainability in every project.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button 
-              variant="outline" 
-              className="border-white text-white hover:bg-white/10"
-              onClick={() => navigate("/clients")}
-            >
-              Client 1
-            </Button>
-            <Button 
-              variant="outline" 
-              className="border-white text-white hover:bg-white/10"
-              onClick={() => navigate("/clients")}
-            >
-              Client 2
-            </Button>
-            <Button 
-              variant="outline" 
-              className="border-white text-white hover:bg-white/10"
-              onClick={() => navigate("/clients")}
-            >
-              Client 3
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Partner with a team */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-2xl md:text-3xl font-bold mb-8 text-foreground max-w-4xl mx-auto">
-            Partner with a team that values safety, quality, and sustainability.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button 
-              className="bg-primary text-white hover:bg-primary/90 px-8 py-6 text-lg"
-              onClick={() => navigate("/contact")}
-            >
-              Contact Our Team
-            </Button>
-            <Button 
-              variant="outline"
-              className="border-primary text-primary hover:bg-primary hover:text-white px-8 py-6 text-lg"
-              onClick={() => navigate("/portfolio")}
-            >
-              View Our Portfolio
-            </Button>
-          </div>
+                      <Button
+                        className="bg-primary text-white hover:bg-primary/90 hover:scale-105 transition-transform duration-300"
+                        onClick={() => navigate(block.btnLink)}
+                      >
+                        {block.btnText}
+                      </Button>
+                    </motion.div>
+                  )}
+                </InView>
+              </div>
+            );
+          })}
         </div>
       </section>
     </div>
