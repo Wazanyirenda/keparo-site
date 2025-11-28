@@ -5,6 +5,8 @@ import CountUp from "react-countup";
 import fabricationImg from "@/assets/fabrication.jpg";
 import warehouseImg from "@/assets/warehouse.jpg";
 import safetyImg from "@/assets/safety.jpg";
+import mimbulaImg from "@/assets/Mimbula structure.jpg";
+import steelFabricationImg from "@/assets/steel fabrication and processing.jpeg";
 
 const About = () => {
   const strengths = [
@@ -83,13 +85,14 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section with Stats */}
-      <section className="relative bg-accent text-white pt-28 sm:pt-32 md:pt-36 pb-16 sm:pb-20 md:pb-24 lg:pt-16 lg:pb-20 xl:pt-24 xl:pb-24 overflow-hidden">
+      <section className="relative bg-black text-white pt-28 sm:pt-32 md:pt-36 pb-16 sm:pb-20 md:pb-24 lg:pt-16 lg:pb-20 xl:pt-24 xl:pb-24 overflow-hidden">
         <div 
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0 opacity-30"
           style={{
-            backgroundImage: `url(${fabricationImg})`,
+            backgroundImage: `url(${mimbulaImg})`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'center 40%',
+            backgroundRepeat: 'no-repeat',
           }}
         />
         <div className="container mx-auto px-4 relative z-10">
@@ -125,9 +128,9 @@ const About = () => {
             
             <div className="hidden lg:flex justify-center items-center">
               <img 
-                src={warehouseImg} 
-                alt="Keparo Facilities" 
-                className="rounded-lg shadow-strong w-full max-w-2xl scale-110"
+                src={mimbulaImg} 
+                alt="Mimbula Structure" 
+                className="rounded-lg shadow-strong w-full max-w-xl object-cover object-center h-[400px] xl:h-[450px]"
               />
             </div>
           </div>
@@ -140,8 +143,8 @@ const About = () => {
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center max-w-7xl mx-auto">
             <div className={`order-2 lg:order-1 ${overviewInView ? 'animate-slide-in-left' : 'opacity-0'}`}>
               <img 
-                src={fabricationImg} 
-                alt="Steel Fabrication" 
+                src={steelFabricationImg} 
+                alt="Steel Fabrication and Processing" 
                 className="rounded-lg shadow-medium w-full h-auto max-h-[450px] object-cover"
               />
             </div>
@@ -175,70 +178,101 @@ const About = () => {
       </section>
 
       {/* Vision & Mission */}
-      <section ref={visionRef} className="py-16 sm:py-20 bg-muted/50">
+      <section ref={visionRef} className="py-16 sm:py-20 bg-gradient-to-br from-muted/30 via-background to-muted/30">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <Card className={`shadow-medium border-0 hover:shadow-strong transition-shadow ${visionInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
-              <CardContent className="p-6 sm:p-8 md:p-10">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-primary/10 flex items-center justify-center mb-5 sm:mb-6">
-                  <Eye className="w-7 h-7 sm:w-8 sm:h-8 text-primary" />
-                </div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Our Vision</h3>
-                <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
-                  To continue expanding our role as a market leader in the building, construction and specialised machine hire industries.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="max-w-6xl mx-auto">
+            {/* Section Header */}
+            <div className={`text-center mb-12 ${visionInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">Our Vision & Mission</h2>
+              <p className="text-muted-foreground text-base sm:text-lg">Guiding principles that drive our success</p>
+            </div>
 
-            <Card className={`shadow-medium border-0 hover:shadow-strong transition-shadow ${visionInView ? 'animate-fade-in-up' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
-              <CardContent className="p-6 sm:p-8 md:p-10">
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-5 sm:mb-6">
-                  <Target className="w-7 h-7 sm:w-8 sm:h-8 text-secondary" />
-                </div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">Our Mission</h3>
-                <p className="text-muted-foreground leading-relaxed text-base sm:text-lg">
-                  To be the leading construction and hire company wherever we operate that delivers high-quality, cost-effective projects on budget and on schedule. We employ qualified building engineers and skilled artisans, and support a motivated, talented, flexible and focused team. We value the importance of our relationships and remain fair and true in our dealings with all employees, clients, vendors and partners. Our clients count on our dependability, our safety record, our drive, and our integrity.
-                </p>
-              </CardContent>
-            </Card>
+            {/* Vision and Mission Cards */}
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-10">
+              {/* Vision Card */}
+              <div className={`relative group ${visionInView ? 'animate-slide-in-left' : 'opacity-0'}`}>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/70 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
+                <Card className="relative border-0 shadow-strong bg-gradient-to-br from-primary to-primary/90 text-white overflow-hidden">
+                  <CardContent className="p-8 sm:p-10 md:p-12">
+                    <div className="flex items-start gap-4 mb-6">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-colors">
+                        <Eye className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl sm:text-3xl font-bold mb-2">Our Vision</h3>
+                        <div className="w-16 h-1 bg-white/50 rounded-full"></div>
+                      </div>
+                    </div>
+                    <p className="text-white/95 leading-relaxed text-base sm:text-lg">
+                      To continue expanding our role as a market leader in the building, construction and specialised machine hire industries.
+                    </p>
+                  </CardContent>
+                  {/* Decorative Elements */}
+                  <div className="absolute -right-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full"></div>
+                  <div className="absolute -right-5 -top-5 w-24 h-24 bg-white/5 rounded-full"></div>
+                </Card>
+              </div>
+
+              {/* Mission Card */}
+              <div className={`relative group ${visionInView ? 'animate-slide-in-right' : 'opacity-0'}`} style={{ animationDelay: '0.2s' }}>
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary to-secondary/70 rounded-2xl transform group-hover:scale-105 transition-transform duration-300"></div>
+                <Card className="relative border-0 shadow-strong bg-gradient-to-br from-secondary to-secondary/90 text-white overflow-hidden">
+                  <CardContent className="p-8 sm:p-10 md:p-12">
+                    <div className="flex items-start gap-4 mb-6">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-colors">
+                        <Target className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl sm:text-3xl font-bold mb-2">Our Mission</h3>
+                        <div className="w-16 h-1 bg-white/50 rounded-full"></div>
+                      </div>
+                    </div>
+                    <p className="text-white/95 leading-relaxed text-base sm:text-lg">
+                      To be the leading construction and hire company wherever we operate that delivers high-quality, cost-effective projects on budget and on schedule. We employ qualified building engineers and skilled artisans, and support a motivated, talented, flexible and focused team. We value the importance of our relationships and remain fair and true in our dealings with all employees, clients, vendors and partners. Our clients count on our dependability, our safety record, our drive, and our integrity.
+                    </p>
+                  </CardContent>
+                  {/* Decorative Elements */}
+                  <div className="absolute -left-10 -bottom-10 w-40 h-40 bg-white/5 rounded-full"></div>
+                  <div className="absolute -left-5 -top-5 w-24 h-24 bg-white/5 rounded-full"></div>
+                </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Why Choose Us */}
-      <section ref={whyChooseRef} className="py-16 sm:py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className={`text-center mb-12 sm:mb-16 ${whyChooseInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Why Choose Keparo Enterprises</h2>
-            <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
-              Discover what sets us apart in the construction industry
+      <section ref={whyChooseRef} className="flex flex-col items-center px-8 md:px-16 py-16 w-full bg-white">
+        <div className="max-w-screen-xl w-full flex flex-col gap-12">
+          <div className={`flex flex-col gap-4 items-center text-center ${whyChooseInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
+            <h2 className="text-3xl font-bold text-gray-900">Why Choose Keparo Enterprises</h2>
+            <p className="text-gray-600">
+              Your trusted partner for exceptional construction and fabrication solutions
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {strengths.map((item, index) => (
-              <Card 
-                key={item.title} 
-                className={`border-0 shadow-soft hover:shadow-medium transition-all hover:-translate-y-1 duration-300 ${whyChooseInView ? 'animate-fade-in-up' : 'opacity-0'}`}
+              <div
+                key={item.title}
+                className={`flex flex-col gap-4 items-center text-center p-6 ${whyChooseInView ? 'animate-fade-in-up' : 'opacity-0'}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardContent className="p-6 sm:p-8 text-center">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-primary to-secondary mx-auto mb-5 sm:mb-6 flex items-center justify-center">
-                    <item.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
-                  </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">{item.description}</p>
-                </CardContent>
-              </Card>
+                <div className="w-16 h-16 rounded-full flex items-center justify-center bg-indigo-600">
+                  <item.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Health, Safety & Environment */}
-      <section ref={hseRef} className="py-16 sm:py-20 bg-accent text-white relative overflow-hidden">
+      <section ref={hseRef} className="py-16 sm:py-20 bg-black text-white relative overflow-hidden">
         <div 
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-25"
           style={{
             backgroundImage: `url(${safetyImg})`,
             backgroundSize: 'cover',
@@ -246,30 +280,20 @@ const About = () => {
           }}
         />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-              <div className={`${hseInView ? 'animate-slide-in-left' : 'opacity-0'}`}>
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary flex items-center justify-center mb-6">
-                  <ShieldCheck className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
-                </div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
-                  Our Commitment to Health, Safety & Environment
-                </h2>
-                <p className="text-white/90 leading-relaxed text-base sm:text-lg mb-8">
-                  Safety, health and environment are core values of our business. We maintain a comprehensive health and safety management system, provide proper personal protective equipment, and actively encourage safe work practices.
-                </p>
-                <p className="text-white/90 leading-relaxed text-base sm:text-lg">
-                  We're committed to preventing environmental pollution, complying with Government Environmental Acts, and conducting our activities according to sustainable development principles.
-                </p>
+          <div className="max-w-4xl mx-auto">
+            <div className={`text-center ${hseInView ? 'animate-fade-in-up' : 'opacity-0'}`}>
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary flex items-center justify-center mb-6 mx-auto">
+                <ShieldCheck className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
               </div>
-              
-              <div className={`hidden lg:block ${hseInView ? 'animate-slide-in-right' : 'opacity-0'}`}>
-                <img 
-                  src={safetyImg} 
-                  alt="Safety First" 
-                  className="rounded-lg shadow-strong w-full max-w-md mx-auto"
-                />
-              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
+                Our Commitment to Health, Safety & Environment
+              </h2>
+              <p className="text-white/90 leading-relaxed text-base sm:text-lg mb-8">
+                Safety, health and environment are core values of our business. We maintain a comprehensive health and safety management system, provide proper personal protective equipment, and actively encourage safe work practices.
+              </p>
+              <p className="text-white/90 leading-relaxed text-base sm:text-lg">
+                We're committed to preventing environmental pollution, complying with Government Environmental Acts, and conducting our activities according to sustainable development principles.
+              </p>
             </div>
           </div>
         </div>
