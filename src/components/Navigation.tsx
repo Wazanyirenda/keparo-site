@@ -43,16 +43,11 @@ const Navigation = () => {
                 <span className="hidden sm:inline">Plot 18 Musenga, Off Kitwe Road, Chingola, Zambia</span>
                 <span className="sm:hidden text-xs">Plot 18 Musenga, Chingola</span>
               </div>
-              <div className="flex items-center gap-2 sm:gap-2 flex-1 sm:flex-initial justify-between sm:justify-start">
+              <div className="flex items-center gap-2">
                 <Phone size={14} className="flex-shrink-0" />
-                <div className="flex flex-col sm:flex-row sm:gap-3">
-                  <a href="tel:+260967674611" className="hover:opacity-80 transition-opacity text-xs sm:text-sm">
-                    +260 967 674 611 <span className="hidden md:inline text-xs opacity-75">(Operations)</span>
-                  </a>
-                  <a href="tel:+260960923998" className="hover:opacity-80 transition-opacity text-xs sm:text-sm">
-                    +260 960 923 998 <span className="hidden md:inline text-xs opacity-75">(Office)</span>
-                  </a>
-                </div>
+                <a href="tel:+260967674611" className="hover:opacity-80 transition-opacity text-xs sm:text-sm">
+                  +260 967 674 611
+                </a>
               </div>
             </div>
             <div className="hidden sm:flex items-center gap-2">

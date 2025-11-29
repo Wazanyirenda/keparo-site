@@ -4,7 +4,7 @@ import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/com
 import Autoplay from "embla-carousel-autoplay";
 import { useNavigate } from "react-router-dom";
 import constructionImage from "@/assets/hero image.jpg";
-import fabricationImage from "@/assets/steel fabrication.jpg";
+import fabricationImage from "@/assets/safety.jpg";
 import machineHireImage from "@/assets/machine hire.jpg";
 import modularBuildingsImage from "@/assets/prefabricated.jpg";
 import conversionsImage from "@/assets/container.jpg";
