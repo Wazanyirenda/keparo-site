@@ -52,8 +52,8 @@ const Navigation = () => {
             </div>
             <div className="hidden sm:flex items-center gap-2">
               <Mail size={14} />
-              <a href="mailto:keparo.enterprises@gmail.com" className="hover:opacity-80 transition-opacity text-xs md:text-sm">
-                keparo.enterprises@gmail.com
+              <a href="mailto:info@keparoservices.com" className="hover:opacity-80 transition-opacity text-xs md:text-sm">
+                info@keparoservices.com
               </a>
             </div>
           </div>

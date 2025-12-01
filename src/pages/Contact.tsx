@@ -55,8 +55,8 @@ const Contact = () => {
       icon: Phone,
       title: "Phone & Email",
       lines: [
-        "+260 123 456 789",
-        "info@keparo.co.zm",
+        "+260 967 674 611",
+        "info@keparoservices.com",
       ],
     },
     {
