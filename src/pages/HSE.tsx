@@ -107,7 +107,7 @@ const HSE = () => {
         className="relative w-full min-h-[600px] flex items-center justify-center parallax"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/61" />
         <div className="relative z-10 container mx-auto px-4 text-center">
           <motion.h1
             initial="hidden"
