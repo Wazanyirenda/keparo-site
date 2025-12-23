@@ -16,7 +16,7 @@ import {
   Globe,
   Building,
 } from "lucide-react";
-import heroImage from "@/assets/Health and Safety.jpg";
+import heroImage from "@/assets/Health And Safety Measures.jpg";
 import workplaceSafetyImage from "@/assets/Health and Safety Measures.jpg";
 import environmentalImage from "@/assets/prefabricated.jpg";
 import trainingImage from "@/assets/Training and Certificate.png";
