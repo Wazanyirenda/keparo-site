@@ -16,8 +16,8 @@ import {
   Globe,
   Building,
 } from "lucide-react";
-import heroImage from "@/assets/Health And Safety Measures.jpg";
-import workplaceSafetyImage from "@/assets/Health and Safety Measures.jpg";
+import heroImage from "@/assets/health-safety.webp";
+import workplaceSafetyImage from "@/assets/safe.jpg";
 import environmentalImage from "@/assets/prefabricated.jpg";
 import trainingImage from "@/assets/Training and Certificate.png";
 import { useNavigate } from "react-router-dom";
@@ -104,8 +104,8 @@ const HSE = () => {
 
       {/* HERO */}
       <section
-        className="relative w-full min-h-[600px] flex items-center justify-center parallax"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        className="relative w-full min-h-[600px] absolute inset-0 bg-black/60 flex items-center justify-center parallax"
+        style={{ backgroundImage: `linear-gradient(0deg, rgba(46, 46, 158, 0.6) 0%, rgba(116, 106, 106, 0.6) 100%), url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-black/61" />
         <div className="relative z-10 container mx-auto px-4 text-center">
@@ -224,7 +224,7 @@ const HSE = () => {
                 </InView>
 
                
-               
+
                 <InView triggerOnce>
                   {({ inView, ref }) => (
                     <motion.div
