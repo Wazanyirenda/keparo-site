@@ -223,7 +223,8 @@ const HSE = () => {
                   )}
                 </InView>
 
-                {/* CONTENT */}
+               
+               
                 <InView triggerOnce>
                   {({ inView, ref }) => (
                     <motion.div
