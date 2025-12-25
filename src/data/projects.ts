@@ -28,15 +28,11 @@ import fenceJob1 from "@/assets/fence job/IMG-20251104-WA0151.jpg";
 import fenceJob2 from "@/assets/fence job/IMG-20251104-WA0153.jpg";
 import fenceJob3 from "@/assets/fence job/IMG-20251104-WA0155.jpg";
 import fenceJob4 from "@/assets/fence job/IMG-20251104-WA0156.jpg";
-import project4Image1 from "@/assets/project 4/IMG-20251104-WA0229.jpg";
-import project4Image2 from "@/assets/project 4/IMG-20251104-WA0231.jpg";
-import project4Image3 from "@/assets/project 4/WhatsApp Image 2025-11-04 at 11.31.52_c94e4b22.jpg";
-import project5Image1 from "@/assets/project 5/IMG-20251104-WA0205.jpg";
-import project5Image2 from "@/assets/project 5/IMG-20251104-WA0217.jpg";
-import project5Image3 from "@/assets/project 5/IMG-20251104-WA0220.jpg";
-import project5Image4 from "@/assets/project 5/IMG-20251104-WA0222.jpg";
-import project5Image5 from "@/assets/project 5/IMG-20251104-WA0223.jpg";
-import project5Image6 from "@/assets/project 5/IMG-20251104-WA0226.jpg";
+import lusangaHouse1 from "@/assets/lusangagrouphouseimages/IMG_0429.JPG";
+import lusangaHouse2 from "@/assets/lusangagrouphouseimages/IMG_1697.JPG";
+import containerHouse1 from "@/assets/containersconvertedintoahouseinthebushwithshowers_/20170420_144240.jpg";
+import containerHouse2 from "@/assets/containersconvertedintoahouseinthebushwithshowers_/20170420_144828.jpg";
+import containerHouse3 from "@/assets/containersconvertedintoahouseinthebushwithshowers_/IMG-20170524-WA0030.jpg";
 
 export const projectsData: Project[] = [
   {
@@ -129,7 +125,7 @@ export const projectsData: Project[] = [
     location: "Various",
     category: "Residential",
     description: "Multiple residential properties featuring steel structures and modern construction techniques.",
-    image: structFab3,
+    image: lusangaHouse1,
     tags: ["Residential", "Steel Structure", "Modern Design"],
     detailedDescription: "A portfolio of residential projects for Lusanga Group, demonstrating our versatility in applying industrial construction expertise to residential development. These projects feature modern design elements combined with robust structural engineering.",
     client: "Lusanga Group",
@@ -141,7 +137,7 @@ export const projectsData: Project[] = [
       "Superior structural integrity",
       "Modern, attractive designs"
     ],
-    images: [structFab3, structFab1, structFab4, mimbulaImage]
+    images: [lusangaHouse1, lusangaHouse2, structFab3, structFab1]
   },
   {
     id: 6,
@@ -167,11 +163,11 @@ export const projectsData: Project[] = [
   {
     id: 7,
     title: "Container Office Conversions",
-    year: "2020-2024",
+    year: "2020-2024", 
     location: "Multiple Sites",
     category: "Conversions",
     description: "Innovative container conversions into functional offices, homes, and storage facilities across Zambia.",
-    image: containerJpeg,
+    image: containerHouse1,
     tags: ["Container Conversion", "Modular", "Sustainable"],
     detailedDescription: "An ongoing series of innovative container conversion projects, transforming standard shipping containers into functional, attractive spaces. These projects demonstrate our creativity and expertise in modular construction solutions.",
     challenges: "Converting industrial containers into comfortable, functional spaces while managing costs and maintaining structural integrity.",
@@ -182,7 +178,7 @@ export const projectsData: Project[] = [
       "Fast deployment (2-4 weeks per unit)",
       "Sustainable, cost-effective solutions"
     ],
-    images: [containerImage, containerJpg, containerJpeg, modularBuildingsImage]
+    images: [containerHouse1, containerHouse2, containerHouse3, containerImage, containerJpg, containerJpeg]
   },
   {
     id: 8,
@@ -191,7 +187,7 @@ export const projectsData: Project[] = [
     location: "Nationwide",
     category: "Equipment",
     description: "Supply and installation of construction and mining machinery for various industrial clients.",
-    image: equipmentInstall1,
+    image: machineHireImage,
     tags: ["Equipment", "Installation", "Support"],
     detailedDescription: "Comprehensive machinery supply and installation services for industrial clients across Zambia. Our services include equipment sourcing, delivery, installation, and training, ensuring clients can maximize their equipment investments.",
     challenges: "Sourcing quality equipment at competitive prices, managing complex logistics across the country, and providing ongoing technical support.",
@@ -202,11 +198,11 @@ export const projectsData: Project[] = [
       "Comprehensive training programs",
       "Ongoing maintenance support"
     ],
-    images: [equipmentInstall1, equipmentInstall2, equipmentInstall3, equipmentInstall4]
+    images: [machineHireImage]
   },
   {
     id: 9,
-    title: "Unnamed - Steel Fence Installation",
+    title: "Steel Fence Installation",
     year: "2024",
     location: "Various",
     category: "Industrial",
@@ -224,45 +220,5 @@ export const projectsData: Project[] = [
     ],
     images: [fenceJob1, fenceJob2, fenceJob3, fenceJob4]
   },
-  {
-    id: 10,
-    title: "Unnamed 2",
-    year: "2024",
-    location: "Various",
-    category: "Construction",
-    description: "Construction project showcasing our expertise in industrial and commercial building solutions.",
-    image: project4Image1,
-    tags: ["Construction", "Industrial", "Engineering"],
-    detailedDescription: "A construction project demonstrating our capabilities in delivering high-quality industrial and commercial building solutions. This project highlights our commitment to excellence in construction and engineering.",
-    challenges: "Managing complex construction requirements, ensuring quality standards, and delivering on time and within budget.",
-    solution: "Our experienced team applied proven construction methodologies, maintained strict quality control throughout the project, and implemented efficient project management practices to ensure successful delivery.",
-    results: [
-      "Project completed successfully",
-      "High-quality construction standards maintained",
-      "Delivered on schedule",
-      "Client satisfaction achieved"
-    ],
-    images: [project4Image1, project4Image2, project4Image3]
-  },
-  {
-    id: 11,
-    title: "Unnamed 3",
-    year: "2024",
-    location: "Various",
-    category: "Construction",
-    description: "Construction project demonstrating our expertise in delivering quality building solutions.",
-    image: project5Image1,
-    tags: ["Construction", "Industrial", "Engineering"],
-    detailedDescription: "A construction project showcasing our capabilities in delivering high-quality building solutions. This project demonstrates our commitment to excellence in construction and engineering services.",
-    challenges: "Managing project complexity, maintaining quality standards, and ensuring timely delivery while meeting client specifications.",
-    solution: "Our team utilized proven construction methodologies, implemented rigorous quality control measures, and maintained effective communication throughout the project lifecycle to ensure successful completion.",
-    results: [
-      "Project completed to client satisfaction",
-      "Quality standards maintained throughout",
-      "Delivered within timeline",
-      "Exceeded client expectations"
-    ],
-    images: [project5Image1, project5Image2, project5Image3, project5Image4, project5Image5, project5Image6]
-  }
 ];
 

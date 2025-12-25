@@ -19,7 +19,12 @@ const Navigation = () => {
     { name: "Contact", path: "/contact" },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => {
+    const normalize = (p: string) => p.replace(/\/+$/g, "").toLowerCase();
+    const current = normalize(location.pathname || "");
+    const target = normalize(path || "");
+    return current === target || current.startsWith(target + "/");
+  };
 
   // Handle scroll effect for navigation bar
   useEffect(() => {
@@ -43,22 +48,17 @@ const Navigation = () => {
                 <span className="hidden sm:inline">Plot 18 Musenga, Off Kitwe Road, Chingola, Zambia</span>
                 <span className="sm:hidden text-xs">Plot 18 Musenga, Chingola</span>
               </div>
-              <div className="flex items-center gap-2 sm:gap-2 flex-1 sm:flex-initial justify-between sm:justify-start">
+              <div className="flex items-center gap-2">
                 <Phone size={14} className="flex-shrink-0" />
-                <div className="flex flex-col sm:flex-row sm:gap-3">
-                  <a href="tel:+260967674611" className="hover:opacity-80 transition-opacity text-xs sm:text-sm">
-                    +260 967 674 611 <span className="hidden md:inline text-xs opacity-75">(Operations)</span>
-                  </a>
-                  <a href="tel:+260960923998" className="hover:opacity-80 transition-opacity text-xs sm:text-sm">
-                    +260 960 923 998 <span className="hidden md:inline text-xs opacity-75">(Office)</span>
-                  </a>
-                </div>
+                <a href="tel:+260967674611" className="hover:opacity-80 transition-opacity text-xs sm:text-sm">
+                  +260 967 674 611
+                </a>
               </div>
             </div>
             <div className="hidden sm:flex items-center gap-2">
               <Mail size={14} />
-              <a href="mailto:keparo.enterprises@gmail.com" className="hover:opacity-80 transition-opacity text-xs md:text-sm">
-                keparo.enterprises@gmail.com
+              <a href="mailto:info@keparoservices.com" className="hover:opacity-80 transition-opacity text-xs md:text-sm">
+                info@keparoservices.com
               </a>
             </div>
           </div>
@@ -83,21 +83,25 @@ const Navigation = () => {
 
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center space-x-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    isActive(link.path)
-                      ? "text-white bg-primary shadow-md"
-                      : isScrolled
-                      ? "text-foreground hover:text-primary hover:bg-primary/5"
-                      : "text-white hover:text-white/80 hover:bg-white/10"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const active = isActive(link.path);
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    aria-current={active ? "page" : undefined}
+                    className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 transform-gpu ${
+                      active
+                        ? "text-white bg-primary shadow-md scale-105"
+                        : isScrolled
+                        ? "text-foreground hover:text-primary hover:bg-primary/5 hover:scale-105"
+                        : "text-white hover:text-white/80 hover:bg-white/10 hover:scale-105"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
             </div>
 
             <div className="hidden lg:block">
@@ -127,20 +131,24 @@ const Navigation = () => {
             <div className={`flex flex-col space-y-2 pb-4 pt-4 ${
               isScrolled ? "border-t border-gray-100" : "border-t border-gray-100"
             }`}>
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    isActive(link.path)
-                      ? "text-white bg-primary shadow-md"
-                      : "text-foreground hover:text-primary hover:bg-primary/5"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const active = isActive(link.path);
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    aria-current={active ? "page" : undefined}
+                    className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                      active
+                        ? "text-white bg-primary shadow-md"
+                        : "text-foreground hover:text-primary hover:bg-primary/5"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
               <Button asChild className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 w-full mt-2 shadow-md">
                 <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                   Get Quote
