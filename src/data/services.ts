@@ -14,6 +14,10 @@ import warehouseImage from "@/assets/Mimbula structure.jpg";
 import plasmaCuttingImage from "@/assets/steel fabrication and processing.jpeg";
 import plasmaCuttingImage2 from "@/assets/plasma cut.jpg";
 import plasmaCuttingImage3 from "@/assets/our story.jpg";
+import plasmaCnc60mmImage from "@/assets/plsma cuuting/60mm stainless steel.jpg";
+import plasmaCncPrecisionImage from "@/assets/plsma cuuting/Presision CNC Plasma Cutting.jpg";
+import plasmaCncStructuralImage from "@/assets/plsma cuuting/Structrural fabrication.jpg";
+import plasmaCncTankImage from "@/assets/plsma cuuting/Tank fabrication.jpg";
 import steelSupplyImage from "@/assets/structFabrication2.jpg";
 import flatpackImage from "@/assets/prefabricated.jpg";
 import structuralImage from "@/assets/structural work.jpg";
@@ -88,7 +92,13 @@ export const servicesData: Service[] = [
       "Achieved cutting tolerances within 0.5mm.",
       "Reduced client production costs through efficient nesting.",
     ],
-    images: [plasmaCuttingImage, plasmaCuttingImage3,plasmaCuttingImage2],
+    images: [
+      plasmaCncPrecisionImage,
+      plasmaCnc60mmImage,
+      plasmaCuttingImage2,
+      plasmaCncTankImage,
+      plasmaCncStructuralImage,
+    ],
     color: "bg-indigo-600",
   },
   {
