@@ -54,7 +54,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Head Office",
-      lines: ["Plot No. 12345, Industrial Area, Lusaka, Zambia", "Mon–Fri, 8:00 AM – 5:00 PM"],
+      lines: ["Plot 18 Musenga, Off Kitwe Road, Chingola, Zambia", "Mon–Fri, 8:00 AM – 5:00 PM"],
     },
     {
       icon: Phone,
@@ -189,7 +189,7 @@ const Contact = () => {
           {/* Google Map */}
           <Card className="overflow-hidden shadow-medium">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.123456!2d28.2916!3d-15.4167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1940e123456789ab%3A0xabcdef1234567890!2sIndustrial%20Area%2C%20Lusaka%2C%20Zambia!5e0!3m2!1sen!2szm!4v1700000000000!5m2!1sen!2szm"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3848.5!2d27.946361!3d-12.620944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDM3JzE1LjQiUyAyN8KwNTYnNDYuOSJF!5e0!3m2!1sen!2szm!4v1700000000000!5m2!1sen!2szm"
               width="100%"
               height="400"
               style={{ border: 0 }}
@@ -205,7 +205,7 @@ const Contact = () => {
             <CardContent className="p-4">
               <div className="text-sm font-semibold mb-1">Keparo Enterprises Ltd</div>
               <div className="text-xs text-muted-foreground mb-3">
-                Plot No. 12345, Industrial Area, Lusaka, Zambia
+                Plot 18 Musenga, Off Kitwe Road, Chingola, Zambia
               </div>
               <Button
                 size="sm"
@@ -213,7 +213,7 @@ const Contact = () => {
                 className="bg-white w-full sm:w-auto"
                 onClick={() =>
                   window.open(
-                    "https://www.google.com/maps/dir/?api=1&destination=Keparo+Enterprises+Ltd+Lusaka+Zambia",
+                    "https://maps.app.goo.gl/1nL5G1iyUpibt9kB7",
                     "_blank"
                   )
                 }
